@@ -1,0 +1,20 @@
+//Clases generales
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./variables";
+@import "./mixins";
+@import "./botones";
+@import "./funciones";
+@import "./allProject";
+@import "./listas";
+@import "./backgroundsFondo";
+@import "./cards";
+@import "./containers";
+@import "./navbat";
+@import "./images";
+
+//Clases particulares
+
+@import "./header.scss";
+@import "./index.scss";
+

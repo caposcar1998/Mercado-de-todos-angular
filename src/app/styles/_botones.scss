@@ -1,0 +1,73 @@
+
+.botonBusqueda {
+    width: 100%;
+    @include botonVario;
+}
+
+.btn-register{
+    @include botonVario;
+}
+
+.botonBusqueda:hover, .btn-register:hover {
+    background-color: $colorAuxiliarDosOscuro;
+    color: $blanco;
+}
+
+.botonCancelar {
+    //width: 100%; utilicen la clase d-block para que un boton ocupe todo el ancho
+    @include botonCancelar;
+}
+
+.botonCancelar:hover{
+    background-color: $colorCancelarOscuro;
+    color: $blanco;
+}
+
+.botonEditar {
+    //width: 100%; utilicen la clase d-block para que un boton ocupe todo el ancho
+    @include botonEdicion;
+}
+
+.botonEditar:hover {
+    background-color: $colorEdicionOscuro;
+    color: $blanco;
+}
+
+.btn-head{
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    font-size: 2.2vh;
+    margin-left: 0.2vh;
+    margin-right: 0.2vh;
+    border-radius: 60px;
+}
+
+.btn-head:hover{
+    font-size: 2.3vh;
+    background-color: $colorAuxiliar;
+    color: $blanco!important;
+}
+
+.login-button{
+    margin-left: 0.2vh;
+    margin-right: 0.2vh;
+    border-radius: 60px;
+    font-size: 2.3vh;
+    color:$colorPrincipal; 
+    color: $blanco!important;
+    background-color: $colorSecundario;   
+}
+
+.btn-signin {
+    @include botonAfirmacion;
+}
+
+.btn-signin:hover {
+    color: $blanco;
+    background-color: $colorAuxiliar;
+}
+
+.inicar-sesion{
+    @include botonAfirmacion;
+}

@@ -1,0 +1,48 @@
+@mixin textoImportante {
+    color: $black;
+    border: 1px solid $black;
+}
+
+@mixin botonAfirmacion {
+    border-radius: 5vh;
+    letter-spacing: .2vh;
+    font-weight: bold;
+    padding: 1vh;
+    background-color: $colorPrincipal;
+    color:$white;
+    
+}
+
+@mixin botonCancelar {
+    background-color: $colorCancelar;
+    border-radius: 5vh;
+    letter-spacing: .2vh;
+    font-weight: bold;
+    padding: 1vh; 
+    color:$white;
+}
+
+@mixin botonVario {
+    border-radius: 5vh;
+    letter-spacing: .2vh;
+    font-weight: bold;
+    padding: 1vh;
+    background-color: $colorAuxiliarDos; 
+    color:$white;   
+}
+
+@mixin botonEdicion {
+    background-color: $colorEdicion;
+    border-radius: 5vh;
+    letter-spacing: .2vh;
+    font-weight: bold;
+    padding: 1vh;  
+    color:$white;   
+}
+
+@mixin generalCards {
+    width: 100%;
+    border: 0;
+    border-radius: 6vh;
+    color: $colorSecundario;
+}

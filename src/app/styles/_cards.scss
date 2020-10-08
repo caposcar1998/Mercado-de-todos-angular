@@ -1,0 +1,21 @@
+.card {
+    width: 100%;
+    border: 0;
+    border-radius: 6vh;
+    display: block;
+}
+
+.card-title{
+    padding: 1vh;
+    color: $colorPrincipal;
+    font-weight: bold;
+    letter-spacing: .2vh;
+    text-align: center;
+}
+
+.card-paragraph{
+    padding: 1vh;
+    color:black;
+    letter-spacing: .1vh;
+    font-size: 21px;
+}
