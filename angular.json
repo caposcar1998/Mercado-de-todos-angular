@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "mercado-de-todos-angular"
+    }
+  },
+  "defaultProject": "mercado-de-todos-angular",
+  "cli": {
+    "analytics": "9a7f8fdc-0aa2-4f98-99d0-782964723079"
+  }
 }
