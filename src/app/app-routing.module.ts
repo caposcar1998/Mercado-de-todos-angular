@@ -7,6 +7,7 @@ const routes: Routes = [
   {path: "", component: SearchBarComponent},
   {path: "login", loadChildren: "./modules/login/login.module#LoginModule"},
   {path: "producto", loadChildren: "./modules/producto/producto.module#ProductoModule"},
+  {path: "carrito", loadChildren: "./modules/carrito/carrito.module#CarritoModule"}
   {path: "**", component: PageNotFoundComponent},
 
 ];

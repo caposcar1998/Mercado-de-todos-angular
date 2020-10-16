@@ -10,6 +10,7 @@ import { SearchBarComponent } from './general-components/search-bar/search-bar.c
 import { LoginModule } from './modules/login/login.module';
 import { ProductoModule } from './modules/producto/producto.module';
 import { PageNotFoundComponent } from './general-components/page-not-found/page-not-found.component';
+import { CarritoModule } from './modules/carrito/carrito.module';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { PageNotFoundComponent } from './general-components/page-not-found/page-
     BrowserModule,
     AppRoutingModule,
     LoginModule,
-    ProductoModule
+    ProductoModule,
+    CarritoModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
