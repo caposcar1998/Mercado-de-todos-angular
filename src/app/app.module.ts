@@ -9,6 +9,8 @@ import { FooterComponent } from './general-components/footer/footer.component';
 import { SearchBarComponent } from './general-components/search-bar/search-bar.component';
 import { LoginModule } from './modules/login/login.module';
 import { ProductoModule } from './modules/producto/producto.module';
+import { HistorialModule } from './modules/historial/historial.module';
+import { PerfilesModule } from './modules/perfiles/perfiles.module';
 import { PageNotFoundComponent } from './general-components/page-not-found/page-not-found.component';
 
 
@@ -25,7 +27,9 @@ import { PageNotFoundComponent } from './general-components/page-not-found/page-
     BrowserModule,
     AppRoutingModule,
     LoginModule,
-    ProductoModule
+    ProductoModule,
+    HistorialModule,
+    PerfilesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

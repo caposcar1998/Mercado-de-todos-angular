@@ -6,6 +6,8 @@ import { SearchBarComponent } from './general-components/search-bar/search-bar.c
 const routes: Routes = [
   {path: "", component: SearchBarComponent},
   {path: "login", loadChildren: "./modules/login/login.module#LoginModule"},
+  {path: "historial", loadChildren: "./modules/historial/historial.module#HistorialModule"},
+  {path: "perfiles", loadChildren: "./modules/perfiles/perfiles.module#PerfilesModule"},
   {path: "**", component: PageNotFoundComponent},
 
 ];
