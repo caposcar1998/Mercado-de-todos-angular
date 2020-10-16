@@ -11,6 +11,7 @@ import { LoginModule } from './modules/login/login.module';
 import { ProductoModule } from './modules/producto/producto.module';
 import { PageNotFoundComponent } from './general-components/page-not-found/page-not-found.component';
 import { CarritoModule } from './modules/carrito/carrito.module';
+import { MostrarProductoModule } from './modules/mostrar-producto/mostrar-producto.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CarritoModule } from './modules/carrito/carrito.module';
     AppRoutingModule,
     LoginModule,
     ProductoModule,
-    CarritoModule
+    CarritoModule,
+    MostrarProductoModule
 
   ],
   providers: [],
