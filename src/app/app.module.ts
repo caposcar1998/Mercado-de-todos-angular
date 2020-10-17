@@ -12,6 +12,8 @@ import { ProductoModule } from './modules/producto/producto.module';
 import { HistorialModule } from './modules/historial/historial.module';
 import { PerfilesModule } from './modules/perfiles/perfiles.module';
 import { PageNotFoundComponent } from './general-components/page-not-found/page-not-found.component';
+import { CarritoModule } from './modules/carrito/carrito.module';
+import { MostrarProductoModule } from './modules/mostrar-producto/mostrar-producto.module';
 
 
 @NgModule({
@@ -30,6 +32,10 @@ import { PageNotFoundComponent } from './general-components/page-not-found/page-
     ProductoModule,
     HistorialModule,
     PerfilesModule
+    CarritoModule,
+    MostrarProductoModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
