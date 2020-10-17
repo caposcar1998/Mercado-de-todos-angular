@@ -31,7 +31,7 @@ import { MostrarProductoModule } from './modules/mostrar-producto/mostrar-produc
     LoginModule,
     ProductoModule,
     HistorialModule,
-    PerfilesModule
+    PerfilesModule,
     CarritoModule,
     MostrarProductoModule
 
