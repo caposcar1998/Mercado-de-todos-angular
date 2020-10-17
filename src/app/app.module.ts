@@ -8,6 +8,7 @@ import { HeaderComponent } from './general-components/header/header.component';
 import { FooterComponent } from './general-components/footer/footer.component';
 import { SearchBarComponent } from './general-components/search-bar/search-bar.component';
 import { LoginModule } from './modules/login/login.module';
+import { LandingModule } from './modules/landing/landing.module';
 import { ProductoModule } from './modules/producto/producto.module';
 import { PageNotFoundComponent } from './general-components/page-not-found/page-not-found.component';
 
@@ -25,6 +26,7 @@ import { PageNotFoundComponent } from './general-components/page-not-found/page-
     BrowserModule,
     AppRoutingModule,
     LoginModule,
+    LandingModule,
     ProductoModule
   ],
   providers: [],
