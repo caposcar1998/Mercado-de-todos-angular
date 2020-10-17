@@ -8,6 +8,7 @@ import { HeaderComponent } from './general-components/header/header.component';
 import { FooterComponent } from './general-components/footer/footer.component';
 import { SearchBarComponent } from './general-components/search-bar/search-bar.component';
 import { LoginModule } from './modules/login/login.module';
+import { LandingModule } from './modules/landing/landing.module';
 import { ProductoModule } from './modules/producto/producto.module';
 import { HistorialModule } from './modules/historial/historial.module';
 import { PerfilesModule } from './modules/perfiles/perfiles.module';
@@ -29,13 +30,12 @@ import { MostrarProductoModule } from './modules/mostrar-producto/mostrar-produc
     BrowserModule,
     AppRoutingModule,
     LoginModule,
+    LandingModule,
     ProductoModule,
     HistorialModule,
     PerfilesModule,
     CarritoModule,
     MostrarProductoModule
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]
