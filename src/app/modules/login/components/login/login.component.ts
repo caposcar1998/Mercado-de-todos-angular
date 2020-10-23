@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import {LoginUsers} from "../../../../models/loginUsers";
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,11 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  //parametros para la otra clase que muestra los datos
+  @Input() loginUsers : LoginUsers;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }
