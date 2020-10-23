@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,4 +13,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onLogin() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.loginForm.value);
+    console.log("hola")
+  }
+
+  loginForm = new FormGroup({
+    mail: new FormControl(''),
+    password: new FormControl(''),
+  });
+
 }
+
+
+
+
