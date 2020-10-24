@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { LoginService } from './services/login.service';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { RegistroComponent } from './components/registro/registro.component';
     CommonModule,
     LoginRoutingModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers: [LoginService]
 })
 export class LoginModule { }
