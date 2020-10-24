@@ -7,14 +7,14 @@ import { ProductoRoutingModule } from './producto-routing.module';
 import { ConfirmarCompraComponent } from './components/confirmar-compra/confirmar-compra.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { RegistrarProductoComponent } from './components/registrar-producto/registrar-producto.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ConfirmarCompraComponent, DetalleProductoComponent, RegistrarProductoComponent],
   imports: [
     CommonModule,
     ProductoRoutingModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductoModule { }

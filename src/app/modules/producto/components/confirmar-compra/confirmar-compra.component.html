@@ -1,1 +1,75 @@
-<p>confirmar-compra works!</p>
+<div class="row mb-5">
+    <div class="card mt-3 col-12 col-sm-12 col-md-6 text-center">
+      <img src="../../assets/creditcard.png" class="w-50" alt="...">
+      <div class="card-body text-center">
+          <h4 class="card-title">Ingresa Tarjeta</h4>
+          <form [formGroup]="confirmarCompraForm" (ngSubmit)="onConfirmarCompra()">
+              <div class="form-group mt-3">
+                  <input type="number" formControlName="cardNumber" id="inputNumTarjeta" class="form-control mb-4" placeholder="Número de tarjeta"> 
+              </div>
+              <div class="form-group mt-3">
+                  <input type="text" formControlName="name" id="inputNombreCompleto" class="form-control mb-4" placeholder="Nombre y apellido"> 
+              </div>
+              <div class="col-md-12 row">
+                  <div class="form-group col-md-6">
+                      <input type="text" formControlName="expirationDate" id="inputExpireDate" pattern="\d\d/\d\d" class="form-control mb-4" placeholder="Fecha de expiración"> 
+                  </div>
+                  <div class="form-group col-md-6">
+                      <input type="number" formControlName="cvv" id="inputCode" class="form-control mb-4" placeholder="CVV"  min="1" max="999" > 
+                  </div> 
+              </div>
+              <button class="btn btn-signin d-block" type="submit">Confirmar Compra</button>
+          </form>
+      </div> 
+    </div>
+    <div class="card mt-3 col-12 col-sm-12 col-md-6 ">
+      <div class="card-body">
+        <h4 class="card-title">Producto 001</h4>
+              <div class="row col-md-12">
+                  <div class="col-md-6">
+                      <h5><span>Precio Unitario: </span></h5>
+                      <p>1000 pesos</p>
+                  </div>
+                  <div class="col-md-6">
+                      <h5><span>Costo de envio: </span></h5>
+                      <p>114 pesos</p>
+                  </div>
+              </div>
+              <div class="row col-md-12">
+                  <div class="col-md-6">
+                      <h5><span>Presentación: </span></h5>
+                      <p>En latas</p>
+                  </div>
+                  <div class="col-md-6">
+                      <h5><span>Fecha estimada de expiración: </span></h5>
+                      <p>24/09/2020</p>
+                  </div>
+              </div>
+              <div class="row col-md-12">
+                  <div class="col-md-6">
+                      <h5><span>Fecha estimada de expiración: </span></h5>
+                      <p>24/09/2020</p>
+                  </div>
+                  <div class="col-md-6">
+                      <h5><span>Unidades a comprar:</span></h5>
+                      <p>1</p>
+                  </div>
+              </div>
+              <div class="row col-md-12">
+                  <div class="col-md-6">
+                      <h5><span>Lugar de entrega: </span></h5>
+                      <p>Debajo de la torre Eifel</p>
+                  </div>
+                  <div class="col-md-6">
+                      <h5><span>Vendedor: </span></h5>
+                      <p>José Luis Espinosa ‘La Jefa’</p>
+                  </div>
+              </div>
+              <div class="col-md-12 text-center">
+                  <h5>Total: </h5>
+                  <p>1000 pesos</p>
+              </div>
+        
+      </div>
+    </div>
+  </div>
