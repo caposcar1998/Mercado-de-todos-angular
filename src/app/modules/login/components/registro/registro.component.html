@@ -1,1 +1,38 @@
-<p>registro works!</p>
+<div class="container-login col-sm-9 col-md-7 col-lg-5">
+    <div class="card bg-light my-5">
+        <div class="card-header navbar-expand-lg navbar-light bg-light" id="header">
+            <a class="navbar-brand text-center" href="#"><b>M</b>ercado <b>P</b>ara <b>T</b>odos</a>   
+        </div>
+        <div class="card-body">
+            <p class="card-paragraph text-center mb-2">Registro Nuevo Vendedor</p>
+            <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+                <div class="form-group mt-3">
+                    <input type="text" formControlName="name" id="inputNameVend" class="form-control mb-4" placeholder="Nombre"> 
+                </div>
+                <div class="form-group mt-3">
+                    <input type="email" formControlName="mail" id="inputEmail" class="form-control mb-4" placeholder="Correo electrónico"> 
+                </div>
+                <div class="form-group mt-3">
+                    <input type="password" formControlName="password" id="inputPassword" class="form-control mb-4" placeholder="Contraseña">
+                </div>
+                <div class="form-group mt-3">
+                    <input type="password" formControlName="confirmPassword" id="inputPassword2" class="form-control mb-4" placeholder="Confirmar contraseña">
+                </div>
+                <div class="form-group mt-3">
+                    <input type="number" formControlName="phone" id="inputPhonenumber" class="form-control mb-4" placeholder="Teléfono">
+                </div>
+                <div class="form-group mt-3">
+                    <input type="text" formControlName="state" id="inputState" class="form-control mb-4" placeholder="Estado">
+                </div>
+                <div class="form-group mt-3">
+                    <input type="text" formControlName="address" id="inputAdress" class="form-control mb-4" placeholder="Dirección">
+                </div>
+                <button class="btn btn-signin btn-sm inicar-sesion btn-block mb-3" type="submit">Registrar cuenta</button>
+            </form> 
+        </div>
+        <div class="card-footer">
+            <p class="card-paragraph text-center mb-2">¿Ya tienes cuenta?</p>
+            <a class="btn btn-register btn-sm  btn-block mt-4 mb-3" type="submit" href="../login"> Inicia Sesión </a>
+        </div>
+    </div>         
+</div>
