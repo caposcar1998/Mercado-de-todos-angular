@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { ProductoRoutingModule } from './producto-routing.module';
 import { ConfirmarCompraComponent } from './components/confirmar-compra/confirmar-compra.component';
@@ -11,7 +13,8 @@ import { RegistrarProductoComponent } from './components/registrar-producto/regi
   declarations: [ConfirmarCompraComponent, DetalleProductoComponent, RegistrarProductoComponent],
   imports: [
     CommonModule,
-    ProductoRoutingModule
+    ProductoRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class ProductoModule { }

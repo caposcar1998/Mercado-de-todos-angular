@@ -14,6 +14,7 @@ export class RegistrarProductoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   } 
 
   onRegisterProduct() {
