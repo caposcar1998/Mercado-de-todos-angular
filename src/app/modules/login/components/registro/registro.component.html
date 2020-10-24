@@ -5,6 +5,8 @@
         </div>
         <div class="card-body">
             <p class="card-paragraph text-center mb-2">Registro Nuevo Vendedor</p>
+            <p>{{message}}</p>
+            <button (click)="newMessage()">Change Message</button>
             <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
                 <div class="form-group mt-3">
                     <input type="text" formControlName="name" id="inputNameVend" class="form-control mb-4" placeholder="Nombre"> 

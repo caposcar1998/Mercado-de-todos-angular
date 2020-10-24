@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { SignupUsers } from "../../../../models/signupUsers"
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-registro',
@@ -9,8 +10,11 @@ import { SignupUsers } from "../../../../models/signupUsers"
 })
 export class RegistroComponent implements OnInit {
 
+  message:string;
+
   //@Input() signupUsers : SignupUsers;
-  constructor() { }
+  constructor(private loginService: LoginService) {
+   }
 
   onSignup() {
     console.log(this.signupForm.value);
@@ -18,6 +22,11 @@ export class RegistroComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.sharedMessage.subscribe(message => this.message = message)
+  }
+
+  newMessage() {
+    this.loginService.nextMessage("Second Message")
   }
 
   signupForm = new FormGroup({

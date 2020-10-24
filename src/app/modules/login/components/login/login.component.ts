@@ -9,14 +9,16 @@ import { LoginService } from '../../services/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  //parametros para la otra clase que muestra los datos
-  @Input() loginUsers : LoginUsers;
+
+  message:string;
 
   constructor(private loginService: LoginService) {
    }
 
   ngOnInit(): void {
     console.log(this.loginService.accesoFacturacion);
+    this.loginService.sharedMessage.subscribe(message => this.message = message)
+    console.log(this.message)
   }
 
   onLogin() {
