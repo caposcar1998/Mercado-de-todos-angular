@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import {RegisterProducts} from "../../../../models/registerProducts";
+import { RegisterProducts } from "../../../../models/registerProducts";
+import { ProductoService } from '../../services/producto.service';
 
 @Component({
   selector: 'app-registrar-producto',
@@ -11,11 +12,16 @@ export class RegistrarProductoComponent implements OnInit {
 
   @Input() registerProducts : RegisterProducts;
 
-  constructor() { }
+  constructor(private productoService: ProductoService) { }
+  message : string;
 
   ngOnInit(): void {
-    
+    this.productoService.sharedMessage.subscribe(message => this.message = message)
   } 
+
+  newMessage() {
+    this.productoService.nextMessage("Segundo mensaje")
+  }
 
   onRegisterProduct() {
     // TODO: Use EventEmitter with form value

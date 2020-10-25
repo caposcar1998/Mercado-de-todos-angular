@@ -2,6 +2,8 @@
     <div class="card mt-3 col-12 col-sm-12 col-md-6 ">
       <img src="../../../../../assets/beans.jpg" class="card-img-top" alt="...">
       <div class="card-body">
+          <p>{{ message }}</p>
+          <button (click)="newMessage()">Cambiar mensaje</button>
           <div class="form-group mt-3">
               <form [formGroup]="RegisterProductForm" (ngSubmit)="onRegisterProduct()">
                 <input type="file" id="newPic" formControlName="productImage" name="newPic" class="form-control mb-4">

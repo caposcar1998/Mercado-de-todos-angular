@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PerfilesService } from '../../services/perfiles.service';
 
 @Component({
   selector: 'app-editar-perfil-comprador',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarPerfilCompradorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private perfilesService: PerfilesService) { }
+  message : string;
 
   ngOnInit(): void {
+    this.perfilesService.sharedMessage.subscribe(message => this.message = message)
+  }
+
+  newMessage() {
+    this.perfilesService.nextMessage("Segundo mensaje")
   }
 
 }
