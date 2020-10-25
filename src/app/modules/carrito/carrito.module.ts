@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CarritoRoutingModule } from './carrito-routing.module';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { CarritoService } from './services/carrito.service';
 
 
 @NgModule({
@@ -10,6 +11,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
   imports: [
     CommonModule,
     CarritoRoutingModule
-  ]
+  ],
+  providers:[CarritoService]
 })
 export class CarritoModule { }
