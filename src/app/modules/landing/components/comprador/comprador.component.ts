@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LandingService } from '../../services/landing.service';
+
 
 @Component({
   selector: 'app-comprador',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompradorComponent implements OnInit {
 
-  constructor() { }
+  message:string;
 
-  ngOnInit(): void {
+  constructor(private landingService: LandingService) { }
+
+
+  ngOnInit(): void{
+    this.landingService.sharedMessage.subscribe(message => this.message = message);
   }
 
+  newMessage(){
+    this.landingService.nextMessage("Second Message");
+  }
 }
