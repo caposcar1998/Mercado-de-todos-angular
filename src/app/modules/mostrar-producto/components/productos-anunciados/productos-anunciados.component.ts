@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MostrarProductoService } from '../../services/mostrar-producto.service';
 @Component({
   selector: 'app-productos-anunciados',
   templateUrl: './productos-anunciados.component.html',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductosAnunciadosComponent implements OnInit {
 
-  constructor() { }
+  message: string;
+
+  constructor(private mostrarProductoService: MostrarProductoService) { }
 
   ngOnInit(): void {
+    this.mostrarProductoService.sharedMessage.subscribe(message => this.message = message);
+  }
+
+  newMessage(){
+    this.mostrarProductoService.nextMessage("Second Message");
   }
 
 }

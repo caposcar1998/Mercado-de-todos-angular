@@ -6,12 +6,14 @@ import { EntregasPendientesComponent } from './components/entregas-pendientes/en
 import { ProductosAnunciadosComponent } from './components/productos-anunciados/productos-anunciados.component';
 import { MostrarProductoComponent } from './components/mostrar-producto/mostrar-producto.component';
 
+import { MostrarProductoService } from './services/mostrar-producto.service';
 
 @NgModule({
   declarations: [EntregasPendientesComponent, ProductosAnunciadosComponent, MostrarProductoComponent],
   imports: [
     CommonModule,
     MostrarProductoRoutingModule
-  ]
+  ],
+  providers: [MostrarProductoService]
 })
 export class MostrarProductoModule { }
