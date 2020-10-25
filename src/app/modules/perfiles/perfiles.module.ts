@@ -8,6 +8,7 @@ import { EditarPerfilCompradorComponent } from './components/editar-perfil-compr
 import { EditarPerfilVendedorComponent } from './components/editar-perfil-vendedor/editar-perfil-vendedor.component';
 import { VerPerfilCompradorComponent } from './components/ver-perfil-comprador/ver-perfil-comprador.component';
 import { VerPerfilVendedorComponent } from './components/ver-perfil-vendedor/ver-perfil-vendedor.component';
+import { PerfilesService } from './services/perfiles.service';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { VerPerfilVendedorComponent } from './components/ver-perfil-vendedor/ver
   imports: [
     CommonModule,
     PerfilesRoutingModule
-  ]
+  ],
+  providers: [PerfilesService]
 })
 export class PerfilesModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoService } from '../../services/producto.service';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleProductoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productoService: ProductoService) { }
+  message : string;
 
   ngOnInit(): void {
+    console.log(this.productoService.accesoFacturacion);
+    this.productoService.sharedMessage.subscribe(message => this.message = message)
+    console.log(this.message)
   }
 
 }
