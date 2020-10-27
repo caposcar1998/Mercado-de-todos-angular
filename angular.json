@@ -36,6 +36,12 @@
             ]
           },
           "configurations": {
+            "es": {
+              "i18nFile": "locale/messages.es.xlf",
+              "i18nLocale": "es",
+              "i18nFormat": "xlf",
+              "aot": true
+              },
             "production": {
               "fileReplacements": [
                 {
@@ -72,6 +78,9 @@
             "browserTarget": "mercado-de-todos-angular:build"
           },
           "configurations": {
+            "es": {
+              "browserTarget": "mercado-de-todos-angular:build:es"
+              },
             "production": {
               "browserTarget": "mercado-de-todos-angular:build:production"
             }
@@ -120,6 +129,9 @@
             "devServerTarget": "mercado-de-todos-angular:serve"
           },
           "configurations": {
+            "es": {
+              "devServerTarget": "mercado-de-todos-angula:serve:es"
+              },
             "production": {
               "devServerTarget": "mercado-de-todos-angular:serve:production"
             }
