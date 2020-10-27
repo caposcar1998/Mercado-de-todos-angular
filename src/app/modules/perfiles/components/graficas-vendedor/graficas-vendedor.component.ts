@@ -19,7 +19,7 @@ export class GraficasVendedorComponent implements OnInit {
         data: {
             labels: ['Frijoles', 'Arroz', 'Jitomates'],
             datasets: [{
-                label: 'Cantidad vendida',
+                label: 'Piezas vendidas',
                 data: [12, 19, 3],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -39,6 +39,27 @@ export class GraficasVendedorComponent implements OnInit {
             }
         }
     });
+
+    var myLineChart = new Chart("historialVentas", {
+      type: 'line',
+      data: {
+        labels: ['Enero', 'Febrero', 'Marzo', "Abril",'Mayo','Junio','Julio',"Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+        datasets: [{
+          label: 'Cantidad vendida $',
+          data: [12, 19, 3,100,2000,3000,4000,8000,9000,1000,1110,12000],
+          borderWidth: 1
+      }]
+      },
+      options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+  });
 
   } 
 
