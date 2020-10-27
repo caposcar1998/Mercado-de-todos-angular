@@ -10,10 +10,11 @@ import { VerPerfilCompradorComponent } from './components/ver-perfil-comprador/v
 import { VerPerfilVendedorComponent } from './components/ver-perfil-vendedor/ver-perfil-vendedor.component';
 import { PerfilesService } from './services/perfiles.service';
 import { GraficasVendedorComponent } from './components/graficas-vendedor/graficas-vendedor.component';
+import { GraficasCompradoresComponent } from './components/graficas-compradores/graficas-compradores.component';
 
 
 @NgModule({
-  declarations: [PerfilCompradorComponent, PerfilVendedorComponent, EditarPerfilCompradorComponent, EditarPerfilVendedorComponent, VerPerfilCompradorComponent, VerPerfilVendedorComponent, GraficasVendedorComponent],
+  declarations: [PerfilCompradorComponent, PerfilVendedorComponent, EditarPerfilCompradorComponent, EditarPerfilVendedorComponent, VerPerfilCompradorComponent, VerPerfilVendedorComponent, GraficasVendedorComponent, GraficasCompradoresComponent],
   imports: [
     CommonModule,
     PerfilesRoutingModule
