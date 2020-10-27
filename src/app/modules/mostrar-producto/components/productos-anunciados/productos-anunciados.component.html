@@ -1,3 +1,96 @@
-<p>productos-anunciados works!</p>
 <p>{{message}}</p>
 <button (click)="newMessage()">Change Message</button>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-7">
+            <h3 class="mt-3">Productos anunciados</h3>
+        </div>
+        <div class="col-sm-3 ">
+            <form action="#">
+                <input type="text" id="Form_Search" value="" placeholder="Busca productos anunciados" role="searchbox"
+                class="InputBox busquedaProducto mt-4">
+            </form>
+        </div>
+        <div class="col-sm-2 mt-3">
+            <form action="#" onclick="alert('Se ha buscado un elemento en tus productos anunciados')">
+                <input type="submit" id="Form_Go" class="btn botonBusqueda  my-2 my-sm-0 " value="Buscar">
+            </form>
+        </div>
+    </div>
+
+    <hr/> <!-- Simple Línea -->
+    
+    
+    <div class="row mt-5 mb-5">
+            <img src="../../assets/beans.jpg" alt="Frijoles" class="col-12 col-sm-12 col-md-4">
+            <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-3 mt-3">
+                <p class="align-self-center text-uppercase"><b>Producto</b></p>
+                <p class="align-self-center">Frijoles</p>
+                <p class="align-self-center text-uppercase"><b>Precio</b></p>
+                <p class="align-self-center">$2,483,241.69 MXN</p>
+                <p class="align-self-center text-uppercase"><b>Unidades disponibles</b> </p>
+                <p class="align-self-center">3 unidades</p>
+            </div>
+            <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-5 mt-3">
+                <p class="align-self-center text-uppercase"><b>Fecha estimada de expiración</b></p>
+                <p class="align-self-center">27 Septiembre 2020</p>
+                <p class="align-self-center text-uppercase"><b>Tiempo estimado de envío</b></p>
+                <p class="align-self-center">5 días</p>
+                <p class="align-self-center text-uppercase"><b>Unidades vendidas</b></p>
+                <p class="align-self-center">29 unidades</p>
+            </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-sm-12 col-md-4 mx-auto">
+            <form action="#" onclick="alert('Se desea editar el producto anunciado')">
+                <input type="submit" id="Button-edit-1" class="btn botonEditar col-md-9 my-2 my-sm-0 " value="Editar">
+            </form>
+        </div>
+    </div>
+
+    <hr/> <!-- Simple Línea  -->
+    <div class="row mt-5 mb-5">
+        <img src="../../assets/avocado-prueba.jpg" alt="Frijoles" class="col-12 col-sm-12 col-md-4">
+        <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-3 mt-3">
+            <p class="align-self-center text-uppercase"><b>Producto</b></p>
+            <p class="align-self-center">Aguacates</p>
+            <p class="align-self-center text-uppercase"><b>Precio</b></p>
+            <p class="align-self-center">$2,483,241.69 MXN</p>
+            <p class="align-self-center text-uppercase"><b>Unidades disponibles</b> </p>
+            <p class="align-self-center">2 kg</p>
+
+        </div>
+        <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-5 mt-3">
+            <p class="align-self-center text-uppercase"><b>Fecha estimada de expiración</b></p>
+            <p class="align-self-center">07 Septiembre 2020</p>
+            <p class="align-self-center text-uppercase"><b>Tiempo estimado de envío</b></p>
+            <p class="align-self-center">3 días</p>
+            <p class="align-self-center text-uppercase"><b>Unidades vendidas</b></p>
+            <p class="align-self-center">29 unidades</p>
+        </div>
+
+        
+    </div>
+    <div class="row mb-4">
+        <div class="col-sm-12 col-md-4 mx-auto">
+            <form action="#" onclick="alert('Se desea editar el producto anunciado')">
+                <input type="submit" id="Button_edit-2" class="btn botonEditar col-md-9 my-2 my-sm-0 " value="Editar">
+            </form>
+        </div>
+    </div>
+    <hr/> <!-- Simple Línea -->
+    <div class="row mb-4">
+        <div class="col-sm-12 col-md-3 mx-auto">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>     
+        </div> 
+    </div>
+               
+</div>

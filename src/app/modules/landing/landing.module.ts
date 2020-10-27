@@ -8,6 +8,10 @@ import { VendedorComponent } from './components/vendedor/vendedor.component';
 import { VendedorNuevoComponent } from './components/vendedor-nuevo/vendedor-nuevo.component';
 import { LandingComponent } from './components/landing/landing.component';
 
+
+
+
+
 import { LandingService } from './services/landing.service';
 
 
@@ -16,7 +20,8 @@ import { LandingService } from './services/landing.service';
   declarations: [CompradorComponent, CompradorNuevoComponent, VendedorComponent, VendedorNuevoComponent, LandingComponent],
   imports: [
     CommonModule,
-    LandingRoutingModule
+    LandingRoutingModule,
+
   ],
   providers: [LandingService]
 })
