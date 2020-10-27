@@ -1,1 +1,61 @@
-<p>perfil-vendedor works!</p>
+
+<div class="container">
+    <h1 class="d-inline-block mt-3">Mi cuenta</h1>
+    <a href="editarperfilvendedor.html" class="btn botonEditar mt-3 float-right">Editar</a>
+    <div class="row">
+        <img src="../../assets/LA-JEFA-Prueba.jpg" alt="Foto de perfil"
+            class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <div class="d-inline-block col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+            <p>La JEFA</p>
+            <P>Ciudad de México</P>
+            <p>040 55 23 89 23 61</p>
+            <p>Kansas #18, Nápoles, C.P. 02364</p>
+        </div>
+    </div>
+
+    <h1>Productos en venta</h1>
+    <div class="row mb-3">
+        <img src="../../assets/beans.jpg" alt="Frijoles" class="col-12 col-sm-12 col-md-2">
+        <div class="d-inline-flex col-8 col-sm-9 col-md-8">
+            <p class="align-self-center">Frijoles</p>
+        </div>
+        <div class="d-inline-flex justify-content-center col-4 col-sm-1 col-md-2">
+            <button onclick="alert('Producto eliminado.');"
+                class="btn botonCancelar align-self-center">Eliminar</button>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <img src="../../assets/avocado-prueba.jpg" alt="Aguacates" class="col-12 col-sm-12 col-md-2">
+        <div class="d-inline-flex col-8 col-sm-9 col-md-8">
+            <p class="align-self-center">Aguacate</p>
+        </div>
+        <div class="d-inline-flex justify-content-center col-4 col-sm-1 col-md-2">
+            <button onclick="alert('Producto eliminado.');"
+                class="btn botonCancelar align-self-center">Eliminar</button>
+        </div>
+    </div>
+    <a href="registerProduct.html" class="btn btn-signin d-block">Agregar producto</a>
+
+    <h1>Preferencias de comunicación</h1>
+    <form action="#">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <input type="checkbox" id="notificarCorreo" name="notificarCorreo" value="notificarcorreo">
+                <label for="notificarCorreo">Notificar por correo electronico</label>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <input type="checkbox" id="notificarSMS" name="notificarSMS" value="notificarsms">
+                <label for="notificarSMS">Notificar por mensaje de texto</label>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <input type="checkbox" id="notificarOfertas" name="notificarOfertas" value="notificarofertas">
+                <label for="notificarOfertas">Recibir ofertas</label>
+            </div>
+            <div class="col-12 col-sm-12 d-flex justify-content-center">
+                <input onclick="alert('Cambios guardados.');" type="submit" class="btn btn-signin"
+                    value="Guardar preferencias">
+            </div>
+        </div>
+    </form>
+</div>
+

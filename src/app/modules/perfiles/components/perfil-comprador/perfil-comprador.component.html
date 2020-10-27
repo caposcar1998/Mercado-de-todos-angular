@@ -1,2 +1,37 @@
-<p>perfil-comprador works!</p>
 <p>{{ message }}</p>
+<div class="container">
+    <h1 class="d-inline-block mt-3">Mi cuenta</h1>
+    <a href="./editarperfilcomprador.html" class="btn botonEditar mt-3 float-right">Editar</a>
+    <div class="row">
+        <img src="../../assets/user.jpg" alt="Foto de perfil"
+            class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <div class="d-inline-block col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+            <p>Karen Ramírez</p>
+            <P>Monterrey</P>
+            <p>040 55 23 89 23 61</p>
+            <p>Avenidad de la playa #222, San Juan de la Playa, C.P. 02364</p>
+        </div>
+    </div>
+
+    <h1>Preferencias de comunicación</h1>
+    <form action="#">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <input type="checkbox" id="notificarCorreo" name="notificarCorreo" value="notificarcorreo">
+                <label for="notificarCorreo">Notificar por correo electronico</label>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <input type="checkbox" id="notificarSMS" name="notificarSMS" value="notificarsms">
+                <label for="notificarSMS">Notificar por mensaje de texto</label>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <input type="checkbox" id="notificarOfertas" name="notificarOfertas" value="notificarofertas">
+                <label for="notificarOfertas">Recibir ofertas</label>
+            </div>
+            <div class="col-12 col-sm-12 d-flex justify-content-center">
+                <input onclick="alert('Preferencias guardadas');" type="submit" class="btn btn-signin"
+                    value="Guardar preferencias">
+            </div>
+        </div>
+    </form>
+</div>
