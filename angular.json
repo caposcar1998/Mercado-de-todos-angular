@@ -36,8 +36,8 @@
             ]
           },
           "configurations": {
-            "es": {
-              "i18nFile": "locale/messages.es.xlf",
+            "us": {
+              "i18nFile": "locale/messages.us.xlf",
               "i18nLocale": "es",
               "i18nFormat": "xlf",
               "aot": true
@@ -78,8 +78,8 @@
             "browserTarget": "mercado-de-todos-angular:build"
           },
           "configurations": {
-            "es": {
-              "browserTarget": "mercado-de-todos-angular:build:es"
+            "us": {
+              "browserTarget": "mercado-de-todos-angular:build:us"
               },
             "production": {
               "browserTarget": "mercado-de-todos-angular:build:production"
@@ -129,8 +129,8 @@
             "devServerTarget": "mercado-de-todos-angular:serve"
           },
           "configurations": {
-            "es": {
-              "devServerTarget": "mercado-de-todos-angula:serve:es"
+            "us": {
+              "devServerTarget": "mercado-de-todos-angula:serve:us"
               },
             "production": {
               "devServerTarget": "mercado-de-todos-angular:serve:production"
