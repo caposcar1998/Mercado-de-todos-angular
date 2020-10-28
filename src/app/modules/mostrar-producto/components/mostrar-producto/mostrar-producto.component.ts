@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MostrarProductoService } from '../../services/mostrar-producto.service';
-
+import { MostrarProductoModel, MOSTRARPRODUCTO2 } from 'src/app/models/mostrarProducto.model'
 
 @Component({
   selector: 'app-mostrar-producto',
@@ -9,14 +9,16 @@ import { MostrarProductoService } from '../../services/mostrar-producto.service'
 })
 export class MostrarProductoComponent implements OnInit {
 
-  message: string;
+  showProducts: MostrarProductoModel[];
 
   constructor(private mostrarProductoService: MostrarProductoService) { }
 
   ngOnInit(): void {
-    console.log(this.mostrarProductoService.accesoFacturacion);
-    this.mostrarProductoService.sharedMessage.subscribe(message => this.message = message);
-    console.log(this.message);
+    this.mostrarProductoService.sharedMessageShowProducts.subscribe(newProducts => this.showProducts = newProducts);
+  }
+
+  updateShowProducts(){
+    this.mostrarProductoService.newShowProducts(MOSTRARPRODUCTO2);
   }
 
 }

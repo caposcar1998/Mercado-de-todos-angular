@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MostrarProductoService } from '../../services/mostrar-producto.service';
+import { ProductosAnunciadosModel, PRODUCTOSANUNCIADOS2 } from 'src/app/models/productosAnunciados.model'
+
 @Component({
   selector: 'app-productos-anunciados',
   templateUrl: './productos-anunciados.component.html',
@@ -7,16 +9,16 @@ import { MostrarProductoService } from '../../services/mostrar-producto.service'
 })
 export class ProductosAnunciadosComponent implements OnInit {
 
-  message: string;
+  announceProducts: ProductosAnunciadosModel[];
 
   constructor(private mostrarProductoService: MostrarProductoService) { }
 
   ngOnInit(): void {
-    this.mostrarProductoService.sharedMessage.subscribe(message => this.message = message);
+    this.mostrarProductoService.sharedMessageAnnounceProducts.subscribe(newProducts => this.announceProducts = newProducts);
   }
 
-  newMessage(){
-    this.mostrarProductoService.nextMessage("Second Message");
+  updateAnnounceProducts(){
+    this.mostrarProductoService.newAnnounceProducts(PRODUCTOSANUNCIADOS2);
   }
 
 }
