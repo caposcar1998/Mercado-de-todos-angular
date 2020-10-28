@@ -1,55 +1,55 @@
 
 <div class="container">
-    <h1 class="d-inline-block mt-3">Mi cuenta</h1>
-    <a href="./perfiles/editar-perfil-vendedor" class="btn botonEditar mt-3 float-right">Editar</a>
+    <h1 class="d-inline-block mt-3" i18n>Mi cuenta</h1>
+    <a href="./perfiles/editar-perfil-vendedor" class="btn botonEditar mt-3 float-right" i18n>Editar</a>
     <div class="row">
         <img src="../../assets/LA-JEFA-Prueba.jpg" alt="Foto de perfil"
             class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
         <div class="d-inline-block col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-            <p>La JEFA</p>
-            <P>Ciudad de México</P>
-            <p>040 55 23 89 23 61</p>
-            <p>Kansas #18, Nápoles, C.P. 02364</p>
+            <p i18n>La JEFA</p>
+            <P i18n>Ciudad de México</P>
+            <p i18n>040 55 23 89 23 61</p>
+            <p i18n>Kansas #18, Nápoles, C.P. 02364</p>
         </div>
     </div>
 
-    <h1>Productos en venta</h1>
+    <h1 i18n>Productos en venta</h1>
     <div class="row mb-3">
         <img src="../../assets/beans.jpg" alt="Frijoles" class="col-12 col-sm-12 col-md-2">
         <div class="d-inline-flex col-8 col-sm-9 col-md-8">
-            <p class="align-self-center">Frijoles</p>
+            <p class="align-self-center" i18n>Frijoles</p>
         </div>
         <div class="d-inline-flex justify-content-center col-4 col-sm-1 col-md-2">
             <button onclick="alert('Producto eliminado.');"
-                class="btn botonCancelar align-self-center">Eliminar</button>
+                class="btn botonCancelar align-self-center" i18n>Eliminar</button>
         </div>
     </div>
     <div class="row mb-3">
         <img src="../../assets/avocado-prueba.jpg" alt="Aguacates" class="col-12 col-sm-12 col-md-2">
         <div class="d-inline-flex col-8 col-sm-9 col-md-8">
-            <p class="align-self-center">Aguacate</p>
+            <p class="align-self-center" i18n>Aguacate</p>
         </div>
         <div class="d-inline-flex justify-content-center col-4 col-sm-1 col-md-2">
             <button onclick="alert('Producto eliminado.');" 
-                class="btn botonCancelar align-self-center">Eliminar</button>
+                class="btn botonCancelar align-self-center" i18n>Eliminar</button>
         </div>
     </div>
-    <a href="./producto/registrarProducto" class="btn btn-signin d-block">Agregar producto</a>
+    <a href="./producto/registrarProducto" class="btn btn-signin d-block" i18n>Agregar producto</a>
     <app-graficas-vendedor></app-graficas-vendedor>
-    <h1>Preferencias de comunicación</h1>
+    <h1 i18n>Preferencias de comunicación</h1>
     <form action="#">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
                 <input type="checkbox" id="notificarCorreo" name="notificarCorreo" value="notificarcorreo">
-                <label for="notificarCorreo">Notificar por correo electronico</label>
+                <label for="notificarCorreo" i18n>Notificar por correo electronico</label>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <input type="checkbox" id="notificarSMS" name="notificarSMS" value="notificarsms">
-                <label for="notificarSMS">Notificar por mensaje de texto</label>
+                <label for="notificarSMS" i18n>Notificar por mensaje de texto</label>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <input type="checkbox" id="notificarOfertas" name="notificarOfertas" value="notificarofertas">
-                <label for="notificarOfertas">Recibir ofertas</label>
+                <label for="notificarOfertas" i18n>Recibir ofertas</label>
             </div>
             <div class="col-12 col-sm-12 d-flex justify-content-center">
                 <input onclick="alert('Cambios guardados.');" type="submit" class="btn btn-signin"

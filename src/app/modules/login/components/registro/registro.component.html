@@ -1,12 +1,12 @@
 <div class="container-login col-sm-9 col-md-7 col-lg-5">
     <div class="card bg-light my-5">
         <div class="card-header navbar-expand-lg navbar-light bg-light" id="header">
-            <a class="navbar-brand text-center" href="#"><b>M</b>ercado <b>P</b>ara <b>T</b>odos</a>   
+            <a class="navbar-brand text-center" href="#" i18n><b>M</b>ercado <b>P</b>ara <b>T</b>odos</a>   
         </div>
         <div class="card-body">
-            <p class="card-paragraph text-center mb-2">Registro Nuevo Vendedor</p>
-            <p>{{message}}</p>
-            <button (click)="newMessage()">Change Message</button>
+            <p class="card-paragraph text-center mb-2" i18n>Registro Nuevo Vendedor</p>
+            <p i18n>{{message}}</p>
+            <button (click)="newMessage()" i18n>Change Message</button>
             <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
                 <div class="form-group mt-3">
                     <input type="text" formControlName="name" id="inputNameVend" class="form-control mb-4" placeholder="Nombre"> 
@@ -29,12 +29,12 @@
                 <div class="form-group mt-3">
                     <input type="text" formControlName="address" id="inputAdress" class="form-control mb-4" placeholder="Dirección">
                 </div>
-                <button class="btn btn-signin btn-sm inicar-sesion btn-block mb-3" type="submit">Registrar cuenta</button>
+                <button class="btn btn-signin btn-sm inicar-sesion btn-block mb-3" type="submit" i18n>Registrar cuenta</button>
             </form> 
         </div>
         <div class="card-footer">
-            <p class="card-paragraph text-center mb-2">¿Ya tienes cuenta?</p>
-            <a class="btn btn-register btn-sm  btn-block mt-4 mb-3" type="submit" href="./landing/vendedor"> Inicia Sesión </a>
+            <p class="card-paragraph text-center mb-2" i18n>¿Ya tienes cuenta?</p>
+            <a class="btn btn-register btn-sm  btn-block mt-4 mb-3" type="submit" href="./landing/vendedor" i18n> Inicia Sesión </a>
         </div>
     </div>         
 </div>

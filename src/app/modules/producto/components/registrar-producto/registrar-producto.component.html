@@ -3,8 +3,8 @@
     <div class="card mt-3 col-12 col-sm-12 col-md-6 ">
       <img src="../../../../../assets/beans.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-          <p>{{ message }}</p>
-          <button (click)="newMessage()">Cambiar mensaje</button>
+          <p i18n>{{ message }}</p>
+          <button (click)="newMessage()" i18n>Cambiar mensaje</button>
           <div class="form-group mt-3">
               <form [formGroup]="RegisterProductForm" (ngSubmit)="onRegisterProduct()">
                 <input type="file" id="newPic" formControlName="productImage" name="newPic" class="form-control mb-4">
@@ -15,7 +15,7 @@
     </div>
     <div class="card mt-3 col-12 col-sm-12 col-md-6 ">
       <div class="card-body"> 
-        <h5 class="card-title">Registro de nuevo producto</h5>
+        <h5 class="card-title" i18n>Registro de nuevo producto</h5>
           <form  [formGroup]="RegisterProductForm" (ngSubmit)="onRegisterProduct()">
               <div class="form-group mt-3">
                   <input type="text" id="inputNameProd" formControlName="name" class="form-control mb-4" placeholder="Nombre del Producto"> 
@@ -39,25 +39,25 @@
               </div>
               <div class="form-row">
                   <div class="form-group col-md-6">
-                      <label for="inputExpireDate">Fecha estimada de expiración:
+                      <label for="inputExpireDate" i18n>Fecha estimada de expiración:
                       </label>
                       <input type="date" id="inputExpireDate" formControlName="expireDate" class="form-control mb-4"> 
                   </div>
                   <div class="form-group col-md-6">
-                      <label for="inputDeliveryDays">Días estimados para envio:</label>
+                      <label for="inputDeliveryDays" i18n>Días estimados para envio:</label>
                       <input type="number" id="inputDeliveryDays" formControlName="shippingDays" name="deliveryDays" class="form-control mb-4" min="1" max="7" step="1" value="1"> 
                   </div>
               </div>
               <div class="form-group mt-3 text-center">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="userAgreement">
-                    <label class="form-check-label" for="userAgreement">
+                    <label class="form-check-label" for="userAgreement" i18n>
                       Acepto los términos y condiciones
                     </label>
                   </div>
               </div>
           </form>
-        <a href="./mostrar-producto/productos-anunciados" class="btn btn-signin d-block" onclick="alert('Se ha registrado el producto exitosamente')">Registrar Producto</a>
+        <a href="./mostrar-producto/productos-anunciados" class="btn btn-signin d-block" onclick="alert('Se ha registrado el producto exitosamente')" i18n>Registrar Producto</a>
       </div>
     </div>
   </div>
