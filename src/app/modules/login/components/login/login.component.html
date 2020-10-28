@@ -1,10 +1,10 @@
 <div class="container-login col-sm-9 col-md-7 col-lg-5">
         <div class="card bg-light my-5">
             <div class="card-header navbar-expand-lg navbar-light bg-light" id="header">
-                <a class="navbar-brand text-center" href="#"><b>M</b>ercado <b>P</b>ara <b>T</b>odos</a>   
+                <a class="navbar-brand text-center" href="#" i18n><b>M</b>ercado <b>P</b>ara <b>T</b>odos</a>   
             </div>
             <div class="card-body">
-                <p class="card-paragraph text-center mb-2">Inicia sesión</p>
+                <p class="card-paragraph text-center mb-2" i18n>Inicia sesión</p>
                 <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
                     <div class="form-group mt-3">
                         <input type="email"  formControlName="mail" id="inputEmail" class="form-control mb-4" placeholder="Correo electrónico"> 
@@ -12,14 +12,14 @@
                     <div class="form-group mt-3">
                         <input type="password" formControlName="password" id="inputPassword" class="form-control mb-4" placeholder="Contraseña">
                     </div>
-                    <p>{{message}}</p>
-                    <a class="btn btn-signin btn-sm inicar-sesion btn-block mb-3" href="./landing/comprador"  type="submit">Iniciar sesión</a>
+                    <p i18n>{{message}}</p>
+                    <a class="btn btn-signin btn-sm inicar-sesion btn-block mb-3" href="./landing/comprador"  type="submit" i18n>Iniciar sesión</a>
 
                 </form> 
             </div>
             <div class="card-footer">
-                <p class="card-paragraph text-center mb-2">¿No tienes cuenta?</p>
-                <a class="btn btn-register btn-sm  btn-block mt-4 mb-3" type="submit" href="./login/registro"> Regístrate </a>
+                <p class="card-paragraph text-center mb-2" i18n>¿No tienes cuenta?</p>
+                <a class="btn btn-register btn-sm  btn-block mt-4 mb-3" type="submit" href="./login/registro" i18n> Regístrate </a>
             </div>
         </div>  
 </div>   
