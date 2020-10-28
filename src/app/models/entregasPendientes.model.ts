@@ -1,5 +1,6 @@
-export interface ProductosAnunciadosInterface {
+export interface EntregasPendientesInterface {
     productImage: File,
+    buyerName: string,
     name: string,
     price: number,
     availableUnits: number,
@@ -9,9 +10,10 @@ export interface ProductosAnunciadosInterface {
     unitsSold: number
 }
 
-export class ProductosAnunciadosModel implements ProductosAnunciadosInterface {
+export class EntregasPendientesModel implements EntregasPendientesInterface {
     constructor(
         public productImage: File,
+        public buyerName: string,
         public name: string,
         public price: number,
         public availableUnits: number,
@@ -22,9 +24,10 @@ export class ProductosAnunciadosModel implements ProductosAnunciadosInterface {
     ) { }
 }
 
-export const PRODUCTOSANUNCIADOS: ProductosAnunciadosModel[] = [
+export const ENTREGASPENDIENTES: EntregasPendientesModel[] = [
     {
         productImage: null,
+        buyerName: "Karen",
         name: "Frijoles bayos",
         price: 243.50,
         availableUnits: 3,
@@ -35,6 +38,7 @@ export const PRODUCTOSANUNCIADOS: ProductosAnunciadosModel[] = [
     },
     {
         productImage: null,
+        buyerName: "Juan",
         name: "Aguacates",
         price: 20500,
         availableUnits: 300,
@@ -45,9 +49,10 @@ export const PRODUCTOSANUNCIADOS: ProductosAnunciadosModel[] = [
     }
 ]
 
-export const PRODUCTOSANUNCIADOS2: ProductosAnunciadosModel[] = [
+export const ENTREGASPENDIENTES2: EntregasPendientesModel[] = [
     {
         productImage: null,
+        buyerName: "Karen II",
         name: "Frijoles bayos II",
         price: 243.50,
         availableUnits: 3,
@@ -58,6 +63,7 @@ export const PRODUCTOSANUNCIADOS2: ProductosAnunciadosModel[] = [
     },
     {
         productImage: null,
+        buyerName: "Juan II",
         name: "Aguacates II",
         price: 20500,
         availableUnits: 300,

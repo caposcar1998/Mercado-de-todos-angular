@@ -4,8 +4,9 @@
             <h3 class="mt-3" i18n>Entregas pendientes</h3>
         </div>
         <div class="col-sm-3 ">
-            <form action="#" >
-                <input type="text" id="Form_Search" value="" placeholder="Busca entregas" role="searchbox" class="InputBox busquedaProducto mt-4">
+            <form action="#">
+                <input type="text" id="Form_Search" value="" placeholder="Busca entregas" role="searchbox"
+                    class="InputBox busquedaProducto mt-4">
             </form>
         </div>
         <div class="col-sm-2 mt-3">
@@ -15,69 +16,41 @@
         </div>
     </div>
 
-    <hr/> <!-- Simple Línea -->
-    
-    
-    <div class="row mt-5 mb-5">
+    <hr /> <!-- Simple Línea -->
+
+    <div *ngFor="let delivery of pendingDeliveries; let i = index">
+        <div class="row mt-5 mb-5">
             <img src="../../assets/beans.jpg" alt="Frijoles" class="col-12 col-sm-12 col-md-4">
             <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-3 mt-3">
-                <p class="align-self-center " i18n><b>Comprador: <a href="verperfilcomprador.html">Karen</a></b></p>
+                <p class="align-self-center " i18n><b>Comprador: <a href="verperfilcomprador.html">{{ delivery.buyerName }}</a></b></p>
                 <p class="align-self-center text-uppercase" i18n><b>Producto</b></p>
-                <p class="align-self-center" i18n>Frijoles</p>
+                <p class="align-self-center" i18n>{{ delivery.name }}</p>
                 <p class="align-self-center text-uppercase" i18n><b>Precio</b></p>
-                <p class="align-self-center" i18n>$2,483,241.69 MXN</p>
+                <p class="align-self-center" i18n>{{ delivery.price }}</p>
                 <p class="align-self-center text-uppercase" i18n><b>Unidades disponibles</b> </p>
-                <p class="align-self-center" i18n>3 unidades</p>
+                <p class="align-self-center" i18n>3 {{ delivery.availableUnits }} {{ delivery.presentation }}</p>
             </div>
             <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-5 mt-3">
                 <p class="align-self-center text-uppercase" i18n><b>Fecha estimada de expiración</b></p>
-                <p class="align-self-center" i18n>27 Septiembre 2020</p>
+                <p class="align-self-center" i18n>{{ delivery.expireDate }}</p>
                 <p class="align-self-center text-uppercase" i18n><b>Tiempo estimado de envío</b></p>
-                <p class="align-self-center" i18n>5 días</p>
+                <p class="align-self-center" i18n>{{ delivery.deliveryTime }}</p>
                 <p class="align-self-center text-uppercase" i18n><b>Unidades vendidas</b></p>
-                <p class="align-self-center" i18n>29 unidades</p>
+                <p class="align-self-center" i18n>{{ delivery.unitsSold }}</p>
             </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col-sm-12 col-md-4 mx-auto">
-            <form action="#" onclick="alert('Se quiere contactar al comprador')">
-                <input type="submit" id="Contact_button-1" class="btn botonEditar my-2 my-sm-0 " value="Contactar comprador">
-            </form>
         </div>
-    </div>
-
-    <hr/> <!-- Simple Línea  -->
-    <div class="row mt-5 mb-5">
-        <img src="../../assets/avocado-prueba.jpg" alt="Frijoles" class="col-12 col-sm-12 col-md-4">
-        <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-3 mt-3">
-            <p class="align-self-center " i18n><b>Comprador: <a href="verperfilcomprador.html">Karen</a></b></p>
-            <p class="align-self-center text-uppercase" i18n><b>Producto</b></p>
-            <p class="align-self-center" i18n>Aguacates</p>
-            <p class="align-self-center text-uppercase" i18n><b>Precio</b></p>
-            <p class="align-self-center" i18n>$2,483,241.69 MXN</p>
-            <p class="align-self-center text-uppercase" i18n><b>Unidades disponibles</b> </p>
-            <p class="align-self-center" i18n>2 kg</p>
-
-        </div>
-        <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-5 mt-3">
-            <p class="align-self-center text-uppercase" i18n><b>Fecha estimada de expiración</b></p>
-            <p class="align-self-center" i18n>07 Septiembre 2020</p>
-            <p class="align-self-center text-uppercase" i18n><b>Tiempo estimado de envío</b></p>
-            <p class="align-self-center" i18n>3 días</p>
-            <p class="align-self-center text-uppercase" i18n><b>Unidades vendidas</b></p>
-            <p class="align-self-center" i18n>29 unidades</p>
+        <div class="row mb-4">
+            <div class="col-sm-12 col-md-4 mx-auto">
+                <form action="#" onclick="alert('Se quiere contactar al comprador')">
+                    <input type="submit" id="Contact_button-1" class="btn botonEditar my-2 my-sm-0 "
+                        value="Contactar comprador">
+                </form>
+            </div>
         </div>
 
-        
+        <hr /> <!-- Simple Línea  -->
     </div>
-    <div class="row mb-4">
-        <div class="col-sm-12 col-md-4 mx-auto">
-            <form action="#">
-                <input type="submit" id="Contact_button-2" class="btn botonEditar my-2 my-sm-0 " value="Contactar comprador">
-            </form>
-        </div>
-    </div>
-    <hr/> <!-- Simple Línea -->
+    
     <div class="row mb-4">
         <div class="col-sm-12 col-md-3 mx-auto">
             <nav aria-label="Page navigation example">
@@ -88,7 +61,7 @@
                     <li class="page-item"><a class="page-link" href="#" i18n>3</a></li>
                     <li class="page-item"><a class="page-link" href="#" i18n>Next</a></li>
                 </ul>
-            </nav>     
-        </div> 
+            </nav>
+        </div>
     </div>
 </div>
