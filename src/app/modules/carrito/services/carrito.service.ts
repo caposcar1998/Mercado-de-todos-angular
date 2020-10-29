@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { CarritoModel, CARRITO } from 'src/app/models/carrito.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
 
-  accesoFacturacion = 'https://login.example.com';
+  private cart = new BehaviorSubject(CARRITO);
+  sharedMessageCart = this.cart.asObservable();
 
-  private message = new BehaviorSubject('First Message in carrito');
-  sharedMessage = this.message.asObservable();
-
-  nextMessage(message: string) {
-    this.message.next(message)
+  newCart(newCart: CarritoModel[]) {
+    this.cart.next(newCart);
   }
 
   constructor() { }
