@@ -1,6 +1,10 @@
 
 <app-header></app-header>
 <app-search-bar></app-search-bar>
-<router-outlet></router-outlet>
+<div [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+    
+  </div>
+
 <app-footer></app-footer>
 
