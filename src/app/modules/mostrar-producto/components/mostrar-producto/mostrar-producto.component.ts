@@ -17,7 +17,7 @@ export class MostrarProductoComponent implements OnInit {
     this.mostrarProductoService.sharedMessageShowProducts.subscribe(newProducts => this.showProducts = newProducts);
   }
 
-  updateShowProducts(){
+  updateShowProducts() {
     this.mostrarProductoService.newShowProducts(MOSTRARPRODUCTO2);
   }
 

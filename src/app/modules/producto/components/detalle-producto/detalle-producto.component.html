@@ -1,61 +1,53 @@
-<p i18n>{{ message }}</p>
 <div class="container">
     <div class="row mb-5">
         <div class="card mt-3 col-12 col-sm-12 col-md-6 ">
         <img src="../../assets/beans.jpg" class="card-img-top" alt="...">
         <div class="card-body text-center">
-            <p i18n>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at eleifend velit. Vestibulum ante ipsum primis in faucibus orci luctus et 
-                ultrices posuere cubilia curae; In ac bibendum dui, ut placerat nunc. Etiam luctus dui eu ex finibus dictum. Vivamus lobortis, mi a 
-                tempus vulputate, neque felis malesuada metus, nec tincidunt urna lectus sit amet erat. Praesent id elit tortor. Maecenas at tellus ornare, 
-                commodo metus sit amet, rutrum metus. </p>
+            <p i18n>{{ productDetail.description }} </p>
         </div> 
         </div>
         <div class="card mt-3 col-12 col-sm-12 col-md-6 ">
         <div class="card-body">
-            <h4 class="card-title" i18n>Producto 001</h4>
+            <h4 class="card-title" i18n>{{ productDetail.name }}</h4>
                 <div class="row col-md-12">
                     <div class="col-md-6">
                         <h5 i18n><span>Precio Unitario: </span></h5>
-                        <p i18n>1000 pesos</p>
+                        <p i18n>{{ productDetail.unitPrice }}</p>
                     </div>
                     <div class="col-md-6">
                         <h5 i18n><span>Costo de envio: </span></h5>
-                        <p i18n>114 pesos</p>
+                        <p i18n>{{ productDetail.shippingPrice }}</p>
                     </div>
                 </div>
                 <div class="row col-md-12">
                     <div class="col-md-6">
                         <h5 i18n><span>Presentación: </span></h5>
-                        <p i18n>En latas</p>
+                        <p i18n>{{ productDetail.presentation }}</p>
                     </div>
                     <div class="col-md-6">
                         <h5 i18n><span>Unidades Disponibles: </span></h5>
-                        <p i18n>30</p>
+                        <p i18n>{{ productDetail.availableUnits }}</p>
                     </div>
                 </div>
                 <div class="row col-md-12">
                     <div class="col-md-6">
                         <h5 i18n><span>Estado donde puede realizar envios: </span></h5>
-                        <p i18n>Chihuahua</p>
+                        <p i18n>{{ productDetail.state }}</p>
                     </div>
                     <div class="col-md-6">
                         <h5 i18n><span>Fecha estimada de expiración: </span></h5>
-                        <p i18n>24/09/2020</p>
+                        <p i18n>{{ productDetail.expireDate }}</p>
                     </div>
                 </div>
                 <div class="row col-md-12">
                     <div class="col-md-6">
-                        <h5 i18n><span>Fecha estimada de expiración: </span></h5>
-                        <p i18n>24/09/2020</p>
-                    </div>
-                    <div class="col-md-6">
                         <h5 i18n><label for="quantity">Unidades a comprar:</label></h5>
                         <input type="number" id="quantity" name="quantity" class="form-control mb-4" min="1" max="50" step="1" value="1">
                     </div>
-                </div>
-                <div class="col-md-12 text-center">
-                    <h5 i18n>Total a pagar: </h5>
-                    <p i18n>1000 pesos</p>
+                    <div class="col-md-6 text-center">
+                        <h5 i18n>Total a pagar</h5>
+                        <p i18n>1000 pesos</p>
+                    </div>
                 </div>
             <a href="./producto/confirmarCompra" class="btn btn-signin d-block" i18n>Comprar</a>
         </div>

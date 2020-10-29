@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ConfirmarCompra } from "../../../../models/confirmarCompra";
+import { ProductoService } from '../../services/producto.service';
+import { ConfirmarCompra } from 'src/app/models/confirmarCompra';
+import { ConfirmarCompraModel, CONFIRMARCOMPRA, CONFIRMARCOMPRA2 } from 'src/app/models/confirmarCompra.model';
 
 @Component({
   selector: 'app-confirmar-compra',
@@ -9,9 +11,16 @@ import { ConfirmarCompra } from "../../../../models/confirmarCompra";
 })
 export class ConfirmarCompraComponent implements OnInit {
   @Input() confirmarCompraCard: ConfirmarCompra;
-  constructor() { }
+  constructor(private productoService: ProductoService) { }
+
+  purchaseConfirmation: ConfirmarCompraModel;
 
   ngOnInit(): void {
+    this.productoService.sharedMessagePurchaseConfirmation.subscribe(newPurchase => this.purchaseConfirmation = newPurchase);
+  }
+
+  updatePurchaseConfirmation() {
+    this.productoService.newPurchaseConfirmation(CONFIRMARCOMPRA2);
   }
 
   onConfirmarCompra(){
