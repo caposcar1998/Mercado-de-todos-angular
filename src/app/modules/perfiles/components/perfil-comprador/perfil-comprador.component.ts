@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PerfilesService } from '../../services/perfiles.service';
+import { ProfileModel, PROFILE3 } from 'src/app/models/profile.model';
 
 @Component({
   selector: 'app-perfil-comprador',
@@ -8,13 +9,16 @@ import { PerfilesService } from '../../services/perfiles.service';
 })
 export class PerfilCompradorComponent implements OnInit {
 
-  constructor(private perfilesService: PerfilesService) { }
-  message : string;
+  customerProfile: ProfileModel;
 
+  constructor(private perfilesService: PerfilesService) { }
+  
   ngOnInit(): void {
-    console.log(this.perfilesService.accesoFacturacion);
-    this.perfilesService.sharedMessage.subscribe(message => this.message = message)
-    console.log(this.message)
+    this.perfilesService.sharedMessageCustomerProfile.subscribe(newProfile => this.customerProfile = newProfile);
+  }
+
+  updateCustomerProfile() {
+    this.perfilesService.newCustomerProfile(PROFILE3);
   }
 
 }

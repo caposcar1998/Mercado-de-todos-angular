@@ -1,19 +1,57 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { ProfileModel, PROFILE, PROFILE2 } from 'src/app/models/profile.model';
+import { VerVendedorProductoModel, VERVENDEDORPRODUCTO } from 'src/app/models/verVendedorProducto.model';
+import { VerCompradorProductoModel, VERCOMPRADORPRODUCTO } from 'src/app/models/verCompradorProducto.model';
+// PROFILE1 es de comprador
+// PROFILE2 es de vendedor
 
 @Injectable({
   providedIn: 'root'
 })
 export class PerfilesService {
 
-  accesoFacturacion = 'https://perfiles.example.com';
+  private vendorProfile = new BehaviorSubject(PROFILE2);
+  sharedMessageVendorProfile = this.vendorProfile.asObservable();
 
-  private message = new BehaviorSubject('Primer mensaje');
-  sharedMessage = this.message.asObservable();
+  private viewVendorProfile = new BehaviorSubject(PROFILE2);
+  sharedMessageViewVendorProfile = this.viewVendorProfile.asObservable();
 
-  nextMessage(message: string) {
-    this.message.next(message)
+  private vendorProducts = new BehaviorSubject(VERVENDEDORPRODUCTO);
+  sharedMessageVendorProducts = this.vendorProducts.asObservable();
+
+  private customerProfile = new BehaviorSubject(PROFILE);
+  sharedMessageCustomerProfile = this.customerProfile.asObservable();
+
+  private viewCustomerProfile = new BehaviorSubject(PROFILE);
+  sharedMessageViewCustomerProfile = this.viewCustomerProfile.asObservable();
+
+  private customerSales = new BehaviorSubject(VERCOMPRADORPRODUCTO);
+  sharedMessageCustomerSales = this.customerSales.asObservable();
+
+  newVendorProfile(newProfile: ProfileModel) {
+    this.vendorProfile.next(newProfile);  
   }
 
-  constructor() { }
-}
+  newViewVendorProfile(newProfile: ProfileModel) {
+    this.viewVendorProfile.next(newProfile);
+  }
+
+  newVendorProducts(newProducts: VerVendedorProductoModel[]) {
+    this.vendorProducts.next(newProducts);
+  }
+
+  newCustomerProfile(newProfile: ProfileModel) {
+    this.customerProfile.next(newProfile);
+  }
+
+  newViewCustomerProfile(newProfile: ProfileModel) {
+    this.viewCustomerProfile.next(newProfile);
+  }
+
+  newCustomerSales(newSales: VerCompradorProductoModel[]) {
+    this.customerSales.next(newSales);
+  }
+
+    constructor() { }
+  }
