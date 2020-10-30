@@ -1,14 +1,12 @@
-
-<p  i18n>{{message}}</p>
 <div class="container">
     <div class="row">
         <div class="col-sm-7">
-            <h3 class="mt-3"  i18n>Tu carrito</h3>
+            <h3 class="mt-3" i18n>Tu carrito</h3>
         </div>
         <div class="col-sm-3 ">
             <form action="./carrito">
-                <input type="text" id="Form_Search" value="" placeholder="Busca productos en tu carrito" role="searchbox"
-                class="InputBox busquedaProducto mt-4">
+                <input type="text" id="Form_Search" value="" placeholder="Busca productos en tu carrito"
+                    role="searchbox" class="InputBox busquedaProducto mt-4">
             </form>
         </div>
         <div class="col-sm-2 mt-3">
@@ -16,7 +14,7 @@
                 <input type="submit" id="Search_product" class="btn botonBusqueda  my-2 my-sm-0 " value="Buscar">
             </form>
         </div>
-        
+
     </div>
     <div class="row mt-3">
         <div class="col-12 col-sm-10">
@@ -24,7 +22,8 @@
         </div>
         <div class="col-12 col-sm-3">
             <form action="./producto/confirmarCompra">
-                <input type="submit" id="Buy_selected" class="btn login-button my-2 my-sm-0 " value="Comprar seleccionados">
+                <input type="submit" id="Buy_selected" class="btn login-button my-2 my-sm-0 "
+                    value="Comprar seleccionados">
             </form>
         </div>
 
@@ -32,66 +31,42 @@
 
 
 
-    <hr/> <!-- Simple Línea -->
-    
-    
-    <div class="row mt-5 mb-5">                
-        
-        <div class="custom-control custom-checkbox image-checkbox d-inline-flex flex-column col-12 col-sm-12 col-md-5">
-            <input type="checkbox" class="custom-control-input" id="ck1a">
-            <label class="custom-control-label" for="ck1a">
-                <img src="../../assets/beans.jpg"  alt="Frijoles" class="img-fluid ">
-            </label>
-        </div>
-        
-        <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-3 mt-2">
-        
-            <p class="align-self-left text-uppercase"><a href="detalleProduct.html" i18n>Frijoles</a></p>
-            <p class="align-self-left"><i i18n>Disponible</i></p>
-            <p class="align-self-left" i18n>Cantidad: 2 kgs</p>
-            <label for="quantity-1" i18n> Unidades: 
-                <input type="number" id="quantity-1" name="cantidad" min="10" max="100">
-            </label>
-        
+    <hr /> <!-- Simple Línea -->
 
-            
+    <div *ngFor="let product of cart; let i = index">
+        <div class="row mt-5 mb-5">
+            <div
+                class="custom-control custom-checkbox image-checkbox d-inline-flex flex-column col-12 col-sm-12 col-md-5">
+                <input type="checkbox" class="custom-control-input" id="ck1a">
+                <label class="custom-control-label" for="ck1a">
+                    <img src="../../assets/beans.jpg" alt="Frijoles" class="img-fluid ">
+                </label>
+            </div>
 
-        </div>
-        <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-4">
-            <p class="align-self text-right">Precio</p>
-            <p class="text-right"><b>$2,483,241.69 MXN</b></p>
-            <form action="./carrito" class="mt-5" onclick="alert('Haz eliminado el producto Frijoles')">
-                <input type="submit" id="Eliminate_product-1" class="btn botonCancelar col-md-6 my-2 my-sm-0" value="Eliminar">
-            </form>
-        </div>
-    </div>
+            <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-3 mt-2">
+
+                <p class="align-self-left text-uppercase"><a href="detalleProduct.html" i18n>{{ product.name }}</a></p>
+                <p class="align-self-left"><i i18n>Disponible</i></p>
+                <p class="align-self-left" i18n>Cantidad: {{product.units }} {{ product.presentation }}</p>
+                <label for="quantity-1" i18n> Unidades:
+                    <input type="number" id="quantity-1" name="cantidad" min="10" max="100">
+                </label>
 
 
-    <hr/> <!-- Simple Línea  -->
-    <div class="row mt-5 mb-5 ">
-        
-        <div class="custom-control custom-checkbox image-checkbox d-inline-flex flex-column col-12 col-sm-12 col-md-5">
-            <input type="checkbox" class="custom-control-input" id="ck2a">
-            <label class="custom-control-label" for="ck2a">
-                <img src="../../assets/avocado-prueba.jpg" alt="Aguacates" class="img-fluid ">
-            </label>
-        </div>
-        
-        <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-3 mt-2">
-            <p class="align-self-left text-uppercase"><a href="detalleProduct.html">Aguacates</a></p>
-            <p class="align-self-left"><i>Disponible</i></p>
-            <p class="align-self-left">Cantidad: 2 kgs</p>
-            <label for="quantity-2"> Unidades: 
-                <input type="number" id="quantity-2" name="cantidad" min="10" max="100">
-            </label>
 
+
+            </div>
+            <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-4">
+                <p class="align-self text-right">Precio</p>
+                <p class="text-right"><b>{{ product.price }}</b></p>
+                <form action="./carrito" class="mt-5" onclick="alert('Haz eliminado el producto Frijoles')">
+                    <input type="submit" id="Eliminate_product-1" class="btn botonCancelar col-md-6 my-2 my-sm-0"
+                        value="Eliminar">
+                </form>
+            </div>
         </div>
-        <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-4">
-            <p class="align-self text-right">Precio</p>
-            <p class="text-right"><b>$2,483,241.69 MXN</b></p>
-            <form action="./carrito" class="mt-5" onclick= "alert('Haz eliminado el producto Aguacates')" >
-                <input type="submit" id="Eliminate_product-2" class="btn botonCancelar col-md-6 my-2 my-sm-0" value="Eliminar">
-            </form>
-        </div>  
+
+
+        <hr /> <!-- Simple Línea  -->
     </div>
 </div>

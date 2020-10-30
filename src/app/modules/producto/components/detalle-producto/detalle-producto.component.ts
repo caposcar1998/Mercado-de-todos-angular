@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
+import { DetalleProductoModel, DETALLEPRODUCTO2 } from 'src/app/models/detalleProducto.model'
 
 @Component({
   selector: 'app-detalle-producto',
@@ -8,13 +9,16 @@ import { ProductoService } from '../../services/producto.service';
 })
 export class DetalleProductoComponent implements OnInit {
 
-  constructor(private productoService: ProductoService) { }
-  message : string;
+  productDetail: DetalleProductoModel;
+
+  constructor(private productService: ProductoService) { }
 
   ngOnInit(): void {
-    console.log(this.productoService.accesoFacturacion);
-    this.productoService.sharedMessage.subscribe(message => this.message = message)
-    console.log(this.message)
+    this.productService.sharedMessageProductDetail.subscribe(newProduct => this.productDetail = newProduct);
+  }
+
+  updateProductDetail() {
+    this.productService.newProductDetail(DETALLEPRODUCTO2);
   }
 
 }

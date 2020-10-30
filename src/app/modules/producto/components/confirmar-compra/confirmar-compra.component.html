@@ -25,50 +25,46 @@
         </div>
         <div class="card mt-3 col-12 col-sm-12 col-md-6 ">
         <div class="card-body">
-            <h4 class="card-title" i18n>Producto 001</h4>
+            <h4 class="card-title" i18n>{{ purchaseConfirmation.name }}</h4>
                 <div class="row col-md-12">
                     <div class="col-md-6">
                         <h5 i18n><span>Precio Unitario: </span></h5>
-                        <p i18n>1000 pesos</p>
+                        <p i18n>{{ purchaseConfirmation.unitPrice }}</p>
                     </div>
                     <div class="col-md-6">
                         <h5 i18n><span>Costo de envio: </span></h5>
-                        <p i18n>114 pesos</p>
+                        <p i18n>{{ purchaseConfirmation.shippingPrice }}</p>
                     </div>
                 </div>
                 <div class="row col-md-12">
                     <div class="col-md-6">
                         <h5 i18n><span>Presentación: </span></h5>
-                        <p> i18nEn latas</p>
+                        <p i18n>{{ purchaseConfirmation.presentation }}</p>
                     </div>
                     <div class="col-md-6">
                         <h5 i18n><span>Fecha estimada de expiración: </span></h5>
-                        <p i18n>24/09/2020</p>
+                        <p i18n>{{ purchaseConfirmation.expireDate }}</p>
                     </div>
                 </div>
                 <div class="row col-md-12">
-                    <div class="col-md-6">
-                        <h5 i18n><span>Fecha estimada de expiración: </span></h5>
-                        <p i18n>24/09/2020</p>
-                    </div>
                     <div class="col-md-6">
                         <h5 i18n><span>Unidades a comprar:</span></h5>
-                        <p i18n>1</p>
+                        <p i18n>{{ purchaseConfirmation.units }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 i18n><span>Lugar de entrega: </span></h5>
+                        <p i18n>{{ purchaseConfirmation.deliveryAddress }}</p>
                     </div>
                 </div>
                 <div class="row col-md-12">
                     <div class="col-md-6">
-                        <h5 i18n><span>Lugar de entrega: </span></h5>
-                        <p i18n>Debajo de la torre Eifel</p>
-                    </div>
-                    <div class="col-md-6">
                         <h5 i18n><span>Vendedor: </span></h5>
-                        <p i18n>José Luis Espinosa ‘La Jefa’</p>
+                        <p i18n>{{ purchaseConfirmation.vendorName }}</p>
                     </div>
-                </div>
-                <div class="col-md-12 text-center">
-                    <h5 i18n>Total: </h5>
-                    <p i18n>1000 pesos</p>
+                    <div class="col-md-6 text-center">
+                        <h5 i18n>Total: </h5>
+                        <p i18n>1000 pesos</p>
+                    </div>
                 </div>
                 <a href="./historial" class="btn btn-signin d-block" type="submit" i18n>Confirmar Compra</a>
         </div>

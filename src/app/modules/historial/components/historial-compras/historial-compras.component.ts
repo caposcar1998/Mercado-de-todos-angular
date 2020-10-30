@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HistorialService } from '../../services/historial.service';
+import { HistorialModel, HISTORIAL2 } from 'src/app/models/historial.model'
 
 @Component({
   selector: 'app-historial-compras',
@@ -8,15 +9,17 @@ import { HistorialService } from '../../services/historial.service';
 })
 export class HistorialComprasComponent implements OnInit {
 
-  message:string;
+  history: HistorialModel[];
 
   constructor(private historialService: HistorialService) {
    }
 
   ngOnInit(): void {
-    console.log(this.historialService.accesoFacturacion);
-    this.historialService.sharedMessage.subscribe(message => this.message = message)
-    console.log(this.message)
+    this.historialService.sharedMessagehistory.subscribe(newHistory => this.history = newHistory);
+  }
+
+  updateHistory() {
+    this.historialService.newHistory(HISTORIAL2);
   }
 
 }

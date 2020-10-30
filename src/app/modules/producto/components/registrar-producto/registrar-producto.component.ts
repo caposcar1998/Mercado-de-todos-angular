@@ -12,16 +12,17 @@ export class RegistrarProductoComponent implements OnInit {
 
   @Input() registerProducts : RegisterProducts;
 
-  constructor(private productoService: ProductoService) { }
-  message : string;
+  contructor() { }
+  //constructor(private productoService: ProductoService) { }
+  //message : string;
 
   ngOnInit(): void {
-    this.productoService.sharedMessage.subscribe(message => this.message = message)
+    //this.productoService.sharedMessage.subscribe(message => this.message = message)
   } 
 
-  newMessage() {
+  /*newMessage() {
     this.productoService.nextMessage("Segundo mensaje")
-  }
+  }*/
 
   onRegisterProduct() {
     // TODO: Use EventEmitter with form value

@@ -1,5 +1,3 @@
-
-<p i18n>{{message}}</p>
 <div class="container">
     <div class="row">
         <div class="col-sm-7">
@@ -7,8 +5,8 @@
         </div>
         <div class="col-sm-3 ">
             <form action="./historial">
-                <input type="text" id="Form_Search" value="" placeholder="Busca productos en tu historial" role="searchbox"
-                class="InputBox busquedaProducto mt-4">
+                <input type="text" id="Form_Search" value="" placeholder="Busca productos en tu historial"
+                    role="searchbox" class="InputBox busquedaProducto mt-4">
             </form>
         </div>
         <div class="col-sm-2 mt-3">
@@ -18,67 +16,39 @@
         </div>
     </div>
 
-    <hr/> <!-- Simple Línea -->
-    
-    
-    <div class="row mt-5 mb-5">
+    <hr /> <!-- Simple Línea -->
+
+    <div *ngFor="let product of history; let i = index">
+        <div class="row mt-5 mb-5">
             <img src="../../assets/beans.jpg" alt="Frijoles" class="col-12 col-sm-12 col-md-4">
             <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-3 mt-3">
                 <p class="align-self-center text-uppercase"><b i18n>Producto</b></p>
-                <p class="align-self-center" i18n>Frijoles</p>
+                <p class="align-self-center" i18n>{{ product.name }}</p>
                 <p class="align-self-center text-uppercase"><b i18n>Precio</b></p>
-                <p class="align-self-center" i18n>$2,483,241.69 MXN</p>
+                <p class="align-self-center" i18n>{{ product.price }}</p>
                 <p class="align-self-center text-uppercase"><b i18n>Cantidad</b> </p>
-                <p class="align-self-center" i18n>2 kg</p>
+                <p class="align-self-center" i18n>{{ product.units }} {{ product.presentation }}</p>
             </div>
             <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-5 mt-3">
                 <p class="align-self-center text-uppercase"><b i18n>Fecha del pedido</b></p>
-                <p class="align-self-center" i18n>07 Septiembre 2020</p>
+                <p class="align-self-center" i18n>{{ product.orderDate }}</p>
                 <p class="align-self-center text-uppercase"><b i18n>Fecha de entrega</b></p>
-                <p class="align-self-center" i18n>13 Septiembre 2020</p>
+                <p class="align-self-center" i18n>{{ product.deliveryDate }}</p>
                 <p class="align-self-center text-uppercase"><b i18n>Vendedor</b></p>
-                <p class="align-self-center"><a href="./perfiles/ver-perfil-vendedor" i18n>José Luis Espinosa ‘La Jefa’</a></p>
+                <p class="align-self-center"><a href="./perfiles/ver-perfil-vendedor" i18n>{{ product.vendorName }}</a></p>
             </div>
-    </div>
-    <div class="row mb-4">
-        <div class="col-sm-12 col-md-4 mx-auto">
-            <form action="./producto/detalleProducto">
-                <input type="submit" id="Buy_again-1" class="btn botonBusqueda my-2 my-sm-0 " value="Comprar de nuevo">
-            </form>
         </div>
+        <div class="row mb-4">
+            <div class="col-sm-12 col-md-4 mx-auto">
+                <form action="./producto/detalleProducto">
+                    <input type="submit" id="Buy_again-1" class="btn botonBusqueda my-2 my-sm-0 "
+                        value="Comprar de nuevo">
+                </form>
+            </div>
+        </div>
+        <hr /> <!-- Simple Línea  -->
     </div>
 
-    <hr/> <!-- Simple Línea  -->
-    <div class="row mt-5 mb-5">
-        <img src="../../assets/avocado-prueba.jpg" alt="Frijoles" class="col-12 col-sm-12 col-md-4">
-        <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-3 mt-3">
-            <p class="align-self-center text-uppercase"><b i18n>Producto</b></p>
-            <p class="align-self-center" i18n>Aguacates</p>
-            <p class="align-self-center text-uppercase"><b i18n>Precio</b></p>
-            <p class="align-self-center" i18n>$2,483,241.69 MXN</p>
-            <p class="align-self-center text-uppercase"><b i18n>Cantidad</b> </p>
-            <p class="align-self-center" i18n>2 kg</p>
-
-        </div>
-        <div class="d-inline-flex flex-column col-12 col-sm-12 col-md-5 mt-3">
-            <p class="align-self-center text-uppercase"><b i18n>Fecha del pedido</b></p>
-            <p class="align-self-center" i18n>07 Septiembre 2020</p>
-            <p class="align-self-center text-uppercase"><b i18n>Fecha de entrega</b></p>
-            <p class="align-self-center" i18n>13 Septiembre 2020</p>
-            <p class="align-self-center text-uppercase"><b i18n>Vendedor</b></p>
-            <p class="align-self-center"><a href="./perfiles/ver-perfil-vendedor" i18n>José Luis Espinosa ‘La Jefa’</a></p>
-        </div>
-
-        
-    </div>
-    <div class="row mb-4">
-        <div class="col-sm-12 col-md-4 mx-auto">
-            <form action="./producto/detalleProducto">
-                <input type="submit" id="Buy_again-2" class="btn botonBusqueda my-2 my-sm-0" value="Comprar de nuevo">
-            </form>
-        </div>
-    </div>
-    <hr/> <!-- Simple Línea -->
     <div class="row mb-4">
         <div class="col-sm-12 col-md-3 mx-auto">
             <nav aria-label="Page navigation example">
@@ -89,7 +59,7 @@
                     <li class="page-item"><a class="page-link" href="./historial" i18n>3</a></li>
                     <li class="page-item"><a class="page-link" href="./historial" i18n>Next</a></li>
                 </ul>
-            </nav>     
-        </div> 
+            </nav>
+        </div>
     </div>
 </div>

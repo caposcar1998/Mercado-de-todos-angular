@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoService } from '../../services/carrito.service';
+import { CarritoModel, CARRITO2 } from 'src/app/models/carrito.model';
 
 @Component({
   selector: 'app-carrito',
@@ -8,15 +9,16 @@ import { CarritoService } from '../../services/carrito.service';
 })
 export class CarritoComponent implements OnInit {
 
-  message:string;
+  cart: CarritoModel[];
 
-  constructor(private carritoService: CarritoService) {
-   }
+  constructor(private carritoService: CarritoService) { }
 
   ngOnInit(): void {
-    console.log(this.carritoService.accesoFacturacion);
-    this.carritoService.sharedMessage.subscribe(message => this.message = message)
-    console.log(this.message)
+    this.carritoService.sharedMessageCart.subscribe(newCart => this.cart = newCart);
+  }
+
+  updateCarrito() {
+    this.carritoService.newCart(CARRITO2);
   }
 
 }

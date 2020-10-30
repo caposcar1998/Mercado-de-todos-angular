@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { HistorialModel, HISTORIAL } from 'src/app/models/historial.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HistorialService {
 
-  accesoFacturacion = 'https://login.example.com';
+  private history = new BehaviorSubject(HISTORIAL);
+  sharedMessagehistory = this.history.asObservable();
 
-  private message = new BehaviorSubject('First Message in historial');
-  sharedMessage = this.message.asObservable();
-
-  nextMessage(message: string) {
-    this.message.next(message)
+  newHistory(newHistory: HistorialModel[]) {
+    this.history.next(newHistory);
   }
 
   constructor() { }
