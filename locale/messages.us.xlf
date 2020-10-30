@@ -2,20 +2,1722 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
-       <trans-unit id="9b8a9da26998acfd11618afa646d3c060399d5be" datatype="html">
+      <trans-unit id="0be5f72bbf89bf36ec937d97f1bfc297c1b7320f" datatype="html">
+        <source>De una casa a tu casa</source>
+        <target>From home to home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/index/carrousel/carrousel.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="be3d1d314783d93d9eae1fbd0331ae27a45712a1" datatype="html">
+        <source>Todos los productos frescos</source>
+        <target>All the prodcuts are fresh</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/index/carrousel/carrousel.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fdd9f943de1adc91c92a9682fcf62d4b10434c4c" datatype="html">
+        <source>Ayuda a la economia</source>
+        <target>Help de economy</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/index/carrousel/carrousel.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="680d5c75b7fd8d37961083608b9fcdc4167b4c43" datatype="html">
+        <source>Previous</source>
+        <target>Previous</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/index/carrousel/carrousel.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador/comprador.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador/comprador.component.html</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor/vendedor.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/mostrar-producto/mostrar-producto.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f732c304c7433e5a83ffcd862c3dce709a0f4982" datatype="html">
+        <source>Next</source>
+        <target>Next</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/index/carrousel/carrousel.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador/comprador.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador/comprador.component.html</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor/vendedor.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/mostrar-producto/mostrar-producto.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9b8a9da26998acfd11618afa646d3c060399d5be" datatype="html">
         <source>BETA VERSION</source>
-        <target>version Beta</target>
+        <target>BETA VERSION</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/general-components/header/header.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c1ab8db7bfc44b36159324a0a5b47350112b7469" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img/&gt;"/> <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>M<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>ercado <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>P<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>ara
+            <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>T<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>odos</source>
+            <target><x id="TAG_IMG" ctype="image" equiv-text="&lt;img/&gt;"/> <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>M<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>arket <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>F<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>or
+            <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>E<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>veryone</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/header/header.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="96a173656451ac4142c01bd89f60a9f1bc641657" datatype="html">
+        <source>Inicia sesión</source>
+        <target>Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/header/header.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/login/login.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="94e97470b37190574802ba66436ec161e490a67e" datatype="html">
+        <source>Necesitas ayuda?</source>
+        <target>Need any help?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/footer/footer.component.html</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="26343d0aa4b6696a34656bae34424cbec5b494da" datatype="html">
         <source>Contacta a nuestro equipo con alguna de las siguientes opciones</source>
-        <target>Conctact our team with one of the following options</target>
+        <target>Contact our team for any of the other options</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/general-components/footer/footer.component.html</context>
           <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="372facde1a72e3f82ac81cac6b81980dcdc1a7bd" datatype="html">
+        <source>Correo</source>
+        <target>Mail</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/footer/footer.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cdcbb652aa2a3509e0e6c4abcfbc85721e448351" datatype="html">
+        <source>Comunidad</source>
+        <target>Community</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/footer/footer.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="782e7c47b5c86aad040e1c30729d51dc0f915e70" datatype="html">
+        <source>Chat en línea</source>
+        <target>Chat</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/footer/footer.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7c38873769d52761357ee184abd9925abb88c695" datatype="html">
+        <source>Telefono</source>
+        <target>Number</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/footer/footer.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4fa4635227a293ad522229708137b4f149ed1780" datatype="html">
+        <source>Realiza pedidos nacionales</source>
+        <target>Make national orders</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/footer/footer.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador-nuevo/comprador-nuevo.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor-nuevo/vendedor-nuevo.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e15c43425a94d921950d5b952d317eacc233ea41" datatype="html">
+        <source>Todos los productos son 100% mexicanos</source>
+        <target>All our products are 100% national</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/footer/footer.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="341ce66aa91af61ec1e04e8d5ae9cb8801fe9e6c" datatype="html">
+        <source>Seguridad, de principio a fin</source>
+        <target>Security from start to end</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/footer/footer.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="99edabd4e95b99df6ca5ac336fcf3840d00caf64" datatype="html">
+        <source>Contamos con sistema de encriptado para que tu infromación siempre este segura</source>
+        <target>We have an encrypting system, your information will always be secure with us</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/footer/footer.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bcf84309402685416c33b36bcd97ba00595be78b" datatype="html">
+        <source>page-not-found works!</source>
+        <target>Page not found</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/general-components/page-not-found/page-not-found.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fa88d88310ec60e4da2f76bcbf700d63a24fab2d" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>M<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>ercado <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>P<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>ara <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>T<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>odos</source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>M<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>arket <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>F<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>or <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>E<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>veryone</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/login/login.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/registro/registro.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor-nuevo/vendedor-nuevo.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c440891d7310e1b8059ddf6801d027f5a0215180" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{message}}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{message}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/login/login.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/registro/registro.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador/comprador.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/landing/landing.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="178aa14d8ee687d41b9be03758b6983fcf628e4e" datatype="html">
+        <source>Iniciar sesión</source>
+        <target>Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/login/login.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7bd83f7002b9de00d1e50cd86a75597cb697d57d" datatype="html">
+        <source>¿No tienes cuenta?</source>
+        <target>Need an account?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/login/login.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b5ea2460571244330b68ed232ee7de6e5f6d3e59" datatype="html">
+        <source> Regístrate </source>
+        <target>Register</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/login/login.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4be16c2afa76928b5873844a620230e0049630d5" datatype="html">
+        <source>Registro Nuevo Vendedor</source>
+        <target>New Seller</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/registro/registro.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="61557ee5572bff432941cb13ebe6d72216c2569b" datatype="html">
+        <source>Change Message</source>
+        <target>Change message</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/registro/registro.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador/comprador.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4de77ecdec897cce95ae6c568075aa4de822b4a4" datatype="html">
+        <source>Registrar cuenta</source>
+        <target>Register account</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/registro/registro.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f95e8b5f4f281f1b1d3f2d6ce816775cdfc6decc" datatype="html">
+        <source>¿Ya tienes cuenta?</source>
+        <target>Already have account?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/registro/registro.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a44d913775234a9561f06a73bfb90a4d08e9f753" datatype="html">
+        <source> Inicia Sesión </source>
+        <target>Login</target>        
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/login/components/registro/registro.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e3bc6cbf69df65d1c2fa74d94336bddd065803d0" datatype="html">
+        <source>Ofertas</source>
+        <target>Sales</target>        
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador/comprador.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9c88d44ac68c07dff63f6f1795c81c03efc0321c" datatype="html">
+        <source>No pierdas las oportunidades, se terminan rápido</source>
+        <target>Don´t miss oportunities, they end quickly</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador/comprador.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ca4e651c4f117134779a8a7347c231dfbed8277a" datatype="html">
+        <source>Basadas en tus ultimas compras</source>
+        <target>Based in last purchases</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador/comprador.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cd44763a6fef7f37422fc00ff5f3f8c7f4994128" datatype="html">
+        <source>Comienza a comprar</source>
+        <target>Start shopping</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador-nuevo/comprador-nuevo.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="29857fa63ca57638186a5a60f1c55b1c22d37477" datatype="html">
+        <source>¿Quienes somos?</source>
+        <target>Who we are?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador-nuevo/comprador-nuevo.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor-nuevo/vendedor-nuevo.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="14c7e8de0ab9b57af06ef3501a679b88417922e7" datatype="html">
+        <source>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, 
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+                    essentially unchanged. It was popularised in the 1960s</source>
+        <target>lorem</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador-nuevo/comprador-nuevo.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador-nuevo/comprador-nuevo.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor-nuevo/vendedor-nuevo.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c2415b38f78dc6c35ca6d374e0f21694c1de1037" datatype="html">
+        <source>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+                essentially unchanged. It was popularised in the 1960s</source>
+        <target>lorem</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador-nuevo/comprador-nuevo.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="05a9d867c40e1340f13a6b8647ae345261dafcfb" datatype="html">
+        <source>Seguridad de principio a fin</source>
+        <target>Security from start to end</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/comprador-nuevo/comprador-nuevo.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor-nuevo/vendedor-nuevo.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7542baa33e24898b39d00901aaa6aac0cde07df" datatype="html">
+        <source>Productos más vendidos</source>
+        <target>Best sellers</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor/vendedor.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/graficas-vendedor/graficas-vendedor.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8c150bd624f48c99d0c7bb0f82095e66e3896d97" datatype="html">
+        <source>Siempre ten tus productos actualizados</source>
+        <target>Always ahve updated your products</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor/vendedor.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="95359bb127861f09be6c8ab63c2ac5a8b29b9e15" datatype="html">
+        <source>Sube más productos para vender</source>
+        <target>Update your products</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor/vendedor.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4f509b97d429cf0248c7ebc4f5ed224fe63d0cef" datatype="html">
+        <source>Comienza a vender en</source>
+        <target>Start selling</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor-nuevo/vendedor-nuevo.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ac5e0ecdf071a63269baedec94c47104e437ee16" datatype="html">
+        <source>&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </source>
+        <target>Lorem</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor-nuevo/vendedor-nuevo.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a9ad2dbc2cb3d85f3a28ef2ac884442a6a0fd64d" datatype="html">
+        <source>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, 
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+                        essentially unchanged. It was popularised in the 1960s</source>
+        <target>Lorem</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor-nuevo/vendedor-nuevo.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1fc62354667a34ed433e32419523e27d9a8a6d58" datatype="html">
+        <source>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, 
+                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+                            essentially unchanged. It was popularised in the 1960s</source>
+        <target>Lorem</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/vendedor-nuevo/vendedor-nuevo.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7cc5e41c566468a4321c73547e2a32d251878f57" datatype="html">
+        <source>landing works!</source>
+        <target>landing works!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/landing/components/landing/landing.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="13a679559803c91e99e5eaa03d621d71b2d37d2d" datatype="html">
+        <source>Ingresa Tarjeta</source>
+        <target>Update credit card</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="15a520743741577e60922f093c33f1358b03c282" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.name }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.name }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="10472f6ac7e389c4b4da2b8524c5b030f9fe6569" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Precio Unitario: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Price per piece: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>     
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d0aa9139aab03ba3b88809f9c20ef3aa6f218a63" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.unitPrice }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.unitPrice }}"/></target> 
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="77d4783f2d35923e97b676667960b67e9cd4e43e" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Costo de envio: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Cost shipment: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target> 
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="00051490da714f0ac4345d9fd6eea20e4953e34f" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.shippingPrice }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.shippingPrice }}"/></target> 
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="145ca56659046df5cc8fb63c968cc19ee395f32e" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Presentación: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Presentation: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>  
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ab90939a2902974cdb3c14f650337243d64fe407" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.presentation }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.presentation }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c5e0debe0c2b276b374b2c08481822ae087e67a8" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Fecha estimada de expiración: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Expiration time: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b06d6031692963ea2e40376a0e6a35e2f89fbf3e" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.expireDate }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.expireDate }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7e155e72ae3267cb11fea37fbc4fa7385fa3653e" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Unidades a comprar:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Units to buy:<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ab419a184d98a760e547fd70b364ec280a961797" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.units }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.units }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="934a52267d8b91fc6ff844969c6bfe458c538380" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Lugar de entrega: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Delivery address: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4eeb5eb4348149b80ba15fee786251eaf3bc9278" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.deliveryAddress }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.deliveryAddress }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e3e127816b8fd6121e3af1506242f17d647fc2e2" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Vendedor: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Seller: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="600f083f4fc3fd05129c85f72bd34099f7a3f39a" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.vendorName }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ purchaseConfirmation.vendorName }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ee5b16adf0b237e70b8567f7af3e5c8a547d50ac" datatype="html">
+        <source>Total: </source>
+        <target>Total:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f27a8601e6716d9010444fec3422c6c163428fb1" datatype="html">
+        <source>1000 pesos</source>
+        <target>$1000</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d1da253b0f667fe1dea3b6454d2d5bed6d8249e2" datatype="html">
+        <source>Confirmar Compra</source>
+        <target>Confirm shipment</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/confirmar-compra/confirmar-compra.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1f307f5d0bb677771399099fdfb75a104f8db6a8" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ productDetail.description }}"/> </source>
+        <target><x id="INTERPOLATION" equiv-text="{{ productDetail.description }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="05ed9fb0e66a5f245d191f2a4dafb26b146dfb1e" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ productDetail.name }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ productDetail.name }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d43b992b5f434b5875c73a24df5bb18d939a7613" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ productDetail.unitPrice }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ productDetail.unitPrice }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9eeece5d353ef235205c1da850db8dab417f0971" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ productDetail.shippingPrice }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ productDetail.shippingPrice }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="829888d8a66d76c23e1b8cb57fb17d8ac39d7022" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ productDetail.presentation }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ productDetail.presentation }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="98d657e9e2e5fe66207d26ab6155789cb4920518" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Unidades Disponibles: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Available units: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9e540edb29d476a7e06f3298ea6434fcc9274ad0" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ productDetail.availableUnits }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ productDetail.availableUnits }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2f503fd8e1d019c53b5a73e620a518af7713b64f" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Estado donde puede realizar envios: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>States where you can send deliveries: <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6a8753a0a37d9c8a31619ce28edd6eb731b8f6e9" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ productDetail.state }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ productDetail.state }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6b6446b882a9d543198e66bd6ab68b0df067e741" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ productDetail.expireDate }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ productDetail.expireDate }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9260b3f971b85ec49682547ac2d31a179c9c7052" datatype="html">
+        <source><x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>Unidades a comprar:<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/></source>
+        <target><x id="START_TAG_LABEL" ctype="x-label" equiv-text="&lt;label&gt;"/>Units to buy:<x id="CLOSE_TAG_LABEL" ctype="x-label" equiv-text="&lt;/label&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c543f3eb037ac004b6c9b8ebc0928b927042c27f" datatype="html">
+        <source>Total a pagar</source>
+        <target>Total to pay</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5ab4aa4b40e2af36c2805acf4cb424d28dcd051c" datatype="html">
+        <source>Comprar</source>
+        <target>Shop</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/detalle-producto/detalle-producto.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="40db4d9dd9f0c6b96cc86c93a256e90dc623c48c" datatype="html">
+        <source>Registro de nuevo producto</source>
+        <target>Register new product</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/registrar-producto/registrar-producto.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f7c3c2a0d9bc4241a02f37f88b7a72e44c5f1aa5" datatype="html">
+        <source>Fecha estimada de expiración:</source>
+        <target>Expiration date</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/registrar-producto/registrar-producto.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8e207b9b0b5f1b9d7dadda3f46505e8a99dfc23d" datatype="html">
+        <source>Días estimados para envio:</source>
+        <target>Days to delivery</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/registrar-producto/registrar-producto.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="be9f9b59600fc318399af91fe84ded94cf1eaa4a" datatype="html">
+        <source>
+                      Acepto los términos y condiciones
+                    </source>
+        <target>Accept term and conditions</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/registrar-producto/registrar-producto.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aa12a1441fa845383e96c106dfad2b6317874e59" datatype="html">
+        <source>Registrar Producto</source>
+        <target>Register product</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/producto/components/registrar-producto/registrar-producto.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8c2f3091ae1c237296ed402783eea61d46e1a832" datatype="html">
+        <source>Tu historial de compras</source>
+        <target>History</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="df9468c61808adf5d6082473a5b35a23102d48ab" datatype="html">
+        <source>Producto</source>
+        <target>Product</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="078742a048536c77a76f13a349032a8867a3d029" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.name }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.name }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-comprador/ver-perfil-comprador.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/carrito/components/carrito/carrito.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d57ce960cceac0877b71d11a9931887f9c86ec73" datatype="html">
+        <source>Precio</source>
+        <target>Price</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="160ad67585fc04f0631f15c125947c35b70bba6f" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.price }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.price }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-comprador/ver-perfil-comprador.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bb8ccf3bdc23c22953aa91cab264f4346195f579" datatype="html">
+        <source>Cantidad</source>
+        <target>Quantity</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fcf09ea8319dd29e1a924229e554f15f187d8fb9" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.units }}"/> <x id="INTERPOLATION_1" equiv-text="{{ product.presentation }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.units }}"/> <x id="INTERPOLATION_1" equiv-text="{{ product.presentation }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="32350d61c7afbb9e2a6c255f57de184a88329af8" datatype="html">
+        <source>Fecha del pedido</source>
+        <target>Shipment day</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e18b7d337d2aa012fcba5864f370333ebd4cc547" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.orderDate }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.orderDate }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7c204e94f90e8d430c4aaa714dd4ff3d7f6c765f" datatype="html">
+        <source>Fecha de entrega</source>
+        <target>Delivery date</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="214964c4392b4d91cd7a268013871dada973e752" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.deliveryDate }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.deliveryDate }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c55a80016f676bf652f30bb24a60348f64f61e2e" datatype="html">
+        <source>Vendedor</source>
+        <target>Seller</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="91318d3f4dc9fe2f1f530617b5d1df782b834946" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.vendorName }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.vendorName }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4f3e86e5e9e2eabd635e10a6db769bc0403eb85d" datatype="html">
+        <source>1</source>
+        <target>1</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/mostrar-producto/mostrar-producto.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="446c5c1e01eb5746070f8fd6e6647013366baa03" datatype="html">
+        <source>2</source>
+        <target>2</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/mostrar-producto/mostrar-producto.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a98b6fdf6513b598738f4d70bd87a696690504fa" datatype="html">
+        <source>3</source>
+        <target>4</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/historial/components/historial-compras/historial-compras.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/mostrar-producto/mostrar-producto.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6c50174ef3bc22ed722c0bf30fe8f282d7ea996a" datatype="html">
+        <source>Mi cuenta</source>
+        <target>My account</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-comprador/perfil-comprador.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-comprador/editar-perfil-comprador.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-vendedor/editar-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5d6e2342e48d75e405f0fc141ab3e4a93c872dbb" datatype="html">
+        <source>Editar</source>
+        <target>Edit</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-comprador/perfil-comprador.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3286505d37a391a46a56b5c9f06c224d754f8635" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ customerProfile.name }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ customerProfile.name }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-comprador/perfil-comprador.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fb7aab0120edbcbbf2db21b6e75a2712514c9c59" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ customerProfile.mail }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ customerProfile.mail }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-comprador/perfil-comprador.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-comprador/editar-perfil-comprador.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f9151c4ac80e8ecaeb9724a37e428b1af4db2bfa" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ customerProfile.phone }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ customerProfile.phone }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-comprador/perfil-comprador.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b8331dcd75c85a6e590b2d22d2da32d817fc19c5" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ customerProfile.state }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ customerProfile.state }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-comprador/perfil-comprador.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ae9bb5f284875101c3faff7d37ed87006dc3c609" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ customerProfile.address }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ customerProfile.address }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-comprador/perfil-comprador.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9fde9bc598436ef59796f50b06273406af6ad063" datatype="html">
+        <source>Preferencias de comunicación</source>
+        <target>Comunication preferences</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-comprador/perfil-comprador.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="243d3864a709cb02b5abf00613d9295b2ae66966" datatype="html">
+        <source>Notificar por correo electronico</source>
+        <target>Send by email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-comprador/perfil-comprador.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bf0b55e93be8fb3cb28589f391841d08303559b6" datatype="html">
+        <source>Notificar por mensaje de texto</source>
+        <target>Send by SMS</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-comprador/perfil-comprador.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="82fa5fe308b7e6879b388f8081ae5cc0d60ebbbe" datatype="html">
+        <source>Recibir ofertas</source>
+        <target>Get offers</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-comprador/perfil-comprador.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7d01b71a943cfe0c4fa4bc06bcd6464bba486ff5" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ vendorProfile.name }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ vendorProfile.name }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="97cae5ae21f0d9fcd2db1a2dfd982a970f77d555" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ vendorProfile.mail }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ vendorProfile.mail }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c341029e76d98ecb5c6a820496ef01e6a27fa800" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ vendorProfile.phone }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ vendorProfile.phone }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="371abbc009dc0af3f3f62400f5c8f7925f218c09" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ vendorProfile.state }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ vendorProfile.state }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9606ec6b7a672ac55d8d2000f60ead0f3fd0045a" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ vendorProfile.address }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ vendorProfile.address }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2f889ad856b7829461265d2db586e30c53fc1639" datatype="html">
+        <source>Productos en venta</source>
+        <target>Products</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4c0cfd3e88d5d6af1d5f23914fb74cb353a83811" datatype="html">
+        <source>Eliminar</source>
+        <target>Delete</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="69e6f01108c3fa20f2b1215cb7dbc2520c7c0fce" datatype="html">
+        <source>Agregar producto</source>
+        <target>Add products</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/perfil-vendedor/perfil-vendedor.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ea77e239a999d9651a076814fdc5f64c360cb34e" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Nombre<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ customerProfile.name }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-comprador/editar-perfil-comprador.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="344a02b49cfa20ab16edc286d003a2940b783f40" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Dirección<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ customerProfile.address }}"/>
+            </source>
+        <target><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Edit<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Address<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ customerProfile.address }}"/></target>   
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-comprador/editar-perfil-comprador.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f038d723ce32adc61ce4481203b3d85ad0b6b0a1" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Estado<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ customerProfile.state }}"/></source>
+        <target><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ customerProfile.state }}"/></target> 
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-comprador/editar-perfil-comprador.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c57cc266d35506452fae0899cebc1a56c0025220" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Correo Electrónico<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Edit<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Mail<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>  
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-comprador/editar-perfil-comprador.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ce5b458b78645c1dacdce45137c32082ca4453d1" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Teléfono<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ customerProfile.phone }}"/></source>
+        <target><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Number<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ customerProfile.phone }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-comprador/editar-perfil-comprador.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a213e86356c37e35f13fa4fb6aea485516696e7d" datatype="html">
+        <source>Guardar cambios</source>
+        <target>Sve changes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-comprador/editar-perfil-comprador.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-vendedor/editar-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6afb3ba9cd00c0b71f6f6a0efb4cfd9497f1328a" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Nombre<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ vendorProfile.name }}"/></source>
+        <target><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Nombre<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ vendorProfile.name }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-vendedor/editar-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7db6449cba66bc3e9036b8a58129c08c1de7b35b" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Dirección<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ vendorProfile.address }}"/>
+            </source>
+        <target><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Address<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ vendorProfile.address }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-vendedor/editar-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="322e0c7e8fe0a37d165fa863ee9018b9b9a2fd2c" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Estado<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ vendorProfile.state }}"/></source>
+        <target><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ vendorProfile.state }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-vendedor/editar-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="411baf645cc3c667203740bf4153f38dea5374d3" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Correo Electrónico<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ vendorProfile.mail }}"/></source>
+        <target><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Correo Electrónico<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="INTERPOLATION" equiv-text="{{ vendorProfile.mail }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-vendedor/editar-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9da7a4cbe5d4ba5afa3296a9f95732b98b05489b" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Teléfono<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ vendorProfile.phone }}"/> </source>
+        <target><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Editar<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Phone<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ vendorProfile.phone }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/editar-perfil-vendedor/editar-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b7eb1bfce05e521924fb273c9c8f2ab69ef2b10b" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ viewCustomerProfile.name }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ viewCustomerProfile.name }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-comprador/ver-perfil-comprador.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3a97467bc04271ffd161c3586e5d8610346f509c" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Dirección<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewCustomerProfile.address }}"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Address<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewCustomerProfile.address }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-comprador/ver-perfil-comprador.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="73133cf02ccf4f219328a25099f56f4d90b96bde" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Estado<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewCustomerProfile.state }}"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>State<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewCustomerProfile.state }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-comprador/ver-perfil-comprador.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="60b98d14787ab5e9b35ca3c79d1f553813835e14" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Correo Electrónico<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewCustomerProfile.mail }}"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Mail<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewCustomerProfile.mail }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-comprador/ver-perfil-comprador.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a0f1426f6342a24fb8ed59ecae92e64905c996ac" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Teléfono<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewCustomerProfile.phone }}"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Phone<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewCustomerProfile.phone }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-comprador/ver-perfil-comprador.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b559c27df158e731f5ae6a82fb3b3f4d089e48aa" datatype="html">
+        <source>Tu historial con comprador</source>
+        <target>History as a buyer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-comprador/ver-perfil-comprador.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2a821e1895bde4a585d774e98a46af1ae7d8bcf0" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.date }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.date }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-comprador/ver-perfil-comprador.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="82183f545368b6e85a5fa37369401a89e87306bc" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.review }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.review }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-comprador/ver-perfil-comprador.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="405367430605addc7e0650e5cc3c2f51823c2ca9" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ viewVendorProfile.name }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ viewVendorProfile.name }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="56ef12bad2a60d5a9372846777d682c4acc11e6c" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Dirección<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewVendorProfile.address }}"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Address<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewVendorProfile.address }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a8c1f4d9dadb536a60dd8529c89ac43bcfbf918b" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Estado<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewVendorProfile.state }}"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Address<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewVendorProfile.state }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2bd98f3731c7611fdcc366c83b4a7fe1525e69b3" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Correo Electrónico<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewVendorProfile.mail }}"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Mail<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewVendorProfile.mail }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="744e03a836b983cad57c321e5a6fc45f59ca3aaa" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Teléfono<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewVendorProfile.phone }}"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Phone<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> <x id="INTERPOLATION" equiv-text="{{ viewVendorProfile.phone }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="21d62d95e3804699b38bcb3532420a156c9e028b" datatype="html">
+        <source>Productos del vendedor</source>
+        <target>Seller products</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="76f3cfe285e0a762186a61f9904573b7faf0fe12" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Producto<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Product<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f8079bc16fe00a36d99cef9b476e7dc091a6a8d0" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Precio<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Price<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2b9db37ed0019aeb9597b1c77ea02e01b0c1330a" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Cantidad<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> </source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Quantity<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4454b0d65df577bbf0b887d4d20bb4b28ea76c96" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.availableUnits }}"/> <x id="INTERPOLATION_1" equiv-text="{{ product.presentation }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.availableUnits }}"/> <x id="INTERPOLATION_1" equiv-text="{{ product.presentation }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="32b37c6587fd38511420cb54e77c06cb4fd3610d" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Fecha del expiración estimada<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Expiration date<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1c9b8ad644aa5a2e60d50ae6a36589cdb052615b" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.expireDate }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.expireDate }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d358fbff4d0ac73170a65ab1070b5f28c6f95e58" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Fecha de entrega<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Shipment date<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/ver-perfil-vendedor/ver-perfil-vendedor.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6b0e54e000617a133a36a1a9f3e8daf06cd039fb" datatype="html">
+        <source>Tu historial de ventas</source>
+        <target>Sell history</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/graficas-vendedor/graficas-vendedor.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f143bb895864dcc9de0bb1941f4fe46d8d06f7d2" datatype="html">
+        <source>Historial de compras</source>
+        <target>Shopping history</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/perfiles/components/graficas-compradores/graficas-compradores.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="08e951d4134f966637ac737c67ef9281b93e7c1e" datatype="html">
+        <source>Tu carrito</source>
+        <target>Shopping cart</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/carrito/components/carrito/carrito.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd61f8cfca766b9ea8308f6693b95a2c192af636" datatype="html">
+        <source>Total: $500.00 </source>
+        <target>Total: $500.00</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/carrito/components/carrito/carrito.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fcf5b251e9f29be4c810a37a5f578d71905123a6" datatype="html">
+        <source>Disponible</source>
+        <target>Available</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/carrito/components/carrito/carrito.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="74e9ab9526e78642040df3dd9fa8da21404de399" datatype="html">
+        <source>Cantidad: <x id="INTERPOLATION" equiv-text="{{product.units }}"/> <x id="INTERPOLATION_1" equiv-text="{{ product.presentation }}"/></source>
+        <target>Quantity: <x id="INTERPOLATION" equiv-text="{{product.units }}"/> <x id="INTERPOLATION_1" equiv-text="{{ product.presentation }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/carrito/components/carrito/carrito.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b2cb33ecea5c649b17d6b36c0fe0a90fb6e33748" datatype="html">
+        <source> Unidades:
+                    <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/>
+                </source>
+        <target>Units:
+                    <x id="TAG_INPUT" ctype="x-input" equiv-text="&lt;input/&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/carrito/components/carrito/carrito.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="deb10f09abe70d4714a8cbd65748e6fcb7cb233c" datatype="html">
+        <source>Entregas pendientes</source>
+        <target>Pending deliveries</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="eb69ff4004acec3ee26be65e1830a1975500c4b4" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Comprador: <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/><x id="INTERPOLATION" equiv-text="{{ delivery.buyerName }}"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Buyer: <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/><x id="INTERPOLATION" equiv-text="{{ delivery.buyerName }}"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fa09c735c8f346c95127f1db4046f583a1b115fc" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ delivery.name }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ delivery.name }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9f463fb9e545038193b0fc1233e7a2aa63d68920" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ delivery.price }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ delivery.price }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="65c775e5c69342d97d91d3d8ed4978edb3c6253e" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Unidades disponibles<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> </source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Available units<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="31eeea80ca4236b6b4c82d2db32da9132d09f4e7" datatype="html">
+        <source>3 <x id="INTERPOLATION" equiv-text="{{ delivery.availableUnits }}"/> <x id="INTERPOLATION_1" equiv-text="{{ delivery.presentation }}"/></source>
+        <target>3 <x id="INTERPOLATION" equiv-text="{{ delivery.availableUnits }}"/> <x id="INTERPOLATION_1" equiv-text="{{ delivery.presentation }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d0865a5c53437cbbad516c0c32d0a3604ffc50bd" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Fecha estimada de expiración<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Expiration date<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ac6546b8bc0b9009c1dd9249484ea4d18785b08e" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ delivery.expireDate }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ delivery.expireDate }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1698e32d973013412e7470dac9e9c575d6ee66af" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Tiempo estimado de envío<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Time shipment<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4c33d2dc4981db72ce8b478ad25104e5b6d00f84" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ delivery.deliveryTime }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ delivery.deliveryTime }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fad09f3a35878bdf1ca7b974772f41ed3e800e1b" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Unidades vendidas<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Units sold<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7909b8bf617b15c538217517cb25e7faf93881b" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ delivery.unitsSold }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ delivery.unitsSold }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/entregas-pendientes/entregas-pendientes.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="31127531c1a2d8a7902f7a58e51bf03508eff360" datatype="html">
+        <source>Productos anunciados</source>
+        <target>Products in offer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ca390b2c86b3c04c9177edac54ba40557d65059e" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.deliveryTime }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.deliveryTime }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd5a423520487050928dcb6aa5d0470125bc8d16" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.unitsSold }}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.unitsSold }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/productos-anunciados/productos-anunciados.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="72ecdb866fca7df0acce04c70152fc7e9f465be5" datatype="html">
+        <source>Resultados de<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>&quot;frijoles&quot;<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target>Results for<x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>&quot;frijoles&quot;<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/mostrar-producto/mostrar-producto.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8fc5a82ba0f994100314a367498393312a3883a1" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ product.name }}"/> </source>
+        <target><x id="INTERPOLATION" equiv-text="{{ product.name }}"/> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/mostrar-producto/mostrar-producto.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c3bcd2cea4dd8a462aa0a0f13ca5eb704477c12d" datatype="html">
+        <source>
+            <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Presentación<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>     <x id="INTERPOLATION" equiv-text="{{ product.presentation }}"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+            <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Precio unitario<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>  <x id="INTERPOLATION_1" equiv-text="{{ product.unitPrice }}"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+            <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Costo de envio<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>   <x id="INTERPOLATION_2" equiv-text="{{ product.shippingPrice }}"/>
+            </source>
+        <target>
+            <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Presentation<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>     <x id="INTERPOLATION" equiv-text="{{ product.presentation }}"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+            <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Price<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>  <x id="INTERPOLATION_1" equiv-text="{{ product.unitPrice }}"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+            <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Shipment cost<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>   <x id="INTERPOLATION_2" equiv-text="{{ product.shippingPrice }}"/>
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/mostrar-producto/mostrar-producto.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="036ca72c0912509f855cf1cdfee9d331ab88d0c6" datatype="html">
+        <source>Ver productos</source>
+        <target>See prodcuts</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/mostrar-producto/components/mostrar-producto/mostrar-producto.component.html</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
     </body>
