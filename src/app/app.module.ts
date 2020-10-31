@@ -15,6 +15,7 @@ import { PerfilesModule } from './modules/perfiles/perfiles.module';
 import { PageNotFoundComponent } from './general-components/page-not-found/page-not-found.component';
 import { CarritoModule } from './modules/carrito/carrito.module';
 import { MostrarProductoModule } from './modules/mostrar-producto/mostrar-producto.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { MostrarProductoModule } from './modules/mostrar-producto/mostrar-produc
     PageNotFoundComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     LoginModule,
