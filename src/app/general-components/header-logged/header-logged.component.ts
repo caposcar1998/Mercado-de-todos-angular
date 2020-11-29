@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 import {
   trigger,
   state,
@@ -50,10 +51,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
 })
 export class HeaderLoggedComponent implements OnInit {
-
-  constructor() { }
+  profileJson: string = null;
+  constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
+    this.auth.user$.subscribe(
+      (profile)=>(this.profileJson = JSON.stringify(profile, null, 2)));
   }
 
   isClosed: boolean = true;
@@ -61,7 +64,7 @@ export class HeaderLoggedComponent implements OnInit {
   toggle() {
     this.isClosed = !this.isClosed;
   }
-
+  
   isClickedUser: boolean = true;
   isClickedSeller: boolean = true;
   isClickedCart: boolean = true;
