@@ -16,7 +16,12 @@ import { PageNotFoundComponent } from './general-components/page-not-found/page-
 import { CarritoModule } from './modules/carrito/carrito.module';
 import { MostrarProductoModule } from './modules/mostrar-producto/mostrar-producto.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from '../environments/environment';
+import { LoginButtonComponent } from './general-components/login-button/login-button.component';
+import { RegisterButtonComponent } from './general-components/register-button/register-button.component';
+import { LogoutButtonComponent } from './general-components/logout-button/logout-button.component';
+import { HeaderLoggedComponent } from './general-components/header-logged/header-logged.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +31,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     SearchBarComponent,
     PageNotFoundComponent,
+    LoginButtonComponent,
+    RegisterButtonComponent,
+    LogoutButtonComponent,
+    HeaderLoggedComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -37,7 +46,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HistorialModule,
     PerfilesModule,
     CarritoModule,
-    MostrarProductoModule
+    MostrarProductoModule,
+    AuthModule.forRoot({
+        ...env.auth
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
