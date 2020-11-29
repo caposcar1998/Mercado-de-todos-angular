@@ -1,5 +1,9 @@
-
-<app-header></app-header>
+<div *ngIf = "(auth.isAuthenticated$ | async) === false; else elseBlock">
+  <app-header></app-header>
+</div>
+<ng-template #elseBlock>
+  <app-header-logged></app-header-logged>
+</ng-template>
 <app-search-bar></app-search-bar>
 <div [@routeAnimations]="prepareRoute(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>
