@@ -13,6 +13,8 @@ import { VendedorComponent } from './components/vendedor/vendedor.component';
 import { VendedorNuevoComponent } from './components/vendedor-nuevo/vendedor-nuevo.component';
 import { LandingComponent } from './components/landing/landing.component';
 
+import { HistorialComprasComponent } from './components/historial-compras/historial-compras.component';
+
 
 const routes: Routes = [
   {path: "perfiles/editar-perfil-comprador", component: EditarPerfilCompradorComponent },
@@ -27,6 +29,8 @@ const routes: Routes = [
   {path: "landing/compradorNuevo", component: CompradorNuevoComponent},
   {path: "landing/vendedor", component: VendedorComponent},
   {path: "landing/vendedorNuevo", component: VendedorNuevoComponent},
+
+  {path: "historial", component: HistorialComprasComponent},
 ];
 
 @NgModule({

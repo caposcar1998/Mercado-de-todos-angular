@@ -3,6 +3,8 @@ import { BehaviorSubject } from 'rxjs';
 import { ProfileModel, PROFILE, PROFILE2 } from 'src/app/models/profile.model';
 import { VerVendedorProductoModel, VERVENDEDORPRODUCTO } from 'src/app/models/verVendedorProducto.model';
 import { VerCompradorProductoModel, VERCOMPRADORPRODUCTO } from 'src/app/models/verCompradorProducto.model';
+
+import { HistorialModel, HISTORIAL } from 'src/app/models/historial.model';
 // PROFILE1 es de comprador
 // PROFILE2 es de vendedor
 
@@ -60,6 +62,14 @@ export class PerfilesService {
 
   newCustomerSales(newSales: VerCompradorProductoModel[]) {
     this.customerSales.next(newSales);
+  }
+
+  // Definido para historial
+  private history = new BehaviorSubject(HISTORIAL);
+  sharedMessagehistory = this.history.asObservable();
+
+  newHistory(newHistory: HistorialModel[]) {
+    this.history.next(newHistory);
   }
 
     constructor() { }
