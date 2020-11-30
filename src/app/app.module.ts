@@ -8,7 +8,6 @@ import { HeaderComponent } from './general-components/header/header.component';
 import { FooterComponent } from './general-components/footer/footer.component';
 import { SearchBarComponent } from './general-components/search-bar/search-bar.component';
 import { LoginModule } from './modules/login/login.module';
-import { LandingModule } from './modules/landing/landing.module';
 import { ProductoModule } from './modules/producto/producto.module';
 import { HistorialModule } from './modules/historial/historial.module';
 import { PerfilesModule } from './modules/perfiles/perfiles.module';
@@ -32,7 +31,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     LoginModule,
-    LandingModule,
     ProductoModule,
     HistorialModule,
     PerfilesModule,

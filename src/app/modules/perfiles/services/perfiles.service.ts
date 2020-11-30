@@ -29,6 +29,15 @@ export class PerfilesService {
   private customerSales = new BehaviorSubject(VERCOMPRADORPRODUCTO);
   sharedMessageCustomerSales = this.customerSales.asObservable();
 
+  // Definido para landing
+  private message = new BehaviorSubject('First Message');
+  sharedMessage = this.message.asObservable();
+
+  // Definido para landing
+  nextMessage(message: string){
+    this.message.next(message)
+  }
+
   newVendorProfile(newProfile: ProfileModel) {
     this.vendorProfile.next(newProfile);  
   }
