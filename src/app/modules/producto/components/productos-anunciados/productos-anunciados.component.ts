@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MostrarProductoService } from '../../services/mostrar-producto.service';
+import { ProductoService } from '../../services/producto.service';
 import { ProductosAnunciadosModel, PRODUCTOSANUNCIADOS2 } from 'src/app/models/productosAnunciados.model'
 
 @Component({
@@ -11,7 +11,7 @@ export class ProductosAnunciadosComponent implements OnInit {
 
   announceProducts: ProductosAnunciadosModel[];
 
-  constructor(private mostrarProductoService: MostrarProductoService) { }
+  constructor(private mostrarProductoService: ProductoService) { }
 
   ngOnInit(): void {
     this.mostrarProductoService.sharedMessageAnnounceProducts.subscribe(newProducts => this.announceProducts = newProducts);

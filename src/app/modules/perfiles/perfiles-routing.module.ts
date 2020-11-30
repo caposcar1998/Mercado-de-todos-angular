@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: "perfiles/ver-perfil-comprador", component: VerPerfilCompradorComponent },
   {path: "perfiles/ver-perfil-vendedor", component: VerPerfilVendedorComponent },
 
-  {path: "landing/", component: LandingComponent},
+  {path: "landing", component: LandingComponent},
   {path: "landing/comprador", component: CompradorComponent},
   {path: "landing/compradorNuevo", component: CompradorNuevoComponent},
   {path: "landing/vendedor", component: VendedorComponent},

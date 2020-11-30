@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarritoService } from '../../services/carrito.service';
+import { ProductoService } from '../../services/producto.service';
 import { CarritoModel, CARRITO2 } from 'src/app/models/carrito.model';
 
 @Component({
@@ -11,7 +11,7 @@ export class CarritoComponent implements OnInit {
 
   cart: CarritoModel[];
 
-  constructor(private carritoService: CarritoService) { }
+  constructor(private carritoService: ProductoService) { }
 
   ngOnInit(): void {
     this.carritoService.sharedMessageCart.subscribe(newCart => this.cart = newCart);

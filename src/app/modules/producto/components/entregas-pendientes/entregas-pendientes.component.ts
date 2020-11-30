@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MostrarProductoService } from '../../services/mostrar-producto.service';
+import { ProductoService } from '../../services/producto.service';
 import { EntregasPendientesModel, ENTREGASPENDIENTES2 } from 'src/app/models/entregasPendientes.model';
 
 @Component({
@@ -10,7 +10,7 @@ import { EntregasPendientesModel, ENTREGASPENDIENTES2 } from 'src/app/models/ent
 export class EntregasPendientesComponent implements OnInit {
 
   pendingDeliveries: EntregasPendientesModel[];
-  constructor(private mostrarProductoService: MostrarProductoService) { }
+  constructor(private mostrarProductoService: ProductoService) { }
 
   ngOnInit(): void {
     this.mostrarProductoService.sharedMessagePendingDeliveries.subscribe(newDeliveries => this.pendingDeliveries = newDeliveries);
