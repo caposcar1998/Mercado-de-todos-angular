@@ -59,6 +59,16 @@
     background-color: $colorSecundario;   
 }
 
+.logout-button{
+    margin-left: 0.2vh;
+    margin-right: 0.2vh;
+    border-radius: 60px;
+    font-size: 2.3vh;
+    color:$colorPrincipal; 
+    color: $blanco!important;
+    background-color: red;   
+}
+
 .btn-signin {
     @include botonAfirmacion;
 }
