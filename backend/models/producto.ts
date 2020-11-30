@@ -1,17 +1,17 @@
 import * as mongoose from "mongoose";
 
 const productos = new mongoose.Schema({
-    nombre : String,
-    precio : Number,
-    presentacion : String,
-    costo_envio : Number,
-    dias_envio : Number,
-    unidades_disp : Number,
-    ubicacion : String,
-    fecha_exp: Date,
-    descrip : String,
-    img_prod : URL
-})
+    nombre : {type: String},
+    precio : {type: Number},
+    presentacion : {type: String},
+    costo_envio : {type : Number},
+    dias_envio : {type : Number},
+    unidades_disp : {type : Number},
+    ubicacion : {type: String},
+    fecha_exp: {type: Date},
+    descrip : {type: String},
+    img_prod : {type: String},
+});
 
-const producto = mongoose.model("Producto", productos)
+const producto = mongoose.model("Producto", productos);
 export default producto

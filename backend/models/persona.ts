@@ -1,16 +1,8 @@
 import * as mongoose from "mongoose";
 import Catalogo from "./catalogo";
 import Carrito from "./carrito";
+import Historial from "./historial";
 
-let catalogoPersona = new mongoose.Schema({
-    catalogo: Catalogo,
-    idReferencia: {type: String}
-})
-
-let carritoPersona = new mongoose.Schema({
-    carrito: Carrito,
-    idReferencia: {type: String}
-})
 
 const personas = new mongoose.Schema({
     nombre : String,
@@ -21,8 +13,9 @@ const personas = new mongoose.Schema({
     contraseña : String,
     vendedor : Boolean,
     comprador: Boolean,
-    "catalogoPersona.$": { type: catalogoPersona },
-    "carritoPersona.$": { type: carritoPersona }
+    idReferenciaCarrito : String,
+    idReferenciaCatalogo : String,
+    idReferenciaHistorial :String
 })
 
 const persona = mongoose.model("Persona", personas)
