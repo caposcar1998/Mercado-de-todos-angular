@@ -10,7 +10,7 @@ const productos = new mongoose.Schema({
     ubicacion : String,
     fecha_exp: Date,
     descrip : String,
-    img_prod : File
+    img_prod : URL
 })
 
 const producto = mongoose.model("Producto", productos)

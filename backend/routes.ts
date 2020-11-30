@@ -5,6 +5,7 @@ import ProductoController from "./controllers/productoController"
 import CarritoProductoController from "./controllers/carritoProductoController"
 import CarritoController from "./controllers/carritoController"
 import CatalogoController from "./controllers/catalogoController"
+import HistorialController from "./controllers/historialController"
 function setRoutes(app): void{
 
     const pruebaController = new PruebaController
@@ -13,6 +14,7 @@ function setRoutes(app): void{
     const carritoProductoController = new CarritoProductoController
     const carritoController = new CarritoController
     const catalogoController = new CatalogoController
+    const historialController = new HistorialController
     const router = express.Router();
 
     router.route("/prueba").get(pruebaController.getAll);
@@ -27,6 +29,8 @@ function setRoutes(app): void{
     router.route("/carrito/insertar").get(carritoController.insert);
     router.route("/catalogo").get(catalogoController.getAll);
     router.route("/catalogo/insertar").get(catalogoController.insert);
+    router.route("/historial").get(historialController.getAll);
+    router.route("/historial/insertar").get(historialController.insert);
 
     app.use("/api", router);
 }
