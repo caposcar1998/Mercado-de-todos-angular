@@ -6,6 +6,9 @@ import CarritoProductoController from "./controllers/carritoProductoController"
 import CarritoController from "./controllers/carritoController"
 import CatalogoController from "./controllers/catalogoController"
 import HistorialController from "./controllers/historialController"
+
+var jwt = require('express-jwt');
+var jwks = require('jwks-rsa');
 function setRoutes(app): void{
 
     const pruebaController = new PruebaController
@@ -38,6 +41,35 @@ function setRoutes(app): void{
     router.route("/catalogo/insertar").get(catalogoController.insert);
     router.route("/historial").get(historialController.getAll);
     router.route("/historial/insertar").get(historialController.insert);
+
+    router.use((req, res, next) => {
+        res.set("Access-Control-Allow-Origin", "*");
+        res.set(
+          "Access-Control-Allow-Headers",
+          "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+        );
+        if (req.method === "OPTIONS") {
+          res.set(
+            "Access-Control-Allow-Headers",
+            "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+          );
+          res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH");
+        }
+        next();
+        }); //funcion habilita el middleware
+
+        var jwtCheck = jwt({
+            secret: jwks.expressJwtSecret({
+                cache: true,
+                rateLimit: true,
+                jwksRequestsPerMinute: 5,
+                jwksUri: 'https://dev-qz51ohsc.auth0.com/.well-known/jwks.json'
+          }),
+          audience: 'http://localhost:3000/',
+          issuer: 'https://dev-qz51ohsc.auth0.com/',
+          algorithms: ['RS256']
+      });
+      
 
     app.use("/api", router);
 }
