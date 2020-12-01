@@ -17,8 +17,15 @@ function setRoutes(app): void{
     const historialController = new HistorialController
     const router = express.Router();
 
+    //Prueba
     router.route("/prueba").get(pruebaController.getAll);
-    router.route("/prueba/insertar").get(pruebaController.insert);
+    router.route("/prueba/insertar").post(pruebaController.insert);
+    router.route("/prueba/count").get(pruebaController.count);
+    router.route("/prueba/:id").get(pruebaController.get);
+    router.route("/prueba/:id").put(pruebaController.update);
+    router.route("/prueba/:id").delete(pruebaController.delete);
+
+
     router.route("/persona").get(personaController.getAll);
     router.route("/persona/insertar").get(personaController.insert);
     router.route("/producto").get(productoController.getAll);
