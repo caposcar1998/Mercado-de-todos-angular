@@ -7,6 +7,8 @@ export interface ProfileInterface {
     phone: string
 }
 
+
+
 export class ProfileModel implements ProfileInterface {
     constructor(
         public profileImage: File,
