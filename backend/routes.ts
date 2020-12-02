@@ -42,6 +42,9 @@ function setRoutes(app): void{
     router.route("/historial").get(historialController.getAll);
     router.route("/historial/insertar").get(historialController.insert);
 
+
+    
+
     router.use((req, res, next) => {
         res.set("Access-Control-Allow-Origin", "*");
         res.set(
@@ -59,19 +62,22 @@ function setRoutes(app): void{
         }); //funcion habilita el middleware
 
         var jwtCheck = jwt({
-            secret: jwks.expressJwtSecret({
-                cache: true,
-                rateLimit: true,
-                jwksRequestsPerMinute: 5,
-                jwksUri: 'https://dev-qz51ohsc.auth0.com/.well-known/jwks.json'
-          }),
-          audience: 'http://localhost:3000/',
-          issuer: 'https://dev-qz51ohsc.auth0.com/',
-          algorithms: ['RS256']
-      });
-      
+          secret: jwks.expressJwtSecret({
+              cache: true,
+              rateLimit: true,
+              jwksRequestsPerMinute: 5,
+              jwksUri: 'https://dev-zglcmhno.us.auth0.com/.well-known/jwks.json'
+        }),
+        audience: 'http://localhost:3000/',
+        issuer: 'https://dev-zglcmhno.us.auth0.com/',
+        algorithms: ['RS256']
+    });
+    
 
+      
+    app.use(jwtCheck)
     app.use("/api", router);
+    
 }
 
 export default setRoutes;
