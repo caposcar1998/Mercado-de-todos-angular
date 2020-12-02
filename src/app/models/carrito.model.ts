@@ -6,6 +6,16 @@ export interface CarritoInterface {
     price: number
 }
 
+export interface CarritoOrdenes {
+    carritoProducto: String,
+    idReferencia: String
+}
+
+export interface Carritos {
+    precio_final : Number,
+    ordenProductos : CarritoOrdenes[]
+}
+
 export class CarritoModel implements CarritoInterface {
     constructor(
         public productImage: File,

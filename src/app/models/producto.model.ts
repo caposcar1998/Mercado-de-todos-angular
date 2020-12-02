@@ -10,4 +10,3 @@ export interface Producto {
     descrip : {type: String},
     img_prod : {type: String},
 }
-

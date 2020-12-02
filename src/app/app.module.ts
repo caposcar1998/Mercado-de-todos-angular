@@ -41,7 +41,6 @@ import {AuthHttpInterceptor} from "@auth0/auth0-angular";
     AppRoutingModule,
     LoginModule,
     ProductoModule,
-    HistorialModule,
     PerfilesModule,
     HttpClientModule,
     StorageServiceModule,
