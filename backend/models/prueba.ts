@@ -1,9 +1,9 @@
 import * as mongoose from "mongoose";
 
-const pruebas = new mongoose.Schema({
+const prueba = new mongoose.Schema({
     nombre : String,
     nivelDePapi: Number
 })
 
-const prueba = mongoose.model("Prueba", pruebas)
-export default prueba
+const Prueba = mongoose.model("prueba", prueba)
+export default Prueba

@@ -9,6 +9,16 @@ export interface HistorialInterface {
     vendorName: string
 }
 
+export interface ProductoHistorial{
+    producto: {type: String},
+    idReferencia: {type: String}
+}
+
+export interface Historial{
+    "productosHistorial.$": { type: ProductoHistorial },
+    productosHistorial: { type: Array<ProductoHistorial>, defaultValue: [], optional: true }
+}
+
 export class HistorialModel implements HistorialInterface {
     constructor(
         public productImage: File,

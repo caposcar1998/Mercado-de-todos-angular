@@ -1,10 +1,10 @@
-import Prueba from "../models/prueba";
+import Catalogo from "../models/catalogo"
 
-class PruebaController{
+class CatalogoController{
     getAll = async (req, res) => {
         try {
-          const pruebas = await Prueba.find({} ) 
-          res.status(200).json(pruebas)
+          const catalogos = await Catalogo.find() 
+          res.status(200).json(catalogos)
         } catch (error) {
             return res.status(400).json({error: error.message})
         }
@@ -12,8 +12,8 @@ class PruebaController{
 
     insert = async(req, res) => {
         try {
-            const pru = await new Prueba (req.body).save();
-            res.status(201).json(pru)
+            const cat = await new Catalogo (req.body).save();
+            res.status(201).json(cat)
         } catch (error) {
             
         }
@@ -21,7 +21,7 @@ class PruebaController{
 
     count = async (req, res) => {
         try {
-          const count = await Prueba.count();
+          const count = await Catalogo.count();
           res.status(200).json(count);
         } catch (err) {
           return res.status(400).json({ error: err.message });
@@ -31,7 +31,7 @@ class PruebaController{
       // Get by id
     get = async (req, res) => {
         try {
-        const obj = await Prueba.findOne({ _id: req.params.id });
+        const obj = await Catalogo.findOne({ _id: req.params.id });
         res.status(200).json(obj);
         } catch (err) {
         return res.status(500).json({ error: err.message });
@@ -41,7 +41,7 @@ class PruebaController{
         // Update by id
     update = async (req, res) => {
         try {
-        await Prueba.findOneAndUpdate({ _id: req.params.id }, req.body);
+        await Catalogo.findOneAndUpdate({ _id: req.params.id }, req.body);
         res.sendStatus(200);
         } catch (err) {
         return res.status(400).json({ error: err.message });
@@ -51,13 +51,12 @@ class PruebaController{
         // Delete by id
     delete = async (req, res) => {
         try {
-        await Prueba.findOneAndRemove({ _id: req.params.id });
+        await Catalogo.findOneAndRemove({ _id: req.params.id });
         res.sendStatus(200);
         } catch (err) {
         return res.status(400).json({ error: err.message });
         }
     }
-
 }
 
-export default PruebaController
+export default CatalogoController

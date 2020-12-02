@@ -3,10 +3,22 @@ import * as morgan from "morgan";
 import setMongo, * as mongo from "./mongo";
 import setRoutes  from "./routes";
 
-const app = express();
 
+
+const {join}= require("path")
+const cors= require("cors")
+var corsOptions = {
+    origin:"*",
+    optionSuccessStatus: 200,
+}
+
+const app = express();
 app.set("port", 3000);
+
+
 app.use(express.json())
+app.use(cors(corsOptions));
+app.options("*",cors())
 app.use(express.urlencoded({extended:false}))
 app.use(morgan("dev"))
 
@@ -24,4 +36,4 @@ async function main(): Promise<any>{
 
 main();
 
-export {main}
+export {app}

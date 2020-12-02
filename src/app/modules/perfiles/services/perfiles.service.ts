@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+
+import { BehaviorSubject, throwError } from 'rxjs';
 import { ProfileModel, PROFILE, PROFILE2 } from 'src/app/models/profile.model';
 import { VerVendedorProductoModel, VERVENDEDORPRODUCTO } from 'src/app/models/verVendedorProducto.model';
 import { VerCompradorProductoModel, VERCOMPRADORPRODUCTO } from 'src/app/models/verCompradorProducto.model';
@@ -7,11 +8,23 @@ import { VerCompradorProductoModel, VERCOMPRADORPRODUCTO } from 'src/app/models/
 import { HistorialModel, HISTORIAL } from 'src/app/models/historial.model';
 // PROFILE1 es de comprador
 // PROFILE2 es de vendedor
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpResponse,
+  HttpErrorResponse,
+} from "@angular/common/http";
 
+import {map, retry, catchError, tap} from "rxjs/operators"
+import { Historial } from 'src/app/models/historial.model';
+import { Persona } from 'src/app/models/persona.model';
 @Injectable({
   providedIn: 'root'
 })
 export class PerfilesService {
+
+  endpointHistorial = "http://localhost:3000/api/historial";
+  endpointPersona = "http://localhost:3000/api/persona";
 
   private vendorProfile = new BehaviorSubject(PROFILE2);
   sharedMessageVendorProfile = this.vendorProfile.asObservable();
@@ -72,5 +85,102 @@ export class PerfilesService {
     this.history.next(newHistory);
   }
 
-    constructor() { }
+    constructor(private http: HttpClient) { }
+
+    handleError(error: HttpErrorResponse) {
+      let errorMessage = 'Unknown error!';
+      if (error.error instanceof ErrorEvent) {
+        // Client-side errors
+        errorMessage = `Error: ${error.error.message}`;
+      } else {
+        // Server-side errors
+        errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      }
+      //intentar cambiar alerta
+      window.alert(errorMessage);
+      return throwError(errorMessage);
+    }
+
+    getHistorial() {
+      console.log("en el servicio")
+      return this.http.get<Historial[]>(this.endpointHistorial).pipe(retry(3),catchError(this.handleError));
+    }
+  
+    insertarHistorial(historial: Historial) {
+      this.http.post<Historial>(this.endpointHistorial, historial).subscribe({
+        next: data => {
+              console.log("datos",data)
+          },
+          error: error => {
+  
+              console.error(' error!', error);
+          }
+      })
+    }
+  
+    updateHistorial(historial: Historial, id:string){
+      this.http.put<Historial>(this.endpointHistorial+"/"+id, historial).subscribe({
+        next: data => {
+              console.log("datos",data)
+          },
+          error: error => {
+  
+              console.error(' error!', error);
+          }
+      })
+    }
+  
+    deleteHistorial(id:string){
+      this.http.delete(this.endpointHistorial+"/"+id).subscribe({
+        next: data => {
+              console.log("datos",data)
+          },
+          error: error => {
+  
+              console.error(' error!', error);
+          }
+      })
+    }
+
+    getPersona() {
+      console.log("en el servicio")
+      return this.http.get<Persona[]>(this.endpointPersona).pipe(retry(3),catchError(this.handleError));
+    }
+  
+    insertarPesona(persona: Persona) {
+      this.http.post<Persona>(this.endpointPersona, persona).subscribe({
+        next: data => {
+              console.log("datos",data)
+          },
+          error: error => {
+  
+              console.error(' error!', error);
+          }
+      })
+    }
+  
+    updatePersona(persona: Persona, id:string){
+      this.http.put<Persona>(this.endpointPersona+"/"+id, persona).subscribe({
+        next: data => {
+              console.log("datos",data)
+          },
+          error: error => {
+  
+              console.error(' error!', error);
+          }
+      })
+    }
+  
+    deletePersona(id:string){
+      this.http.delete(this.endpointPersona+"/"+id).subscribe({
+        next: data => {
+              console.log("datos",data)
+          },
+          error: error => {
+  
+              console.error(' error!', error);
+          }
+      })
+    }
+
   }
