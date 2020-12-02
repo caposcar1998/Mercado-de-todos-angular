@@ -18,8 +18,9 @@ import { LoginButtonComponent } from './general-components/login-button/login-bu
 import { RegisterButtonComponent } from './general-components/register-button/register-button.component';
 import { LogoutButtonComponent } from './general-components/logout-button/logout-button.component';
 import { HeaderLoggedComponent } from './general-components/header-logged/header-logged.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { StorageServiceModule } from 'ngx-webstorage-service';
+import {AuthHttpInterceptor} from "@auth0/auth0-angular";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
         ...env.auth
     })
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi:true},],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
