@@ -40,8 +40,6 @@ import { HeaderLoggedComponent } from './general-components/header-logged/header
     ProductoModule,
     HistorialModule,
     PerfilesModule,
-    CarritoModule,
-    MostrarProductoModule,
     AuthModule.forRoot({
         ...env.auth
     })
