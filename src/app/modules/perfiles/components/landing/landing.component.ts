@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LandingService } from '../../services/landing.service';
+import { PerfilesService } from '../../services/perfiles.service';
 
 @Component({
   selector: 'app-landing',
@@ -10,11 +10,10 @@ export class LandingComponent implements OnInit {
 
   message: string;
 
-  constructor(private landingService: LandingService) { }
+  constructor(private landingService: PerfilesService) { }
 
 
   ngOnInit(): void {
-    console.log(this.landingService.accesoFacturacion);
     this.landingService.sharedMessage.subscribe(message => this.message = message);
     console.log(this.message);
   }

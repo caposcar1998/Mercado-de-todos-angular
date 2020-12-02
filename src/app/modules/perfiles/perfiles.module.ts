@@ -12,9 +12,16 @@ import { PerfilesService } from './services/perfiles.service';
 import { GraficasVendedorComponent } from './components/graficas-vendedor/graficas-vendedor.component';
 import { GraficasCompradoresComponent } from './components/graficas-compradores/graficas-compradores.component';
 
+import { CompradorComponent } from './components/comprador/comprador.component';
+import { CompradorNuevoComponent } from './components/comprador-nuevo/comprador-nuevo.component';
+import { VendedorComponent } from './components/vendedor/vendedor.component';
+import { VendedorNuevoComponent } from './components/vendedor-nuevo/vendedor-nuevo.component';
+import { LandingComponent } from './components/landing/landing.component';
+
+import { HistorialComprasComponent } from './components/historial-compras/historial-compras.component';
 
 @NgModule({
-  declarations: [PerfilCompradorComponent, PerfilVendedorComponent, EditarPerfilCompradorComponent, EditarPerfilVendedorComponent, VerPerfilCompradorComponent, VerPerfilVendedorComponent, GraficasVendedorComponent, GraficasCompradoresComponent],
+  declarations: [PerfilCompradorComponent, PerfilVendedorComponent, EditarPerfilCompradorComponent, EditarPerfilVendedorComponent, VerPerfilCompradorComponent, VerPerfilVendedorComponent, GraficasVendedorComponent, GraficasCompradoresComponent, CompradorComponent, CompradorNuevoComponent, VendedorComponent, VendedorNuevoComponent, LandingComponent, HistorialComprasComponent],
   imports: [
     CommonModule,
     PerfilesRoutingModule
