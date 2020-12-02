@@ -1,9 +1,9 @@
-import historial from "../models/historial"
+import Historial from "../models/historial"
 
 class HistorialController{
     getAll = async (req, res) => {
         try {
-          const historiales = await historial.find() 
+          const historiales = await Historial.find() 
           res.status(200).json(historiales)
         } catch (error) {
             return res.status(400).json({error: error.message})
@@ -12,10 +12,49 @@ class HistorialController{
 
     insert = async(req, res) => {
         try {
-            const hist = await new historial (req.body).save();
+            const hist = await new Historial (req.body).save();
             res.status(201).json(hist)
         } catch (error) {
             
+        }
+    }
+
+    count = async (req, res) => {
+        try {
+          const count = await Historial.count();
+          res.status(200).json(count);
+        } catch (err) {
+          return res.status(400).json({ error: err.message });
+        }
+      }
+
+      // Get by id
+    get = async (req, res) => {
+        try {
+        const obj = await Historial.findOne({ _id: req.params.id });
+        res.status(200).json(obj);
+        } catch (err) {
+        return res.status(500).json({ error: err.message });
+        }
+    }
+
+        // Update by id
+    update = async (req, res) => {
+        try {
+        await Historial.findOneAndUpdate({ _id: req.params.id }, req.body);
+        res.sendStatus(200);
+        } catch (err) {
+        return res.status(400).json({ error: err.message });
+        }
+    }
+
+        // Delete by id
+    delete = async (req, res) => {
+        try {
+        await Historial.findOneAndRemove({ _id: req.params.id });
+        res.sendStatus(200);
+        } catch (err) {
+        return res.status(400).json({ error: err.message });
         }
     }
 }
