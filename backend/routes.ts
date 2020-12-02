@@ -28,19 +28,53 @@ function setRoutes(app): void{
     router.route("/prueba/:id").put(pruebaController.update);
     router.route("/prueba/:id").delete(pruebaController.delete);
 
-
+    //Persona
     router.route("/persona").get(personaController.getAll);
-    router.route("/persona/insertar").get(personaController.insert);
+    router.route("/persona/insertar").post(personaController.insert);
+    router.route("/persona/count").get(personaController.count);
+    router.route("/persona/:id").get(personaController.get);
+    router.route("/persona/:id").put(personaController.update);
+    router.route("/persona/:id").delete(personaController.delete);
+
+    //Producto
     router.route("/producto").get(productoController.getAll);
-    router.route("/producto/insertar").get(productoController.insert);
+    router.route("/producto/insertar").post(productoController.insert);
+    router.route("/producto/count").get(productoController.count);
+    router.route("/producto/:id").get(productoController.get);
+    router.route("/producto/:id").put(productoController.update);
+    router.route("/producto/:id").delete(productoController.delete);
+
+    //CarritoProducto
     router.route("/carritoProducto").get(carritoProductoController.getAll);
-    router.route("/carritoProducto/insertar").get(carritoProductoController.insert);
+    router.route("/carritoProducto/insertar").post(carritoProductoController.insert);
+    router.route("/carritoProducto/count").get(carritoProductoController.count);
+    router.route("/carritoProducto/:id").get(carritoProductoController.get);
+    router.route("/carritoProducto/:id").put(carritoProductoController.update);
+    router.route("/carritoProducto/:id").delete(carritoProductoController.delete);
+
+    //Carrito
     router.route("/carrito").get(carritoController.getAll);
-    router.route("/carrito/insertar").get(carritoController.insert);
+    router.route("/carrito/insertar").post(carritoController.insert);
+    router.route("/carrito/count").get(carritoController.count);
+    router.route("/carrito/:id").get(carritoController.get);
+    router.route("/carrito/:id").put(carritoController.update);
+    router.route("/carrito/:id").delete(carritoController.delete);
+
+    //Catalogo
     router.route("/catalogo").get(catalogoController.getAll);
-    router.route("/catalogo/insertar").get(catalogoController.insert);
+    router.route("/catalogo/insertar").post(catalogoController.insert);
+    router.route("/catalogo/count").get(catalogoController.count);
+    router.route("/catalogo/:id").get(catalogoController.get);
+    router.route("/catalogo/:id").put(catalogoController.update);
+    router.route("/catalogo/:id").delete(catalogoController.delete);
+
+    //Historial
     router.route("/historial").get(historialController.getAll);
-    router.route("/historial/insertar").get(historialController.insert);
+    router.route("/historial/insertar").post(historialController.insert);
+    router.route("/historial/count").get(historialController.count);
+    router.route("/historial/:id").get(historialController.get);
+    router.route("/historial/:id").put(historialController.update);
+    router.route("/historial/:id").delete(historialController.delete);
 
 
     
