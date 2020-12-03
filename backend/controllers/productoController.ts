@@ -28,8 +28,18 @@ class ProductoController{
         }
       }
 
+      // Get by name
+    getNombre = async (req, res) => {
+        try {
+        const obj = await Producto.find({nombre : req.query.nombre},{});
+        res.status(200).json(obj);
+        } catch (err) {
+        return res.status(500).json({ error: err.message });
+        }
+    }
+
       // Get by id
-    get = async (req, res) => {
+      get = async (req, res) => {
         try {
         const obj = await Producto.findOne({ _id: req.params.id });
         res.status(200).json(obj);

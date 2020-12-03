@@ -36,6 +36,27 @@ class PersonaController{
         } catch (err) {
         return res.status(500).json({ error: err.message });
         }
+    } 
+
+      // Get vendedorBool
+      getIsVendedor = async (req, res) => {
+        try {
+        const obj = await Persona.find({ nombre: req.query.nombre},{vendedor : 1});
+        res.status(200).json(obj);
+        } catch (err) {
+        return res.status(500).json({ error: err.message });
+        }
+    }
+
+    
+      // Get compradorBool
+      getIsComprador = async (req, res) => {
+        try {
+        const obj = await Persona.find({ nombre: req.query.nombre},{comprador : 1});
+        res.status(200).json(obj);
+        } catch (err) {
+        return res.status(500).json({ error: err.message });
+        }
     }
 
         // Update by id
