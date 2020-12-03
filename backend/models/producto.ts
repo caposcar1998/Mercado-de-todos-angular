@@ -13,5 +13,6 @@ const productos = new mongoose.Schema({
     img_prod : {type: String},
 });
 
+
 const producto = mongoose.model("Producto", productos);
 export default producto

@@ -32,6 +32,8 @@ function setRoutes(app): void{
     router.route("/persona").get(personaController.getAll);
     router.route("/persona/insertar").post(personaController.insert);
     router.route("/persona/count").get(personaController.count);
+    router.route("/persona/isComprador").get(personaController.getIsComprador);
+    router.route("/persona/isVendedor").get(personaController.getIsVendedor);
     router.route("/persona/:id").get(personaController.get);
     router.route("/persona/:id").put(personaController.update);
     router.route("/persona/:id").delete(personaController.delete);
@@ -40,6 +42,7 @@ function setRoutes(app): void{
     router.route("/producto").get(productoController.getAll);
     router.route("/producto/insertar").post(productoController.insert);
     router.route("/producto/count").get(productoController.count);
+    router.route("/producto/search").get(productoController.getNombre);
     router.route("/producto/:id").get(productoController.get);
     router.route("/producto/:id").put(productoController.update);
     router.route("/producto/:id").delete(productoController.delete);
