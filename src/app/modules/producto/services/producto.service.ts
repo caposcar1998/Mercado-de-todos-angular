@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, throwError } from 'rxjs';
+
+
+// Borrar imports desde aquí
 import { DetalleProductoModel, DETALLEPRODUCTO } from 'src/app/models/detalleProducto.model';
 import { ConfirmarCompraModel, CONFIRMARCOMPRA } from 'src/app/models/confirmarCompra.model';
 
 import { CarritoModel, CARRITO } from 'src/app/models/carrito.model';
 
-import { MostrarProductoModel, MOSTRARPRODUCTO } from 'src/app/models/mostrarProducto.model';
 import { ProductosAnunciadosModel, PRODUCTOSANUNCIADOS } from 'src/app/models/productosAnunciados.model';
 import { EntregasPendientesModel, ENTREGASPENDIENTES } from 'src/app/models/entregasPendientes.model';
+// Hasta acá
+
+
 import {
   HttpClient,
   HttpHeaders,
@@ -33,6 +38,10 @@ export class ProductoService {
   endpointCatalogos = "http://localhost:3000/api/catalogos";
   endpointCarritoProductos = "http://localhost:3000/api/carritoProductos";
   
+  /***
+   * 
+   * Borrar desde aquí
+   */
   // Producto
   private productDetail = new BehaviorSubject(DETALLEPRODUCTO);
   sharedMessageProductDetail = this.productDetail.asObservable();
@@ -57,18 +66,12 @@ export class ProductoService {
   }
 
   // Mostrar-producto
-  private showProducts = new BehaviorSubject(MOSTRARPRODUCTO);
-  sharedMessageShowProducts = this.showProducts.asObservable();
 
   private announceProducts = new BehaviorSubject(PRODUCTOSANUNCIADOS);
   sharedMessageAnnounceProducts = this.announceProducts.asObservable();
 
   private pendingDeliveries = new BehaviorSubject(ENTREGASPENDIENTES);
   sharedMessagePendingDeliveries = this.pendingDeliveries.asObservable();
-
-  newShowProducts(newProducts: MostrarProductoModel[]) {
-    this.showProducts.next(newProducts);
-  }
 
   newAnnounceProducts(newProducts: ProductosAnunciadosModel[]) {
     this.announceProducts.next(newProducts);
@@ -77,6 +80,10 @@ export class ProductoService {
   newPendingDeliveries(newDeliveries: EntregasPendientesModel[]) {
     this.pendingDeliveries.next(newDeliveries);
   }
+
+  /***
+   * Borrar hasta acá
+   */
 
   //
   // Manejo de APIs

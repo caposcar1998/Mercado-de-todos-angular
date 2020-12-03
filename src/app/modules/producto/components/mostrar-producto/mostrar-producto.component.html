@@ -2,14 +2,14 @@
     <h3 class="mt-3" i18n>Resultados de<strong>"frijoles"</strong></h3>
     <div class="row mb-3">
         
-        <div *ngFor="let product of showProducts; let i = index" class="card mt-3 col-12 col-sm-12 col-md-6 col-lg-4 -col-xl-3">
-        <img src="../assets/beans.jpg" class="card-img-top" alt="...">
+        <div *ngFor="let product of (showProducts | async); let i = index" class="card mt-3 col-12 col-sm-12 col-md-6 col-lg-4 -col-xl-3">
+        <img attr.src={{product.img_prod}} class="card-img-top" attr.alt={{product.nombre}}>
         <div class="card-body">
-            <h5 class="card-title" i18n>{{ product.name }} </h5>
+            <h5 class="card-title" i18n>{{ product.nombre }} </h5>
             <p class="card-text" i18n>
-            <strong>Presentación</strong>     {{ product.presentation }}<br>
-            <strong>Precio unitario</strong>  {{ product.unitPrice }}<br>
-            <strong>Costo de envio</strong>   {{ product.shippingPrice }}
+            <strong>Presentación</strong>     {{ product.presentacion }}<br>
+            <strong>Precio unitario</strong>  {{ product.precio }}<br>
+            <strong>Costo de envio</strong>   {{ product.costo_envio }}
             </p>
             <a href="./producto/detalleProducto" class="btn btn-signin d-block" i18n>Ver productos</a>
         </div>
@@ -23,10 +23,10 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item"><a class="page-link" href="./mostrar-producto" i18n>Previous</a></li>
-                    <li (click)="updateShowProducts()" class="page-item"><a class="page-link" href="./mostrar-producto" i18n>1</a></li>
-                    <li (click)="updateShowProducts()" class="page-item"><a class="page-link" href="./mostrar-producto" i18n>2</a></li>
-                    <li (click)="updateShowProducts()" class="page-item"><a class="page-link" href="./mostrar-producto" i18n>3</a></li>
-                    <li (click)="updateShowProducts()" class="page-item"><a class="page-link" href="./mostrar-producto" i18n>Next</a></li>
+                    <li class="page-item"><a class="page-link" href="./mostrar-producto" i18n>1</a></li>
+                    <li class="page-item"><a class="page-link" href="./mostrar-producto" i18n>2</a></li>
+                    <li class="page-item"><a class="page-link" href="./mostrar-producto" i18n>3</a></li>
+                    <li class="page-item"><a class="page-link" href="./mostrar-producto" i18n>Next</a></li>
                 </ul>
             </nav>     
         </div> 
