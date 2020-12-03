@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
-import { MostrarProductoModel, MOSTRARPRODUCTO2 } from 'src/app/models/mostrarProducto.model'
+import { Producto } from 'src/app/models/producto.model';
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-mostrar-producto',
@@ -9,16 +10,12 @@ import { MostrarProductoModel, MOSTRARPRODUCTO2 } from 'src/app/models/mostrarPr
 })
 export class MostrarProductoComponent implements OnInit {
 
-  showProducts: MostrarProductoModel[];
+  showProducts: Observable<Producto[]>;
 
   constructor(private mostrarProductoService: ProductoService) { }
 
   ngOnInit(): void {
-    this.mostrarProductoService.sharedMessageShowProducts.subscribe(newProducts => this.showProducts = newProducts);
-  }
-
-  updateShowProducts() {
-    this.mostrarProductoService.newShowProducts(MOSTRARPRODUCTO2);
+    this.showProducts = this.mostrarProductoService.getProductos();
   }
 
 }
