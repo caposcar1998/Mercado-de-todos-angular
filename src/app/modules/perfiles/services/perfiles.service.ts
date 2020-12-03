@@ -107,7 +107,7 @@ export class PerfilesService {
     }
   
     insertarHistorial(historial: Historial) {
-      this.http.post<Historial>(this.endpointHistorial, historial).subscribe({
+      this.http.post<Historial>(this.endpointHistorial+"/insertar", historial).subscribe({
         next: data => {
               console.log("datos",data)
           },
@@ -148,7 +148,7 @@ export class PerfilesService {
     }
   
     insertarPesona(persona: Persona) {
-      this.http.post<Persona>(this.endpointPersona, persona).subscribe({
+      this.http.post<Persona>(this.endpointPersona+"/insertar", persona).subscribe({
         next: data => {
               console.log("datos",data)
           },

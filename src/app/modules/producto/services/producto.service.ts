@@ -112,7 +112,7 @@ export class ProductoService {
   }
 
   insertarCarritoOrdenes(carritoOrdenes: CarritoOrdenes) {
-      this.http.post<CarritoOrdenes>(this.endpointCarritoOrdenes, carritoOrdenes).subscribe({
+      this.http.post<CarritoOrdenes>(this.endpointCarritoOrdenes+"/insertar", carritoOrdenes).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -154,7 +154,7 @@ export class ProductoService {
   }
 
   insertarCarritos(carritos: Carritos) {
-      this.http.post<Carritos>(this.endpointCarritos, carritos).subscribe({
+      this.http.post<Carritos>(this.endpointCarritos+"/insertar", carritos).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -196,7 +196,7 @@ export class ProductoService {
   }
 
   insertarProductos(producto: Producto) {
-    this.http.post<Producto>(this.endpointProducto, producto).subscribe({
+    this.http.post<Producto>(this.endpointProducto+"/insertar", producto).subscribe({
       next: data => {
             console.log("datos",data)
         },
@@ -238,7 +238,7 @@ export class ProductoService {
   }
 
   insertarCatalogoProducto(catalogoProducto: CatalogoProducto) {
-      this.http.post<CatalogoProducto>(this.endpointCatalogoProducto, catalogoProducto).subscribe({
+      this.http.post<CatalogoProducto>(this.endpointCatalogoProducto+"/insertar", catalogoProducto).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -280,7 +280,7 @@ export class ProductoService {
   }
 
   insertarCatalogos(catalogos: Catalogos) {
-      this.http.post<Catalogos>(this.endpointCatalogos, catalogos).subscribe({
+      this.http.post<Catalogos>(this.endpointCatalogos+"/insertar", catalogos).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -322,7 +322,7 @@ export class ProductoService {
   }
 
   insertarCarritoProductos(carritoProductos: CarritoProductos) {
-      this.http.post<CarritoProductos>(this.endpointCarritoProductos, carritoProductos).subscribe({
+      this.http.post<CarritoProductos>(this.endpointCarritoProductos+"/insertar", carritoProductos).subscribe({
           next: data => {
               console.log("datos",data)
           },

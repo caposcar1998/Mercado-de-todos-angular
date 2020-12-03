@@ -12,7 +12,7 @@ export class RegistrarProductoComponent implements OnInit {
 
   @Input() registerProducts : RegisterProducts;
 
-  contructor() { }
+  constructor(private productoService: ProductoService) { }
   //constructor(private productoService: ProductoService) { }
   //message : string;
 
@@ -26,8 +26,19 @@ export class RegistrarProductoComponent implements OnInit {
 
   onRegisterProduct() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.RegisterProductForm.value);
-    console.log("hello")
+    this.productoService.insertarProductos({
+      nombre: this.RegisterProductForm.get('name').value,
+      precio: this.RegisterProductForm.get('price').value,
+      presentacion: this.RegisterProductForm.get('display').value,
+      costo_envio: this.RegisterProductForm.get('shippingCost').value,
+      dias_envio: this.RegisterProductForm.get('shippingDays').value,
+      unidades_disp: this.RegisterProductForm.get('availableUnits').value,
+      ubicacion: this.RegisterProductForm.get('location').value,
+      fecha_exp: this.RegisterProductForm.get('expireDate').value,
+      descrip: this.RegisterProductForm.get('description').value,
+      img_prod: this.RegisterProductForm.get('productImage').value
+    });
+    this.RegisterProductForm.reset();
   }
 
   RegisterProductForm = new FormGroup({
