@@ -2,11 +2,10 @@
     <h1 class="d-inline-block mt-3" i18n>Mi cuenta</h1>
     <a routerLink="./perfiles/editar-perfil-comprador" class="btn botonEditar mt-3 float-right" i18n>Editar</a>
     <div class="row">
-        <img src="../../assets/user.jpg" alt="Foto de perfil"
+    <div *ngIf = "auth.user$ | async as user"> 
+        <img [src]="user.picture" alt="Foto de perfil"
             class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="d-inline-block col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-            <div *ngIf = "auth.user$ | async as user"> <!--Muestra información del usuario logeado-->
-                
+        <div class="d-inline-block col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">  
                 <p i18n>{{ user.name }}</p>
                 <p i18n>{{ user.email }}</p>
             </div>
