@@ -21,6 +21,7 @@ import {
 import {map, retry, catchError, tap} from "rxjs/operators";
 import {CarritoOrdenes, Carritos } from 'src/app/models/carrito.model';
 import { ProductoModel } from 'src/app/models/producto.model';
+import { RegistrarProductoModel } from 'src/app/models/registrarProducto.model';
 import { CatalogoProducto, Catalogos } from 'src/app/models/catalogo.model'
 import { CarritoProductos } from 'src/app/models/carritoProductos.model'
 
@@ -212,6 +213,19 @@ export class ProductoService {
   insertarProductos(producto: ProductoModel) {
     const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
     this.http.post<ProductoModel>(this.endpointProducto+"/insertar", producto,{ headers }).subscribe({
+      next: data => {
+            console.log("datos",data)
+        },
+        error: error => {
+
+            console.error(' error!', error);
+        }
+    })
+  }
+
+  registrarProducto(producto: RegistrarProductoModel) {
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+    this.http.post<RegistrarProductoModel>(this.endpointProducto+"/insertar", producto,{ headers }).subscribe({
       next: data => {
             console.log("datos",data)
         },

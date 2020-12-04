@@ -22,6 +22,11 @@ import { HeaderLoggedComponent } from './general-components/header-logged/header
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import {AuthHttpInterceptor} from "@auth0/auth0-angular";
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+  AngularFireUploadTask
+} from "@angular/fire/storage";
 
 @NgModule({
   declarations: [
@@ -46,6 +51,8 @@ import {AuthHttpInterceptor} from "@auth0/auth0-angular";
     PerfilesModule,
     HttpClientModule,
     StorageServiceModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(env.firebase),
     AuthModule.forRoot({
 
         ...env.auth,
@@ -70,8 +77,7 @@ import {AuthHttpInterceptor} from "@auth0/auth0-angular";
   ]
 }
     }),
-    AngularFireStorageModule,
-    AngularFireModule.initializeApp(env.firebase)
+
 
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi:true},],

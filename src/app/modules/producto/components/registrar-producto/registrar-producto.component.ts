@@ -8,7 +8,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { Url } from 'url';
 import { Observable } from 'rxjs';
 import { catchError, finalize } from 'rxjs/operators';
-import { ProductoModel } from '../../../../models/producto.model';
+import { RegistrarProductoModel } from '../../../../models/registrarProducto.model';
 import { ProductoModule } from '../../producto.module';
 
 
@@ -73,7 +73,7 @@ export class RegistrarProductoComponent implements OnInit {
     let tarea = this.firebaseStorage.tareaCloudStorage(this.nombreArchivo, archivo);
     let urlImage = "";
 
-    // setTimeout(function sayHello() { console.log("Karen", urlImage)}, 5000);
+    
     (async () => { 
       // Do something before delay
       referencia.put(archivo).then(data => {
@@ -89,19 +89,18 @@ export class RegistrarProductoComponent implements OnInit {
 
       // Do something after
       console.log(urlImage);
-      this.productoService.insertarProductos({
-        _id: "",
-        nombre: this.RegisterProductForm.get('name').value,
-        precio: this.RegisterProductForm.get('price').value,
-        presentacion: this.RegisterProductForm.get('display').value,
-        costo_envio: this.RegisterProductForm.get('shippingCost').value,
-        dias_envio: this.RegisterProductForm.get('shippingDays').value,
-        unidades_disp: this.RegisterProductForm.get('availableUnits').value,
-        ubicacion: this.RegisterProductForm.get('location').value,
-        fecha_exp: this.RegisterProductForm.get('expireDate').value,
-        descrip: this.RegisterProductForm.get('description').value,
-        img_prod: urlImage
-      });
+      // this.productoService.registrarProducto({
+      //   nombre: this.RegisterProductForm.get('name').value,
+      //   precio: this.RegisterProductForm.get('price').value,
+      //   presentacion: this.RegisterProductForm.get('display').value,
+      //   costo_envio: this.RegisterProductForm.get('shippingCost').value,
+      //   dias_envio: this.RegisterProductForm.get('shippingDays').value,
+      //   unidades_disp: this.RegisterProductForm.get('availableUnits').value,
+      //   ubicacion: this.RegisterProductForm.get('location').value,
+      //   fecha_exp: this.RegisterProductForm.get('expireDate').value,
+      //   descrip: this.RegisterProductForm.get('description').value,
+      //   img_prod: urlImage
+      // });
       this.RegisterProductForm.reset();
       console.log('after delay')
     })();
