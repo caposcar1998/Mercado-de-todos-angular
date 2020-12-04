@@ -25,6 +25,7 @@ export class RegistrarProductoComponent implements OnInit {
   }*/
 
   onRegisterProduct() {
+    /*
  
     let archivo = this.datosFormulario.get('productImage');
     let referencia = this.firebaseStorage.referenciaCloudStorage(this.nombreArchivo);
@@ -48,8 +49,8 @@ export class RegistrarProductoComponent implements OnInit {
       });
     });
     this.RegisterProductForm.reset();
+    */
   }
-
   RegisterProductForm = new FormGroup({
     name: new FormControl(''),
     price: new FormControl(''),
