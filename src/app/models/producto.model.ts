@@ -10,4 +10,5 @@ export interface ProductoModel {
     fecha_exp:Date,
     descrip :String,
     img_prod :String
+
 }
