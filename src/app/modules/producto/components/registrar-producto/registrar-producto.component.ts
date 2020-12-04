@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RegisterProducts } from "../../../../models/registerProducts";
 import { ProductoService } from '../../services/producto.service';
+
 import { FirebaseStorageService } from '../../../../firebase-storage.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Url } from 'url';
@@ -19,6 +20,7 @@ import { ProductoModule } from '../../producto.module';
 export class RegistrarProductoComponent implements OnInit {
 
   @Input() registerProducts : RegisterProducts;
+
 
   constructor(private productoService: ProductoService, 
     private firebaseStorage: FirebaseStorageService) { }
@@ -110,4 +112,7 @@ export class RegistrarProductoComponent implements OnInit {
   }
 
 
-}
+    
+
+  }
+

@@ -1,4 +1,3 @@
-
 export interface ProductoModel {
     _id :String,
     nombre :String,

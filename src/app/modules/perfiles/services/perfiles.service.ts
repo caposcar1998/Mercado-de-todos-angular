@@ -183,16 +183,4 @@ export class PerfilesService {
       })
     }
 
-    getCorreoConCorreoId(correo:string){
-      this.http.get(this.endpointPersona+"/traerId"+"?correo="+correo).subscribe({
-        next: data => {
-              console.log("datos",data)
-          },
-          error: error => {
-  
-              console.error(' error!', error);
-          }
-      })
-    }
-
   }
