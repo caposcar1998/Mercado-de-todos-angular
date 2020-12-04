@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PerfilesService } from '../../services/perfiles.service';
 import { ProfileModel, PROFILE3 } from 'src/app/models/profile.model';
 import { AuthService } from '@auth0/auth0-angular';
-
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-editar-perfil-comprador',
   templateUrl: './editar-perfil-comprador.component.html',
@@ -23,7 +23,18 @@ export class EditarPerfilCompradorComponent implements OnInit {
   }
 
   updateCustomerProfile() {
-    this.perfilesService.newCustomerProfile(PROFILE3);
+    console.log(this.editarinfo.value);
   }
+
+  
+
+  editarinfo = new FormGroup({
+    nombre: new FormControl(''),
+    telefono: new FormControl(''),
+    direccion: new FormControl(''),
+    ciudad: new FormControl(''),
+
+  });
+
 
 }
