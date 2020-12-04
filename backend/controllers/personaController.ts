@@ -98,7 +98,7 @@ class PersonaController{
     getId = async (req, res) => {
       let statusCode = 404;
       try {
-      const obj = await Persona.find({correo : req.query.correo},{_id : 1});
+        const obj = await Persona.find({email : req.query.correo},{_id : 1});
       res.status(200).json(obj);
       } catch (error) {
           if(!error.statusCode){
