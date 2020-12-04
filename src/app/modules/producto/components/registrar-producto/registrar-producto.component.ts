@@ -25,7 +25,7 @@ export class RegistrarProductoComponent implements OnInit {
   }*/
 
   onRegisterProduct() {
-
+ 
     let archivo = this.datosFormulario.get('productImage');
     let referencia = this.firebaseStorage.referenciaCloudStorage(this.nombreArchivo);
     let tarea = this.firebaseStorage.tareaCloudStorage(this.nombreArchivo, archivo);

@@ -33,6 +33,7 @@ export class ProductoService {
   endpointCarritoOrdenes = "http://localhost:3000/api/carritoOrdenes";
   endpointCarritos = "http://localhost:3000/api/carritos";
   endpointProducto = "http://localhost:3000/api/producto";
+  endpointProductoSearch = "http://localhost:3000/api/producto/search";
   endpointCatalogoProducto = "http://localhost:3000/api/catalogoProducto";
   endpointCatalogos = "http://localhost:3000/api/catalogos";
   endpointCarritoProductos = "http://localhost:3000/api/carritoProductos";
@@ -192,6 +193,10 @@ export class ProductoService {
     console.log("Ruta solicitada en detalle-producto");
     console.log(this.endpointProducto+"/"+id);
     return this.http.get<ProductoModel>(this.endpointProducto+"/"+id).pipe(retry(3),catchError(this.handleError));
+  }
+
+  getProductoSearch(search: String) {
+    return this.http.get<ProductoModel[]>(this.endpointProductoSearch+"?nombre="+search).pipe(retry(3),catchError(this.handleError));
   }
 
   insertarProductos(producto: ProductoModel) {
