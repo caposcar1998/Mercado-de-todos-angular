@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { AngularFireModule } from "@angular/fire";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarrouselComponent } from './index/carrousel/carrousel.component';
@@ -22,6 +22,12 @@ import { HeaderLoggedComponent } from './general-components/header-logged/header
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import {AuthHttpInterceptor} from "@auth0/auth0-angular";
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+  AngularFireUploadTask
+} from "@angular/fire/storage";
+
 
 @NgModule({
   declarations: [
@@ -35,6 +41,7 @@ import {AuthHttpInterceptor} from "@auth0/auth0-angular";
     RegisterButtonComponent,
     LogoutButtonComponent,
     HeaderLoggedComponent,
+
   ],
   imports: [
     ReactiveFormsModule,
@@ -48,7 +55,9 @@ import {AuthHttpInterceptor} from "@auth0/auth0-angular";
     StorageServiceModule,
     AuthModule.forRoot({
         ...env.auth
-    })
+    }),
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(env.firebase)
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi:true},],
   bootstrap: [AppComponent]

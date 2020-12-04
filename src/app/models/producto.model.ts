@@ -1,3 +1,4 @@
+
 export interface ProductoModel {
     _id : {type: String},
     nombre : {type: String},
