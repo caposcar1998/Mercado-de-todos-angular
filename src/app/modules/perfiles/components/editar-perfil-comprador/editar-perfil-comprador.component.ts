@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PerfilesService } from '../../services/perfiles.service';
-import { ProfileModel } from 'src/app/models/profile.model';
-import { AuthService } from '@auth0/auth0-angular';
-import { FormGroup, FormControl,FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { Persona } from 'src/app/models/persona.model';
-
+import { ProfileModel, PROFILE3 } from 'src/app/models/profile.model';
 
 @Component({
   selector: 'app-editar-perfil-comprador',
@@ -14,37 +10,16 @@ import { Persona } from 'src/app/models/persona.model';
 
 export class EditarPerfilCompradorComponent implements OnInit {
 
-  profileJson: string = null;
-  persona: Persona = {nombre : "", ciudad : "", telefono : 0, domicilio : ""} ;
-  idCambio: string = null;
+  customerProfile: ProfileModel;
 
-  constructor(private perfilesService: PerfilesService, public auth: AuthService) { }
+  constructor(private perfilesService: PerfilesService) { }
   
   ngOnInit(): void {
-    this.auth.user$.subscribe(
-      (profile)=>(this.profileJson = JSON.stringify(profile, null, 2)));
+    this.perfilesService.sharedMessageCustomerProfile.subscribe(newProfile => this.customerProfile = newProfile);
   }
 
   updateCustomerProfile() {
-    
-    let profileInfo= JSON.parse(this.profileJson).email
-    this.perfilesService.getCorreoConCorreoId(profileInfo)
-    this.idCambio = profileInfo
-    this.persona.nombre = this.updatePerfilForm.value.nombre
-    this.persona.ciudad = this.updatePerfilForm.value.ciudad
-    this.persona.domicilio = this.updatePerfilForm.value.domicilio
-    this.perfilesService.updatePersona(this.persona,this.idCambio);
+    this.perfilesService.newCustomerProfile(PROFILE3);
   }
-
-
-
-  updatePerfilForm = new FormGroup({
-    nombre: new FormControl(''),
-    ciudad: new FormControl(''),
-    telefono: new FormControl(''),
-    domicilio: new FormControl(''),
-  });
-
-
 
 }

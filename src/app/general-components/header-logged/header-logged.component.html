@@ -3,7 +3,9 @@
         <nav class="" i18n>BETA VERSION</nav>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
         <a class="navbar-brand" routerLink="" i18n><img id="logo" alt="logo" src="../assets/logo.png"> <b>M</b>ercado <b>P</b>ara
+
             <b>T</b>odos</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggle()">
             <div class="icon-bar" [@hamburguerX]="isClosed ? 'hamburguer' : 'topX'"></div>
@@ -14,13 +16,7 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link btn-head"routerLink="../../login/registro">
-                        <p>Llena perfil</p>
-                    </a>
-                </li>
-
-                <li class="nav-item active">
-                    <a (click)="rotateSeller()" class="nav-link btn-head"routerLink="./perfiles/perfil-vendedor">
+                    <a (click)="rotateSeller()" class="nav-link btn-head" href="./perfiles/perfil-vendedor">
                         <svg [@rotatedState]="isClickedSeller ? 'rotated' : 'default'" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-check-fill"
                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -30,7 +26,7 @@
                 </li>
 
                 <li class="nav-item active flex-row">
-                    <a (click)="rotateUser()" class="nav-link btn-head" routerLink="./perfiles/perfil-comprador">
+                    <a (click)="rotateUser()" class="nav-link btn-head" href="./perfiles/perfil-comprador">
                         <svg [@rotatedState]="isClickedUser ? 'rotated' : 'default'" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -39,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item active">
-                    <a (click)="rotateCart()" class="nav-link btn-head"routerLink="../modules/producto/components/carrito">
+                    <a (click)="rotateCart()" class="nav-link btn-head" href="./carrito">
                         <svg [@rotatedState]="isClickedCart ? 'rotated' : 'default'"  width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -59,13 +55,13 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle text-left btn-head" routerLink="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-left btn-head" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" routerLink="#">Idioma</a>
-                      <a class="dropdown-item" routerLink="#">Imágenes HTML</a>
+                      <a class="dropdown-item" href="#">Idioma</a>
+                      <a class="dropdown-item" href="#">Imágenes HTML</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" routerLink="./landing/compradorNuevo">¿Quiénes somos?</a>
+                      <a class="dropdown-item" href="./landing/compradorNuevo">¿Quiénes somos?</a>
                     </div>
                 </li>
                 <li class="nav-item active">

@@ -3,7 +3,6 @@ import { BehaviorSubject, throwError } from 'rxjs';
 
 
 // Borrar imports desde aquí
-import { ConfirmarCompraModel, CONFIRMARCOMPRA } from 'src/app/models/confirmarCompra.model';
 
 import { CarritoModel, CARRITO } from 'src/app/models/carrito.model';
 
@@ -33,6 +32,7 @@ export class ProductoService {
   endpointCarritoOrdenes = "http://localhost:3000/api/carritoOrdenes";
   endpointCarritos = "http://localhost:3000/api/carritos";
   endpointProducto = "http://localhost:3000/api/producto";
+  endpointProductoSearch = "http://localhost:3000/api/producto/search";
   endpointCatalogoProducto = "http://localhost:3000/api/catalogoProducto";
   endpointCatalogos = "http://localhost:3000/api/catalogos";
   endpointCarritoProductos = "http://localhost:3000/api/carritoProductos";
@@ -41,14 +41,6 @@ export class ProductoService {
    * 
    * Borrar desde aquí
    */
-  // ProductoModel
-  private purchaseConfirmation = new BehaviorSubject(CONFIRMARCOMPRA);
-  sharedMessagePurchaseConfirmation = this.purchaseConfirmation.asObservable();
-  
-  newPurchaseConfirmation(newPurchase: ConfirmarCompraModel) {
-    this.purchaseConfirmation.next(newPurchase);
-  }
-
   // Carrito
   private cart = new BehaviorSubject(CARRITO);
   sharedMessageCart = this.cart.asObservable();
@@ -207,10 +199,14 @@ export class ProductoService {
   }
 
   getProductosId(id: String) {
-    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
 
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
     console.log(this.endpointProducto+"/"+id);
     return this.http.get<ProductoModel>(this.endpointProducto+"/"+id,{ headers }).pipe(retry(3),catchError(this.handleError));
+  }
+
+  getProductoSearch(search: String) {
+    return this.http.get<ProductoModel[]>(this.endpointProductoSearch+"?nombre="+search).pipe(retry(3),catchError(this.handleError));
   }
 
   insertarProductos(producto: ProductoModel) {
