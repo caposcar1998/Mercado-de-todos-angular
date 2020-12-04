@@ -4,8 +4,8 @@
       <img src="../../../../../assets/beans.jpg" class="card-img-top" alt="...">
       <div class="card-body">
           <div class="form-group mt-3">
-              <form [formGroup]="RegisterProductForm" (ngSubmit)="onRegisterProduct()">
-                <input type="file" id="newPic" formControlName="productImage" name="newPic" class="form-control mb-4">
+              <form [formGroup]="RegisterProductForm"  (ngSubmit)="onRegisterProduct()">
+                <input type="file" id="newPic" (change)="cambioArchivo($event)" formControlName="productImage" name="newPic" class="form-control mb-4">
                 <textarea name="message" formControlName="description" rows="7" cols="60" placeholder="Inserta aqui la descripción del producto" class="form-control mb-4"></textarea>
             </form>
           </div>
