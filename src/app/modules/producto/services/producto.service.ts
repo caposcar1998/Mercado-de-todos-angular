@@ -3,7 +3,6 @@ import { BehaviorSubject, throwError } from 'rxjs';
 
 
 // Borrar imports desde aquí
-import { ConfirmarCompraModel, CONFIRMARCOMPRA } from 'src/app/models/confirmarCompra.model';
 
 import { CarritoModel, CARRITO } from 'src/app/models/carrito.model';
 
@@ -42,14 +41,6 @@ export class ProductoService {
    * 
    * Borrar desde aquí
    */
-  // ProductoModel
-  private purchaseConfirmation = new BehaviorSubject(CONFIRMARCOMPRA);
-  sharedMessagePurchaseConfirmation = this.purchaseConfirmation.asObservable();
-  
-  newPurchaseConfirmation(newPurchase: ConfirmarCompraModel) {
-    this.purchaseConfirmation.next(newPurchase);
-  }
-
   // Carrito
   private cart = new BehaviorSubject(CARRITO);
   sharedMessageCart = this.cart.asObservable();

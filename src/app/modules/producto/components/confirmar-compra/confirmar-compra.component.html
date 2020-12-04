@@ -25,45 +25,45 @@
         </div>
         <div class="card mt-3 col-12 col-sm-12 col-md-6 ">
         <div class="card-body">
-            <h4 class="card-title" i18n>{{ purchaseConfirmation.name }}</h4>
+            <h4 class="card-title" i18n>{{ productDetail?.nombre }}</h4>
                 <div class="row col-md-12">
                     <div class="col-md-6">
                         <h5 i18n><span>Precio Unitario: </span></h5>
-                        <p i18n>{{ purchaseConfirmation.unitPrice }}</p>
+                        <p i18n>${{ productDetail?.precio }} MXN.</p>
                     </div>
                     <div class="col-md-6">
                         <h5 i18n><span>Costo de envio: </span></h5>
-                        <p i18n>{{ purchaseConfirmation.shippingPrice }}</p>
+                        <p i18n>${{ productDetail?.costo_envio }} MXN.</p>
                     </div>
                 </div>
                 <div class="row col-md-12">
                     <div class="col-md-6">
                         <h5 i18n><span>Presentación: </span></h5>
-                        <p i18n>{{ purchaseConfirmation.presentation }}</p>
+                        <p i18n>{{ productDetail?.presentacion }}</p>
                     </div>
                     <div class="col-md-6">
                         <h5 i18n><span>Fecha estimada de expiración: </span></h5>
-                        <p i18n>{{ purchaseConfirmation.expireDate }}</p>
+                        <p i18n>{{ productDetail?.fecha_exp | date:'dd-MMM-yyyy' }}</p>
                     </div>
                 </div>
                 <div class="row col-md-12">
                     <div class="col-md-6">
                         <h5 i18n><span>Unidades a comprar:</span></h5>
-                        <p i18n>{{ purchaseConfirmation.units }}</p>
+                        <p i18n>{{ amount }}</p>
                     </div>
                     <div class="col-md-6">
                         <h5 i18n><span>Lugar de entrega: </span></h5>
-                        <p i18n>{{ purchaseConfirmation.deliveryAddress }}</p>
+                        <p i18n>{{ productDetail?.ubicacion }}</p>
                     </div>
                 </div>
                 <div class="row col-md-12">
                     <div class="col-md-6">
                         <h5 i18n><span>Vendedor: </span></h5>
-                        <p i18n>{{ purchaseConfirmation.vendorName }}</p>
+                        <p i18n>El mejor de {{ productDetail?.ubicacion }}</p>
                     </div>
                     <div class="col-md-6 text-center">
                         <h5 i18n>Total: </h5>
-                        <p i18n>1000 pesos</p>
+                        <p i18n>${{ productDetail?.costo_envio + productDetail?.precio.valueOf() * amount.valueOf() }} MXN.</p>
                     </div>
                 </div>
                 <a href="./historial" class="btn btn-signin d-block" type="submit" i18n>Confirmar Compra</a>
