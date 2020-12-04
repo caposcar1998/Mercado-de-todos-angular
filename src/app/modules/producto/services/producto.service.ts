@@ -3,8 +3,6 @@ import { BehaviorSubject, throwError } from 'rxjs';
 
 
 // Borrar imports desde aquí
-import { DetalleProductoModel, DETALLEPRODUCTO } from 'src/app/models/detalleProducto.model';
-import { ConfirmarCompraModel, CONFIRMARCOMPRA } from 'src/app/models/confirmarCompra.model';
 
 import { CarritoModel, CARRITO } from 'src/app/models/carrito.model';
 
@@ -22,7 +20,8 @@ import {
 
 import {map, retry, catchError, tap} from "rxjs/operators";
 import {CarritoOrdenes, Carritos } from 'src/app/models/carrito.model';
-import { Producto } from 'src/app/models/producto.model';
+import { ProductoModel } from 'src/app/models/producto.model';
+import { RegistrarProductoModel } from 'src/app/models/registrarProducto.model';
 import { CatalogoProducto, Catalogos } from 'src/app/models/catalogo.model'
 import { CarritoProductos } from 'src/app/models/carritoProductos.model'
 
@@ -34,6 +33,7 @@ export class ProductoService {
   endpointCarritoOrdenes = "http://localhost:3000/api/carritoOrdenes";
   endpointCarritos = "http://localhost:3000/api/carritos";
   endpointProducto = "http://localhost:3000/api/producto";
+  endpointProductoSearch = "http://localhost:3000/api/producto/search";
   endpointCatalogoProducto = "http://localhost:3000/api/catalogoProducto";
   endpointCatalogos = "http://localhost:3000/api/catalogos";
   endpointCarritoProductos = "http://localhost:3000/api/carritoProductos";
@@ -42,21 +42,6 @@ export class ProductoService {
    * 
    * Borrar desde aquí
    */
-  // Producto
-  private productDetail = new BehaviorSubject(DETALLEPRODUCTO);
-  sharedMessageProductDetail = this.productDetail.asObservable();
-
-  private purchaseConfirmation = new BehaviorSubject(CONFIRMARCOMPRA);
-  sharedMessagePurchaseConfirmation = this.purchaseConfirmation.asObservable();
-  
-  newProductDetail(newProduct: DetalleProductoModel) {
-    this.productDetail.next(newProduct);
-  }
-
-  newPurchaseConfirmation(newPurchase: ConfirmarCompraModel) {
-    this.purchaseConfirmation.next(newPurchase);
-  }
-
   // Carrito
   private cart = new BehaviorSubject(CARRITO);
   sharedMessageCart = this.cart.asObservable();
@@ -107,12 +92,16 @@ export class ProductoService {
 
   // API - CarritoOrdenes
   getCarritoOrdenes() {
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
     console.log("en el servicio")
     return this.http.get<CarritoOrdenes[]>(this.endpointCarritoOrdenes).pipe(retry(3),catchError(this.handleError));
   }
 
   insertarCarritoOrdenes(carritoOrdenes: CarritoOrdenes) {
-      this.http.post<CarritoOrdenes>(this.endpointCarritoOrdenes+"/insertar", carritoOrdenes).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.post<CarritoOrdenes>(this.endpointCarritoOrdenes+"/insertar", carritoOrdenes,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -124,7 +113,9 @@ export class ProductoService {
   }
 
   updateCarritoOrdenes(carritoOrdenes: CarritoOrdenes, id:string){
-      this.http.put<CarritoOrdenes>(this.endpointCarritoOrdenes+"/"+id, carritoOrdenes).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.put<CarritoOrdenes>(this.endpointCarritoOrdenes+"/"+id, carritoOrdenes,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -136,7 +127,9 @@ export class ProductoService {
   }
 
   deleteCarritoOrdenes(id:string){
-      this.http.delete(this.endpointCarritoOrdenes+"/"+id).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.delete(this.endpointCarritoOrdenes+"/"+id,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -149,12 +142,16 @@ export class ProductoService {
 
   // API - Carritos
   getCarritos() {
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
     console.log("en el servicio")
-    return this.http.get<Carritos[]>(this.endpointCarritos).pipe(retry(3),catchError(this.handleError));
+    return this.http.get<Carritos[]>(this.endpointCarritos,{ headers }).pipe(retry(3),catchError(this.handleError));
   }
 
   insertarCarritos(carritos: Carritos) {
-      this.http.post<Carritos>(this.endpointCarritos+"/insertar", carritos).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.post<Carritos>(this.endpointCarritos+"/insertar", carritos,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -166,7 +163,9 @@ export class ProductoService {
   }
 
   updateCarritos(carritos: Carritos, id:string){
-      this.http.put<Carritos>(this.endpointCarritos+"/"+id, carritos).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.put<Carritos>(this.endpointCarritos+"/"+id, carritos,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -178,7 +177,9 @@ export class ProductoService {
   }
 
   deleteCarritos(id:string){
-      this.http.delete(this.endpointCarritos+"/"+id).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.delete(this.endpointCarritos+"/"+id,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -189,14 +190,29 @@ export class ProductoService {
       })
   }
 
+  
+
   // API - Productos
   getProductos() {
-    console.log("en el servicio")
-    return this.http.get<Producto[]>(this.endpointProducto).pipe(retry(3),catchError(this.handleError));
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+    return this.http.get<ProductoModel[]>(this.endpointProducto,{ headers }
+        ).pipe(retry(3),catchError(this.handleError));
   }
 
-  insertarProductos(producto: Producto) {
-    this.http.post<Producto>(this.endpointProducto+"/insertar", producto).subscribe({
+  getProductosId(id: String) {
+
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+    console.log(this.endpointProducto+"/"+id);
+    return this.http.get<ProductoModel>(this.endpointProducto+"/"+id,{ headers }).pipe(retry(3),catchError(this.handleError));
+  }
+
+  getProductoSearch(search: String) {
+    return this.http.get<ProductoModel[]>(this.endpointProductoSearch+"?nombre="+search).pipe(retry(3),catchError(this.handleError));
+  }
+
+  insertarProductos(producto: ProductoModel) {
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+    this.http.post<ProductoModel>(this.endpointProducto+"/insertar", producto,{ headers }).subscribe({
       next: data => {
             console.log("datos",data)
         },
@@ -207,8 +223,23 @@ export class ProductoService {
     })
   }
 
-  updateProducto(producto: Producto, id:string){
-    this.http.put<Producto>(this.endpointProducto+"/"+id, producto).subscribe({
+  registrarProducto(producto: RegistrarProductoModel) {
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+    this.http.post<RegistrarProductoModel>(this.endpointProducto+"/insertar", producto,{ headers }).subscribe({
+      next: data => {
+            console.log("datos",data)
+        },
+        error: error => {
+
+            console.error(' error!', error);
+        }
+    })
+  }
+
+  updateProducto(producto: ProductoModel, id:string){
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+    this.http.put<ProductoModel>(this.endpointProducto+"/"+id, producto,{ headers }).subscribe({
       next: data => {
             console.log("datos",data)
         },
@@ -220,7 +251,9 @@ export class ProductoService {
   }
 
   deleteProducto(id:string){
-    this.http.delete(this.endpointProducto+"/"+id).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+    this.http.delete(this.endpointProducto+"/"+id,{ headers }).subscribe({
       next: data => {
             console.log("datos",data)
         },
@@ -233,12 +266,16 @@ export class ProductoService {
 
   // API - CatalogoProducto
   getCatalogoProducto() {
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
     console.log("en el servicio")
-    return this.http.get<CatalogoProducto[]>(this.endpointCatalogoProducto).pipe(retry(3),catchError(this.handleError));
+    return this.http.get<CatalogoProducto[]>(this.endpointCatalogoProducto,{ headers }).pipe(retry(3),catchError(this.handleError));
   }
 
   insertarCatalogoProducto(catalogoProducto: CatalogoProducto) {
-      this.http.post<CatalogoProducto>(this.endpointCatalogoProducto+"/insertar", catalogoProducto).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.post<CatalogoProducto>(this.endpointCatalogoProducto+"/insertar", catalogoProducto,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -250,7 +287,9 @@ export class ProductoService {
   }
 
   updateCatalogoProducto(catalogoProducto: CatalogoProducto, id:string){
-      this.http.put<CatalogoProducto>(this.endpointCatalogoProducto+"/"+id, catalogoProducto).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.put<CatalogoProducto>(this.endpointCatalogoProducto+"/"+id, catalogoProducto,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -262,7 +301,9 @@ export class ProductoService {
   }
 
   deleteCatalogoProducto(id:string){
-      this.http.delete(this.endpointCatalogoProducto+"/"+id).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.delete(this.endpointCatalogoProducto+"/"+id,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -275,12 +316,16 @@ export class ProductoService {
 
   // API - Catalogos
   getCatalogos() {
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
     console.log("en el servicio")
-    return this.http.get<Catalogos[]>(this.endpointCatalogos).pipe(retry(3),catchError(this.handleError));
+    return this.http.get<Catalogos[]>(this.endpointCatalogos,{ headers }).pipe(retry(3),catchError(this.handleError));
   }
 
   insertarCatalogos(catalogos: Catalogos) {
-      this.http.post<Catalogos>(this.endpointCatalogos+"/insertar", catalogos).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.post<Catalogos>(this.endpointCatalogos+"/insertar", catalogos,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -292,7 +337,9 @@ export class ProductoService {
   }
 
   updateCatalogos(catalogos: Catalogos, id:string){
-      this.http.put<Catalogos>(this.endpointCatalogos+"/"+id, catalogos).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.put<Catalogos>(this.endpointCatalogos+"/"+id, catalogos,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -304,7 +351,9 @@ export class ProductoService {
   }
 
   deleteCatalogos(id:string){
-      this.http.delete(this.endpointCatalogos+"/"+id).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.delete(this.endpointCatalogos+"/"+id,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -317,12 +366,16 @@ export class ProductoService {
 
   // API - CarritoProductos
   getCarritoProductos() {
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
     console.log("en el servicio")
-    return this.http.get<CarritoProductos[]>(this.endpointCarritoProductos).pipe(retry(3),catchError(this.handleError));
+    return this.http.get<CarritoProductos[]>(this.endpointCarritoProductos,{ headers }).pipe(retry(3),catchError(this.handleError));
   }
 
   insertarCarritoProductos(carritoProductos: CarritoProductos) {
-      this.http.post<CarritoProductos>(this.endpointCarritoProductos+"/insertar", carritoProductos).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.post<CarritoProductos>(this.endpointCarritoProductos+"/insertar", carritoProductos,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -334,7 +387,9 @@ export class ProductoService {
   }
 
   updateCarritoProductos(carritoProductos: CarritoProductos, id:string){
-      this.http.put<CarritoProductos>(this.endpointCarritoProductos+"/"+id, carritoProductos).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.put<CarritoProductos>(this.endpointCarritoProductos+"/"+id, carritoProductos,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
@@ -346,7 +401,9 @@ export class ProductoService {
   }
 
   deleteCarritoProductos(id:string){
-      this.http.delete(this.endpointCarritoProductos+"/"+id).subscribe({
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDg5MzgsImV4cCI6MTYwNzk3MjkzOCwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.RYnxTbyQ4no8zBxPw2ntsRYi0Ovox0EcqI9ov0dqikpJdFvlZ9S2u5SZsslfynBn8-SgIBqWihXCxOHC2ZWJfk0kLlMlve6TkRVdZSdccO7k_KPNcYEtF-bVwafhFvdgEyH3P1_FS_SjFjCk6Ie22_MLXVP0S2Sp4CsfZPzP2IIzf5AkNn5Boe7uwrhfgxVW3MsXz0jX3fsdby2FkV8zmUi3DpDNL_Hlj6z2Vf_y121slwUdaOoBHITe1mf90TRscqBKMhZp14oNMBY_TcmSQnzBJDHZ60wmH_ZGHwmXJSvTipzOFLzqTUn-KQV3gQsD0a34YPUyyccEU2LwMmX3bQ', "Content-Type": "application/x-www-form-urlencoded" }
+
+      this.http.delete(this.endpointCarritoProductos+"/"+id,{ headers }).subscribe({
           next: data => {
               console.log("datos",data)
           },
