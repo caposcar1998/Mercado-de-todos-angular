@@ -29,7 +29,7 @@ export class EditarPerfilCompradorComponent implements OnInit {
     
     let profileInfo= JSON.parse(this.profileJson).email
     this.perfilesService.getCorreoConCorreoId(profileInfo)
-    this.idCambio = "5fc6f045d769aa7ed0f051b4"
+    this.idCambio = profileInfo
     this.persona.nombre = this.updatePerfilForm.value.nombre
     this.persona.ciudad = this.updatePerfilForm.value.ciudad
     this.persona.domicilio = this.updatePerfilForm.value.domicilio
