@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProductoService } from '../../services/producto.service';
-import { Producto } from 'src/app/models/producto.model';
+import { ProductoModel } from 'src/app/models/producto.model';
 import { Observable } from 'rxjs'
 
 @Component({
@@ -10,12 +11,21 @@ import { Observable } from 'rxjs'
 })
 export class MostrarProductoComponent implements OnInit {
 
-  showProducts: Observable<Producto[]>;
+  showProducts: Observable<ProductoModel[]>;
+  searchTerm: string;
 
-  constructor(private mostrarProductoService: ProductoService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private mostrarProductoService: ProductoService
+  ) { }
 
   ngOnInit(): void {
-    this.showProducts = this.mostrarProductoService.getProductos();
+    this.route.queryParamMap.subscribe(params =>  {
+      this.searchTerm = params.get('search') || "";
+      if (this.searchTerm === "") {
+        this.showProducts = this.mostrarProductoService.getProductos();
+      }
+    });
   }
 
 }

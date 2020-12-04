@@ -66,6 +66,7 @@ export class RegistrarProductoComponent implements OnInit {
       data.ref.getDownloadURL().then(url => {
           console.log(url)
           this.productoService.insertarProductos({
+            _id: this.RegisterProductForm.get('shippingCost').value,
             nombre: this.RegisterProductForm.get('name').value,
             precio: this.RegisterProductForm.get('price').value,
             presentacion: this.RegisterProductForm.get('display').value,
