@@ -5,6 +5,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" routerLink="#" i18n><img id="logo" alt="logo" src="../assets/logo.png"> <b>M</b>ercado <b>P</b>ara
             <b>T</b>odos</a>
+            {{profileJson}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggle()">
             <div class="icon-bar" [@hamburguerX]="isClosed ? 'hamburguer' : 'topX'"></div>
             <div class="icon-bar" [@hamburguerX]="isClosed ? 'hamburguer' : 'hide'"></div>  
@@ -33,7 +34,7 @@
                     </a>
                 </li>
                 <li class="nav-item active">
-                    <a (click)="rotateCart()" class="nav-link btn-head"routerLink="./carrito">
+                    <a (click)="rotateCart()" class="nav-link btn-head"routerLink="../modules/producto/components/carrito">
                         <svg [@rotatedState]="isClickedCart ? 'rotated' : 'default'"  width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart4" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"

@@ -15,6 +15,7 @@ export class EditarPerfilCompradorComponent implements OnInit {
   profileJson: string = null;
   customerProfile: ProfileModel;
   Persona: null;
+  idCambio: string = null;
 
   constructor(private perfilesService: PerfilesService, public auth: AuthService) { }
   
@@ -24,7 +25,7 @@ export class EditarPerfilCompradorComponent implements OnInit {
   }
 
   updateCustomerProfile() {
-    this.perfilesService.updatePersona(this.Persona,"2");
+    this.perfilesService.updatePersona(this.Persona,this.idCambio);
   }
 
   updatePerfilForm = new FormGroup({
