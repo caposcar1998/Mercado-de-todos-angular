@@ -93,21 +93,22 @@ class PersonaController{
             return res.status(error.statusCode).json({error: error.message})
         }
     }
+
     //Get id by mail
     getId = async (req, res) => {
-        let statusCode = 404;
-        try {
-        const obj = await Persona.find({correo : req.query.correo},{_id : 1, nombre : 1});
-        res.status(200).json(obj);
-        } catch (error) {
-            if(!error.statusCode){
-                error.statusCode=500;
-              }else if (error.statusCode == 404){
-                return res.status(statusCode).json({error: error.message})
-              } 
-              return res.status(error.statusCode).json({error: error.message})
-        }
-    }
+      let statusCode = 404;
+      try {
+      const obj = await Persona.find({correo : req.query.correo},{_id : 1});
+      res.status(200).json(obj);
+      } catch (error) {
+          if(!error.statusCode){
+              error.statusCode=500;
+            }else if (error.statusCode == 404){
+              return res.status(statusCode).json({error: error.message})
+            } 
+            return res.status(error.statusCode).json({error: error.message})
+      }
+  }
         // Update by id
     update = async (req, res) => {
       let statusCode = 304;

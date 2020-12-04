@@ -2,8 +2,8 @@ import * as mongoose from "mongoose";
 import CarritoProducto from "./carritoProducto";
 
 let carritoOrdenes = new mongoose.Schema({
-    carritoProducto: {type:String},
-    idReferencia: {type:String}
+    carritoProducto: String,
+    idReferencia: String
 })
 
 const carritos = new mongoose.Schema({

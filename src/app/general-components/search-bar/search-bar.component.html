@@ -3,22 +3,22 @@
     <div class="container">
     <div class="d-flex align-items-center justify-content-center containerBusqueda">
         <div class="container">
+            <form [formGroup]="SearchForm" (ngSubmit)="onSearchTerm()">
             <div class="row">
-            <div class="col"></div>
-            <div class="col-6">
-                <input type="text" id="Form_Search" value="" placeholder="Busca productos" role="searchbox" class="InputBox busquedaProducto">  
-            </div>
-            <div class="col"></div>
+                <div class="col"></div>
+                <div class="col-6">
+                    <input type="text" formControlName="term" id="Form_Search" value="" placeholder="Busca productos" role="searchbox" class="InputBox busquedaProducto">  
+                </div>
+                <div class="col"></div>
             </div>
             <div class="row">
-            <div class="col"></div>
-            <div class="col-6">
-                <form action="./mostrar-producto">
-                    <input type="submit" id="Form_Go" class="btn  my-2 my-sm-0 botonBusqueda" value="Buscar">
-                </form>  
+                <div class="col"></div>
+                <div class="col-6">
+                    <input (click)="onSearchTerm()" id="Form_Go" class="btn  my-2 my-sm-0 botonBusqueda" value="Buscar">
+                </div>
+                <div class="col"></div>
             </div>
-            <div class="col"></div>
-            </div>
+            </form>  
         </div>
     </div>
     </div>            

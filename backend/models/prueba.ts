@@ -1,8 +1,8 @@
 import * as mongoose from "mongoose";
 
 const prueba = new mongoose.Schema({
-    nombre : {type:String},
-    nivelDePapi: {type:Number}
+    nombre : String,
+    nivelDePapi: Number
 })
 
 const Prueba = mongoose.model("prueba", prueba)

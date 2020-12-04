@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from "@angular/fire";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarrouselComponent } from './index/carrousel/carrousel.component';
@@ -21,6 +22,11 @@ import { HeaderLoggedComponent } from './general-components/header-logged/header
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import {AuthHttpInterceptor} from "@auth0/auth0-angular";
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+  AngularFireUploadTask
+} from "@angular/fire/storage";
 
 @NgModule({
   declarations: [
@@ -36,6 +42,7 @@ import {AuthHttpInterceptor} from "@auth0/auth0-angular";
     HeaderLoggedComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
@@ -44,9 +51,34 @@ import {AuthHttpInterceptor} from "@auth0/auth0-angular";
     PerfilesModule,
     HttpClientModule,
     StorageServiceModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(env.firebase),
     AuthModule.forRoot({
-        ...env.auth
-    })
+
+        ...env.auth,
+               // Request this audience at user authentication time
+      audience: 'https://dev-zglcmhno.us.auth0.com/api/v2/',
+      // Request this scope at user authentication time
+      scope: 'read:current_user',
+      // Specify configuration for the interceptor
+      httpInterceptor: {
+      allowedList: [
+      {
+        // Match any request that starts 'https://dev-qz51ohsc.auth0.com/api/v2/' (note the asterisk)
+        uri: 'https://dev-zglcmhno.us.auth0.com/api/v2/*',
+        tokenOptions: {
+        // The attached token should target this audience
+        audience: 'https://dev-zglcmhno.us.auth0.com/api/v2/',
+
+        // The attached token should have these scopes
+        scope: 'read:current_user'
+      }
+    }
+  ]
+}
+    }),
+
+
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi:true},],
   bootstrap: [AppComponent]

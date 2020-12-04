@@ -1,5 +1,4 @@
-export interface ProductoModel {
-    _id :String,
+export interface RegistrarProductoModel {
     nombre :String,
     precio :Number,
     presentacion :String,
