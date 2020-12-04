@@ -149,6 +149,15 @@ class PersonaController{
             return res.status(400).json({ error: err.message });
         }
     }
+
+    setBasicinfo= async (req, res) => {
+        try {
+            await Persona.updateOne({ _id: req.params.id }, { $set: { nombre: 'El cacas', ciudad: 'df', telefono: 5655, domicilio: 'foo' } })
+            res.sendStatus(200);
+        } catch (err) {
+            return res.status(400).json({ error: err.message });
+        }
+    }
 }
 
 export default PersonaController
