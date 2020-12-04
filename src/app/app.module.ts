@@ -54,7 +54,27 @@ import {
     HttpClientModule,
     StorageServiceModule,
     AuthModule.forRoot({
-        ...env.auth
+        ...env.auth,
+               // Request this audience at user authentication time
+      audience: 'https://dev-zglcmhno.us.auth0.com/api/v2/',
+      // Request this scope at user authentication time
+      scope: 'read:current_user',
+      // Specify configuration for the interceptor
+      httpInterceptor: {
+      allowedList: [
+      {
+        // Match any request that starts 'https://dev-qz51ohsc.auth0.com/api/v2/' (note the asterisk)
+        uri: 'https://dev-zglcmhno.us.auth0.com/api/v2/*',
+        tokenOptions: {
+        // The attached token should target this audience
+        audience: 'https://dev-zglcmhno.us.auth0.com/api/v2/',
+
+        // The attached token should have these scopes
+        scope: 'read:current_user'
+      }
+    }
+  ]
+}
     }),
     AngularFireStorageModule,
     AngularFireModule.initializeApp(env.firebase)

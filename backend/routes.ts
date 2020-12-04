@@ -82,7 +82,7 @@ function setRoutes(app): void{
 
 
     
-/*
+
     router.use((req, res, next) => {
         res.set("Access-Control-Allow-Origin", "*");
         res.set(
@@ -113,7 +113,7 @@ function setRoutes(app): void{
     
 
       
-    app.use(jwtCheck)*/
+    app.use(jwtCheck)
     app.use("/api", router);
     
 }

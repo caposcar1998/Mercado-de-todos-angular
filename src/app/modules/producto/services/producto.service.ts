@@ -181,17 +181,20 @@ export class ProductoService {
       })
   }
 
+  
+
   // API - Productos
   getProductos() {
-    console.log("en el servicio")
-    return this.http.get<ProductoModel[]>(this.endpointProducto).pipe(retry(3),catchError(this.handleError));
+    const headers = { 'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Indjb0x2NXhmenQ4dGFxQU94MVF1WSJ9.eyJpc3MiOiJodHRwczovL2Rldi16Z2xjbWhuby51cy5hdXRoMC5jb20vIiwic3ViIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkRAY2xpZW50cyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC8iLCJpYXQiOjE2MDcxMDMyMTIsImV4cCI6MTYwNzE4OTYxMiwiYXpwIjoiMk5zTW14R0xnTmJEdjhVaTc3Z002akFZUWczczJrSkQiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.wlbjs8pXrjgxHd6OxuYaAq9AW_urf20HxfGf7PLwX9B3AAy8EvS5DWzpsvyPU0AWC0ckNh6ht0hBCW1RYItUKfmapNeyOIhY0Jyjaz5ZNaozpQUwwLUqquLnbjsBuf3ZlFSGqu5ItFtDQuXzWOYZHx9KB8qEfwMkEZ-7pJno8w1gcIr6r4U3uE9VLR-XyIIFXSttIh0XlNS81fPMbgBtaEjxx2_5WPRakKutmNF1w2WsNeE1bODFH7RDybqDDlMTsUpTrNRUPWLIbG6GJU98bogBIBaU9I0ffEweNrZfLk8Pb9QBAB7zP8ypMj7eRVh2xeKHySLwFqt0ovuZoaH1aw', "Content-Type": "application/x-www-form-urlencoded" }
+    return this.http.get<ProductoModel[]>(this.endpointProducto,{ headers }
+        ).pipe(retry(3),catchError(this.handleError));
   }
 
   getProductosId(id: String) {
     console.log("en el servicio")
     console.log("Ruta solicitada en detalle-producto");
     console.log(this.endpointProducto+"/"+id);
-    return this.http.get<ProductoModel>(this.endpointProducto+"/"+id).pipe(retry(3),catchError(this.handleError));
+    return this.http.get<ProductoModel>(this.endpointProducto+"/"+id,).pipe(retry(3),catchError(this.handleError));
   }
 
   insertarProductos(producto: ProductoModel) {
