@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { RegisterProducts } from "../../../../models/registerProducts";
 import { ProductoService } from '../../services/producto.service';
+
 import { FirebaseStorageService } from '../../../../firebase-storage.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Url } from 'url';
@@ -19,6 +20,7 @@ import { ProductoModule } from '../../producto.module';
 export class RegistrarProductoComponent implements OnInit {
 
   @Input() registerProducts : RegisterProducts;
+
 
   constructor(private productoService: ProductoService, 
     private firebaseStorage: FirebaseStorageService) { }
@@ -59,13 +61,16 @@ export class RegistrarProductoComponent implements OnInit {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
+
   ngOnInit(): void {
     //this.productoService.sharedMessage.subscribe(message => this.message = message)
   } 
 
 
 
+
   onRegisterProduct() {
+
     let archivo = this.datosFormulario.get('productImage');
     let referencia = this.firebaseStorage.referenciaCloudStorage(this.nombreArchivo);
     let tarea = this.firebaseStorage.tareaCloudStorage(this.nombreArchivo, archivo);
@@ -81,6 +86,7 @@ export class RegistrarProductoComponent implements OnInit {
           
         });
       });
+
       console.log('before delay')
 
       await this.delay(5000);
@@ -106,7 +112,18 @@ export class RegistrarProductoComponent implements OnInit {
 
 
     
+
   }
-
-
+  RegisterProductForm = new FormGroup({
+    name: new FormControl(''),
+    price: new FormControl(''),
+    display: new FormControl(''),
+    location: new FormControl(''),
+    availableUnits: new FormControl(''),
+    shippingCost: new FormControl(''),
+    expireDate: new FormControl(''),
+    shippingDays: new FormControl(''),
+    description: new FormControl(''),
+    productImage: new FormControl(''),
+  });
 }

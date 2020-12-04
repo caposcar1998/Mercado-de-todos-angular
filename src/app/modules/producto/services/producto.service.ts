@@ -3,7 +3,6 @@ import { BehaviorSubject, throwError } from 'rxjs';
 
 
 // Borrar imports desde aquí
-import { ConfirmarCompraModel, CONFIRMARCOMPRA } from 'src/app/models/confirmarCompra.model';
 
 import { CarritoModel, CARRITO } from 'src/app/models/carrito.model';
 
@@ -33,6 +32,7 @@ export class ProductoService {
   endpointCarritoOrdenes = "http://localhost:3000/api/carritoOrdenes";
   endpointCarritos = "http://localhost:3000/api/carritos";
   endpointProducto = "http://localhost:3000/api/producto";
+  endpointProductoSearch = "http://localhost:3000/api/producto/search";
   endpointCatalogoProducto = "http://localhost:3000/api/catalogoProducto";
   endpointCatalogos = "http://localhost:3000/api/catalogos";
   endpointCarritoProductos = "http://localhost:3000/api/carritoProductos";
@@ -41,14 +41,6 @@ export class ProductoService {
    * 
    * Borrar desde aquí
    */
-  // ProductoModel
-  private purchaseConfirmation = new BehaviorSubject(CONFIRMARCOMPRA);
-  sharedMessagePurchaseConfirmation = this.purchaseConfirmation.asObservable();
-  
-  newPurchaseConfirmation(newPurchase: ConfirmarCompraModel) {
-    this.purchaseConfirmation.next(newPurchase);
-  }
-
   // Carrito
   private cart = new BehaviorSubject(CARRITO);
   sharedMessageCart = this.cart.asObservable();
@@ -189,9 +181,12 @@ export class ProductoService {
 
   getProductosId(id: String) {
     console.log("en el servicio")
-    console.log("Ruta solicitada en detalle-producto");
     console.log(this.endpointProducto+"/"+id);
     return this.http.get<ProductoModel>(this.endpointProducto+"/"+id).pipe(retry(3),catchError(this.handleError));
+  }
+
+  getProductoSearch(search: String) {
+    return this.http.get<ProductoModel[]>(this.endpointProductoSearch+"?nombre="+search).pipe(retry(3),catchError(this.handleError));
   }
 
   insertarProductos(producto: ProductoModel) {

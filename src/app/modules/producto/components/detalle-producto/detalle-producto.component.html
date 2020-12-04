@@ -12,11 +12,11 @@
                 <div class="row col-md-12">
                     <div class="col-md-6">
                         <h5 i18n><span>Precio Unitario: </span></h5>
-                        <p i18n>{{ productDetail?.precio }}</p>
+                        <p i18n>${{ productDetail?.precio }} MXN.</p>
                     </div>
                     <div class="col-md-6">
                         <h5 i18n><span>Costo de envio: </span></h5>
-                        <p i18n>{{ productDetail?.costo_envio }}</p>
+                        <p i18n>${{ productDetail?.costo_envio }} MXN.</p>
                     </div>
                 </div>
                 <div class="row col-md-12">
@@ -36,20 +36,20 @@
                     </div>
                     <div class="col-md-6">
                         <h5 i18n><span>Fecha estimada de expiración: </span></h5>
-                        <p i18n>{{ productDetail?.fecha_exp }}</p>
+                        <p i18n>{{ productDetail?.fecha_exp | date:'dd-MMM-yyyy' }}</p>
                     </div>
                 </div>
                 <div class="row col-md-12">
                     <div class="col-md-6">
                         <h5 i18n><label for="quantity">Unidades a comprar:</label></h5>
-                        <input type="number" id="quantity" name="quantity" class="form-control mb-4" min="1" max="50" step="1" value="1">
+                        <input [value]="amount" (input)="amount=$event.target.value;updateTotal();" type="number" id="quantity" name="quantity" class="form-control mb-4" min="1" attr.max={{productDetail?.unidades_disp}} step="1" value="1">
                     </div>
                     <div class="col-md-6 text-center">
                         <h5 i18n>Total a pagar</h5>
-                        <p i18n>1000 pesos</p>
+                        <p i18n>$ {{ total }} MXN</p>
                     </div>
                 </div>
-            <a href="./productDetail?/confirmarCompra" class="btn btn-signin d-block" i18n>Comprar</a>
+            <a (click)="purchase()" class="btn btn-signin d-block" i18n>Comprar</a>
         </div>
         </div>
     </div>

@@ -15,15 +15,17 @@ export class MostrarProductoComponent implements OnInit {
   searchTerm: string;
 
   constructor(
-    private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private mostrarProductoService: ProductoService
   ) { }
 
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe(params =>  {
+    this.activatedRoute.queryParamMap.subscribe(params =>  {
       this.searchTerm = params.get('search') || "";
-      if (this.searchTerm === "") {
+      if (this.searchTerm == "") {
         this.showProducts = this.mostrarProductoService.getProductos();
+      } else {
+        this.showProducts = this.mostrarProductoService.getProductoSearch(this.searchTerm);
       }
     });
   }

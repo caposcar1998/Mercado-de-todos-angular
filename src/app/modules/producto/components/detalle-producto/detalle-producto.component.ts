@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Component, OnInit, OnDestroy, Input} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductoService } from '../../services/producto.service';
 import { ProductoModel } from 'src/app/models/producto.model';
-import { Observable, Subscription } from 'rxjs'
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-detalle-producto',
@@ -13,6 +13,8 @@ export class DetalleProductoComponent implements OnInit, OnDestroy {
 
   id: String;
   productDetail: ProductoModel;
+  @Input() amount: Number = 0;
+  total: Number = 0;
 
   subscription: Subscription;
 
@@ -22,9 +24,7 @@ export class DetalleProductoComponent implements OnInit, OnDestroy {
               private productService: ProductoService) { }
 
   ngOnInit(): void {
-    this.subscription = this.activatedRoute.paramMap.subscribe(params => {
-      console.log("Dentro de detalle-producto ngOnInit()");
-      console.log(params);
+      this.subscription = this.activatedRoute.paramMap.subscribe(params => {
       this.id = params.get('id');
       this.productService.getProductosId(this.id).subscribe(info => this.productDetail = info);
     });
@@ -32,5 +32,13 @@ export class DetalleProductoComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  updateTotal() {
+    this.total = this.amount.valueOf() * this.productDetail.precio.valueOf() + this.productDetail.costo_envio.valueOf();
+  }
+
+  purchase() {
+    this.router.navigate(['/producto/confirmarCompra/'+this.id], { queryParams: { amount: this.amount}, queryParamsHandling: "merge" });
   }
 }

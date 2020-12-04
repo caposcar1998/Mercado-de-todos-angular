@@ -22,12 +22,6 @@ import { HeaderLoggedComponent } from './general-components/header-logged/header
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import {AuthHttpInterceptor} from "@auth0/auth0-angular";
-import {
-  AngularFireStorageModule,
-  AngularFireStorageReference,
-  AngularFireUploadTask
-} from "@angular/fire/storage";
-
 
 @NgModule({
   declarations: [
@@ -41,7 +35,6 @@ import {
     RegisterButtonComponent,
     LogoutButtonComponent,
     HeaderLoggedComponent,
-
   ],
   imports: [
     ReactiveFormsModule,
@@ -55,9 +48,7 @@ import {
     StorageServiceModule,
     AuthModule.forRoot({
         ...env.auth
-    }),
-    AngularFireStorageModule,
-    AngularFireModule.initializeApp(env.firebase)
+    })
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi:true},],
   bootstrap: [AppComponent]
