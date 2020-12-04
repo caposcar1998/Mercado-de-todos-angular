@@ -3,7 +3,6 @@ import { BehaviorSubject, throwError } from 'rxjs';
 
 
 // Borrar imports desde aquí
-import { DetalleProductoModel, DETALLEPRODUCTO } from 'src/app/models/detalleProducto.model';
 import { ConfirmarCompraModel, CONFIRMARCOMPRA } from 'src/app/models/confirmarCompra.model';
 
 import { CarritoModel, CARRITO } from 'src/app/models/carrito.model';
@@ -22,7 +21,7 @@ import {
 
 import {map, retry, catchError, tap} from "rxjs/operators";
 import {CarritoOrdenes, Carritos } from 'src/app/models/carrito.model';
-import { Producto } from 'src/app/models/producto.model';
+import { ProductoModel } from 'src/app/models/producto.model';
 import { CatalogoProducto, Catalogos } from 'src/app/models/catalogo.model'
 import { CarritoProductos } from 'src/app/models/carritoProductos.model'
 
@@ -42,17 +41,10 @@ export class ProductoService {
    * 
    * Borrar desde aquí
    */
-  // Producto
-  private productDetail = new BehaviorSubject(DETALLEPRODUCTO);
-  sharedMessageProductDetail = this.productDetail.asObservable();
-
+  // ProductoModel
   private purchaseConfirmation = new BehaviorSubject(CONFIRMARCOMPRA);
   sharedMessagePurchaseConfirmation = this.purchaseConfirmation.asObservable();
   
-  newProductDetail(newProduct: DetalleProductoModel) {
-    this.productDetail.next(newProduct);
-  }
-
   newPurchaseConfirmation(newPurchase: ConfirmarCompraModel) {
     this.purchaseConfirmation.next(newPurchase);
   }
@@ -192,11 +184,18 @@ export class ProductoService {
   // API - Productos
   getProductos() {
     console.log("en el servicio")
-    return this.http.get<Producto[]>(this.endpointProducto).pipe(retry(3),catchError(this.handleError));
+    return this.http.get<ProductoModel[]>(this.endpointProducto).pipe(retry(3),catchError(this.handleError));
   }
 
-  insertarProductos(producto: Producto) {
-    this.http.post<Producto>(this.endpointProducto+"/insertar", producto).subscribe({
+  getProductosId(id: String) {
+    console.log("en el servicio")
+    console.log("Ruta solicitada en detalle-producto");
+    console.log(this.endpointProducto+"/"+id);
+    return this.http.get<ProductoModel>(this.endpointProducto+"/"+id).pipe(retry(3),catchError(this.handleError));
+  }
+
+  insertarProductos(producto: ProductoModel) {
+    this.http.post<ProductoModel>(this.endpointProducto+"/insertar", producto).subscribe({
       next: data => {
             console.log("datos",data)
         },
@@ -207,8 +206,8 @@ export class ProductoService {
     })
   }
 
-  updateProducto(producto: Producto, id:string){
-    this.http.put<Producto>(this.endpointProducto+"/"+id, producto).subscribe({
+  updateProducto(producto: ProductoModel, id:string){
+    this.http.put<ProductoModel>(this.endpointProducto+"/"+id, producto).subscribe({
       next: data => {
             console.log("datos",data)
         },

@@ -1,4 +1,5 @@
-export interface Producto {
+export interface ProductoModel {
+    _id : {type: String},
     nombre : {type: String},
     precio : {type: Number},
     presentacion : {type: String},

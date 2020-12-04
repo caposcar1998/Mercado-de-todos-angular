@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
-import { Producto } from 'src/app/models/producto.model';
+import { ProductoModel } from 'src/app/models/producto.model';
 import { Observable } from 'rxjs'
 
 @Component({
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs'
 })
 export class MostrarProductoComponent implements OnInit {
 
-  showProducts: Observable<Producto[]>;
+  showProducts: Observable<ProductoModel[]>;
 
   constructor(private mostrarProductoService: ProductoService) { }
 

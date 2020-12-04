@@ -27,6 +27,7 @@ export class RegistrarProductoComponent implements OnInit {
   onRegisterProduct() {
     // TODO: Use EventEmitter with form value
     this.productoService.insertarProductos({
+      _id: this.RegisterProductForm.get('shippingCost').value,
       nombre: this.RegisterProductForm.get('name').value,
       precio: this.RegisterProductForm.get('price').value,
       presentacion: this.RegisterProductForm.get('display').value,

@@ -11,7 +11,7 @@
             <strong>Precio unitario</strong>  {{ product.precio }}<br>
             <strong>Costo de envio</strong>   {{ product.costo_envio }}
             </p>
-            <a href="./producto/detalleProducto" class="btn btn-signin d-block" i18n>Ver productos</a>
+            <a [routerLink]="['/producto/detalleProducto', product._id]" class="btn btn-signin d-block" i18n>Ver productos</a>
         </div>
         
         <hr/> <!-- Simple Línea -->

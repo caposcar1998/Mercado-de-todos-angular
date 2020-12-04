@@ -1,24 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
 import { ProductoService } from '../../services/producto.service';
-import { DetalleProductoModel, DETALLEPRODUCTO2 } from 'src/app/models/detalleProducto.model'
+import { ProductoModel } from 'src/app/models/producto.model';
+import { Observable, Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-detalle-producto',
   templateUrl: './detalle-producto.component.html',
   styleUrls: ['./detalle-producto.component.scss']
 })
-export class DetalleProductoComponent implements OnInit {
+export class DetalleProductoComponent implements OnInit, OnDestroy {
 
-  productDetail: DetalleProductoModel;
+  id: String;
+  productDetail: ProductoModel;
 
-  constructor(private productService: ProductoService) { }
+  subscription: Subscription;
+
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
+              private productService: ProductoService) { }
 
   ngOnInit(): void {
-    this.productService.sharedMessageProductDetail.subscribe(newProduct => this.productDetail = newProduct);
+    this.subscription = this.activatedRoute.paramMap.subscribe(params => {
+      console.log("Dentro de detalle-producto ngOnInit()");
+      console.log(params);
+      this.id = params.get('id');
+      this.productService.getProductosId(this.id).subscribe(info => this.productDetail = info);
+    });
   }
 
-  updateProductDetail() {
-    this.productService.newProductDetail(DETALLEPRODUCTO2);
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
-
 }

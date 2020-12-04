@@ -12,7 +12,7 @@ import { ProductosAnunciadosComponent } from './components/productos-anunciados/
 
 const routes: Routes = [
   {path: "producto/confirmarCompra", component: ConfirmarCompraComponent},
-  {path: "producto/detalleProducto", component: DetalleProductoComponent},
+  {path: "producto/detalleProducto/:id", component: DetalleProductoComponent},
   {path: "producto/registrarProducto", component: RegistrarProductoComponent},
 
   {path: "carrito", component: CarritoComponent},
