@@ -1,25 +1,29 @@
 <div class="container">
     <div class="text-center">
         <h1 class="mt-3" i18n>Mi cuenta</h1>
-        <div>
-            <img src="../../assets/user.jpg" alt="Foto de perfil" class="mw-100">
+        <div *ngIf = "auth.user$ | async as user">
+            <img [src]="user.picture" alt="Foto de perfil" class="mw-100">
         </div>
-        <div class="d-inline-block text-left mt-3">
-            <p i18n><button onclick="alert('Realizar cambio');"
-                    class="btn botonEditar mr-3">Editar</button><strong>Nombre</strong> {{ customerProfile.name }}</p>
-            <p i18n><button onclick="alert('Realizar cambio');"
-                    class="btn botonEditar mr-3">Editar</button><strong>Dirección</strong> {{ customerProfile.address }}
-            </p>
-            <p i18n><button onclick="alert('Realizar cambio');"
-                    class="btn botonEditar mr-3">Editar</button><strong>Estado</strong> {{ customerProfile.state }}</p>
-            <p i18n><button onclick="alert('Realizar cambio');"
-                    class="btn botonEditar mr-3">Editar</button><strong>Correo Electrónico</strong><p i18n>{{ customerProfile.mail }}</p>
-            <p i18n><button onclick="alert('Realizar cambio');"
-                    class="btn botonEditar mr-3">Editar</button><strong>Teléfono</strong>{{ customerProfile.phone }}</p>
+        <div >
+            <form [formGroup]="updatePerfilForm" (ngSubmit)="updateCustomerProfile()">
+                <div class="form-group ">
+                    <input type="text" formControlName="nombre" id="nombre" class="form-control mb-4" placeholder="Nombre"> 
+                </div>
+                <div class="form-group ">
+                    <input type="text" formControlName="ciudad" id="ciudad" class="form-control mb-4" placeholder="Ciudad"> 
+                </div>
+                    <div class="form-group ">
+                        <input type="number" formControlName="telefono" id="telefono"  class="form-control mb-4" placeholder="Telefono"> 
+                    </div>
+                    <div class="form-group ">
+                        <input type="text" formControlName="domicilio" id="domicilio" class="form-control mb-4" placeholder="Domicilio" > 
+                    </div> 
+                
+            </form>
         </div>
     </div>
 
     <div class="col-12 col-sm-12 d-flex justify-content-center mb-3">
-        <a href="./perfiles/perfil-comprador" class="btn btn-signin" i18n>Guardar cambios</a>
+        <a routerLink="./perfiles/perfil-comprador" class="btn btn-signin" i18n>Guardar cambios</a>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="container">
     <h1 class="d-inline-block mt-3" i18n>Mi cuenta</h1>
-    <a routerLink="./perfiles/editar-perfil-comprador" class="btn botonEditar mt-3 float-right" i18n>Editar</a>
+    <a routerLink="../editar-perfil-comprador" class="btn botonEditar mt-3 float-right" i18n>Editar</a>
     <div class="row">
     <div *ngIf = "auth.user$ | async as user"> 
         <img [src]="user.picture" alt="Foto de perfil"
