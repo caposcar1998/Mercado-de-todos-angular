@@ -34,6 +34,7 @@ function setRoutes(app): void{
     router.route("/persona/count").get(personaController.count);
     router.route("/persona/isComprador").get(personaController.getIsComprador);
     router.route("/persona/isVendedor").get(personaController.getIsVendedor);
+    router.route("/persona/traerId").get(personaController.getId);
     router.route("/persona/:id").get(personaController.get);
     router.route("/persona/:id").put(personaController.update);
     router.route("/persona/:id").delete(personaController.delete);
