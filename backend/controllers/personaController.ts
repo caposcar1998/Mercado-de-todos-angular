@@ -147,6 +147,10 @@ class PersonaController{
       console.log(req.body.ciudad)
       console.log(req.body.telefono)
       console.log(req.body.direccion)
+      console.log(req.body)
+
+
+ 
         try {	        
             await Persona.updateOne({ _id: req.params.id }, { $set: { nombre: req.body.nombre, ciudad: req.body.ciudad, telefono: req.body.telefono, domicilio: req.body.domicilio } })	        
             res.sendStatus(200);	          
