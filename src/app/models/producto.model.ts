@@ -1,14 +1,13 @@
-
 export interface ProductoModel {
-    _id : {type: String},
-    nombre : {type: String},
-    precio : {type: Number},
-    presentacion : {type: String},
-    costo_envio : {type : Number},
-    dias_envio : {type : Number},
-    unidades_disp : {type : Number},
-    ubicacion : {type: String},
-    fecha_exp: {type: Date},
-    descrip : {type: String},
-    img_prod : {type: String},
+    _id :String,
+    nombre :String,
+    precio :Number,
+    presentacion :String,
+    costo_envio : Number,
+    dias_envio : Number,
+    unidades_disp : Number,
+    ubicacion :String,
+    fecha_exp:Date,
+    descrip :String,
+    img_prod :String
 }

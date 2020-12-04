@@ -11,7 +11,7 @@ import { MostrarProductoComponent } from './components/mostrar-producto/mostrar-
 import { ProductosAnunciadosComponent } from './components/productos-anunciados/productos-anunciados.component';
 
 const routes: Routes = [
-  {path: "producto/confirmarCompra", component: ConfirmarCompraComponent},
+  {path: "producto/confirmarCompra/:id", component: ConfirmarCompraComponent},
   {path: "producto/detalleProducto/:id", component: DetalleProductoComponent},
   {path: "producto/registrarProducto", component: RegistrarProductoComponent},
 

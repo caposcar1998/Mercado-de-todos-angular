@@ -19,9 +19,8 @@ export class SearchBarComponent implements OnInit {
 
   onSearchTerm() {
     this.searchTerm = this.SearchForm.get('term').value;
-    console.log("Search: " + this.searchTerm);
     this.SearchForm.reset();
-    this.router.navigate(['mostrar-producto'], { queryParams: { search: this.searchTerm} });
+    this.router.navigate(['mostrar-producto'], { queryParams: { search: this.searchTerm}, queryParamsHandling: "merge" });
   }
 
   SearchForm = new FormGroup({

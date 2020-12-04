@@ -2,8 +2,8 @@ import * as mongoose from "mongoose";
 import Producto from "./producto";
 
 let productoHistorial = new mongoose.Schema({
-    producto: {type:String},
-    idReferencia: {type:String}
+    producto: String,
+    idReferencia: String
 })
 
 const historiales = new mongoose.Schema({
