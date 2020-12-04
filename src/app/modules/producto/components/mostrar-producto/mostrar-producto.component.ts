@@ -22,8 +22,10 @@ export class MostrarProductoComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params =>  {
       this.searchTerm = params.get('search') || "";
-      if (this.searchTerm === "") {
+      if (this.searchTerm == "") {
         this.showProducts = this.mostrarProductoService.getProductos();
+      } else {
+        this.showProducts = this.mostrarProductoService.getProductoSearch(this.searchTerm);
       }
     });
   }

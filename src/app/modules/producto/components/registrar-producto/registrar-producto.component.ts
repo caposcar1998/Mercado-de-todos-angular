@@ -88,6 +88,7 @@ export class RegistrarProductoComponent implements OnInit {
       // Do something after
       console.log(urlImage);
       this.productoService.insertarProductos({
+        _id: "",
         nombre: this.RegisterProductForm.get('name').value,
         precio: this.RegisterProductForm.get('price').value,
         presentacion: this.RegisterProductForm.get('display').value,

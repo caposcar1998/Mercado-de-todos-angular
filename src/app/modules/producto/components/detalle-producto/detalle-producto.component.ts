@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router,ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ProductoService } from '../../services/producto.service';
 import { ProductoModel } from 'src/app/models/producto.model';
-import { Observable, Subscription } from 'rxjs'
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-detalle-producto',
@@ -18,7 +18,6 @@ export class DetalleProductoComponent implements OnInit, OnDestroy {
 
 
   constructor(private activatedRoute: ActivatedRoute,
-              private router: Router,
               private productService: ProductoService) { }
 
   ngOnInit(): void {
