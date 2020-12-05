@@ -36,6 +36,7 @@ export class EditarPerfilCompradorComponent implements OnInit {
       this.perfilesService.updateBasicInfo(info[0]._id,this.persona)  
       );
     
+    
   }
 
   

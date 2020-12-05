@@ -96,7 +96,7 @@ export class ProductoService {
     const headers = { 'Authorization': `Bearer ${token}`, "Content-Type": "application/x-www-form-urlencoded" }
 
     console.log("en el servicio")
-    return this.http.get<CarritoOrdenes[]>(this.endpointCarritoOrdenes).pipe(retry(3),catchError(this.handleError));
+    return this.http.get<CarritoOrdenes[]>(this.endpointCarritoOrdenes,{ headers }).pipe(retry(3),catchError(this.handleError));
   }
 
   insertarCarritoOrdenes(carritoOrdenes: CarritoOrdenes) {
