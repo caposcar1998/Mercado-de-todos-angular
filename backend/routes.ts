@@ -44,6 +44,7 @@ function setRoutes(app): void{
     router.route("/producto/insertar").post(productoController.insert);
     router.route("/producto/count").get(productoController.count);
     router.route("/producto/search").get(productoController.getNombre);
+    router.route("/producto/comprar").put(productoController.buyprod);
     router.route("/producto/:id").get(productoController.get);
     router.route("/producto/:id").put(productoController.update);
     router.route("/producto/:id").delete(productoController.delete);
