@@ -25,6 +25,10 @@ export class EditarPerfilCompradorComponent implements OnInit {
   }
 
   updateCustomerProfile() {
+    this.persona.nombre = this.editarinfo.value.nombre
+    this.persona.telefono = this.editarinfo.value.telefono
+    this.persona.domicilio = this.editarinfo.value.direccion
+    this.persona.ciudad = this.editarinfo.value.ciudad
     let email = JSON.parse(this.profileJson).email;
     this.perfilesService.getPersonaId(email).subscribe(info =>
       this.perfilesService.updateBasicInfo(info[0]._id,this.persona)  
