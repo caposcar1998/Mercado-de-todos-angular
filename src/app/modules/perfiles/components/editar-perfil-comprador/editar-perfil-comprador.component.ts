@@ -25,9 +25,11 @@ export class EditarPerfilCompradorComponent implements OnInit {
   }
 
   updateCustomerProfile() {
-    console.log(this.editarinfo.value);
+    let email = JSON.parse(this.profileJson).email;
+    this.perfilesService.getPersonaId(email).subscribe(info =>
+      this.perfilesService.updateBasicInfo(info[0]._id,this.persona)  
+      );
     
-    this.perfilesService.updateBasicInfo("5fc9bdf442fc7300111db5d5",this.persona)
   }
 
   
