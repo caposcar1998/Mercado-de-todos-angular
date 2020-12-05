@@ -145,7 +145,7 @@ class PersonaController{
     setBasicinfo= async (req, res) => {
  
         try {	        
-            await Persona.updateOne({ _id: req.params.id }, { $set: { nombre: req.body.nombre, ciudad: req.body.ciudad, telefono: req.body.telefono, domicilio: req.body.domicilio } })	        
+            await Persona.updateOne({ _id: req.params.id }, { $set: { nombre: req.body.nombre, ciudad: req.body.ciudad, telefono: req.body.telefono, domicilio: req.body.domicilio, idReferenciaCatalogo: req.body.idReferenciaCatalogo, idReferenciaHistorial: req.body.idReferenciaHistorial } })	        
             res.sendStatus(200);	          
         } catch (err) {	  return res.status(400).json({ error: err.message });      }   
       }	  	        

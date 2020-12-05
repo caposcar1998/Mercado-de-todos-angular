@@ -14,7 +14,7 @@ export class EditarPerfilCompradorComponent implements OnInit {
 
   customerProfile: ProfileModel;
   profileJson: string = null;
-  persona: PersonaBasic = {nombre:"hola", domicilio:"hola",ciudad:"hola",telefono:0}
+  persona: PersonaBasic = {nombre:"hola", domicilio:"hola",ciudad:"hola",telefono:0, idReferenciaCatalogo:0, idReferenciaHistorial:0}
 
   constructor(private perfilesService: PerfilesService, public auth: AuthService) { }
   
@@ -29,6 +29,8 @@ export class EditarPerfilCompradorComponent implements OnInit {
     this.persona.telefono = this.editarinfo.value.telefono
     this.persona.domicilio = this.editarinfo.value.direccion
     this.persona.ciudad = this.editarinfo.value.ciudad
+    this.persona.idReferenciaCatalogo =Math.floor(Math.random() * 100000000000000)
+    this.persona.idReferenciaHistorial =Math.floor(Math.random() * 10000000000)
     let email = JSON.parse(this.profileJson).email;
     this.perfilesService.getPersonaId(email).subscribe(info =>
       this.perfilesService.updateBasicInfo(info[0]._id,this.persona)  
