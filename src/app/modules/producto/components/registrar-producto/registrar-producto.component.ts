@@ -86,14 +86,13 @@ export class RegistrarProductoComponent implements OnInit {
 
   onRegisterProduct() {
 
-
     let archivo = this.datosFormulario.get('productImage');
 
-    if(!archivo || !this.RegisterProductForm.get('name').value || this.RegisterProductForm.get('shippingDays').value 
-      || this.RegisterProductForm.get('price').value || this.RegisterProductForm.get('display').value 
-      || this.RegisterProductForm.get('shippingCost').value || this.RegisterProductForm.get('availableUnits').value 
-      || this.RegisterProductForm.get('location').value || this.RegisterProductForm.get('expireDate').value 
-      || this.RegisterProductForm.get('description').value){
+    if(!archivo || !this.RegisterProductForm.get('name').value || !this.RegisterProductForm.get('shippingDays').value 
+      || !this.RegisterProductForm.get('price').value || !this.RegisterProductForm.get('display').value 
+      || !this.RegisterProductForm.get('shippingCost').value || !this.RegisterProductForm.get('availableUnits').value 
+      || !this.RegisterProductForm.get('location').value || !this.RegisterProductForm.get('expireDate').value 
+      || !this.RegisterProductForm.get('description').value){
       alert("Es necesario llenar todos los campos");
       return;
     }
@@ -110,12 +109,11 @@ export class RegistrarProductoComponent implements OnInit {
           urlImage = url
           
         });
-      });
-
+      }); 
       await this.delay(5000);
-
       // Do something after
       console.log(urlImage);
+      console.log("oski puto", this.RegisterProductForm.get('name').value);
       this.productoService.registrarProducto({
         nombre: this.RegisterProductForm.get('name').value,
         precio: this.RegisterProductForm.get('price').value,
@@ -128,6 +126,7 @@ export class RegistrarProductoComponent implements OnInit {
         descrip: this.RegisterProductForm.get('description').value,
         img_prod: urlImage
       });
+
       this.RegisterProductForm.reset();
       
   
