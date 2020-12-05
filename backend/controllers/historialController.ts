@@ -96,13 +96,13 @@ class HistorialController{
 
     addProduct = async (req, res) => {
       let statusCode = 404;
-      const newProducto = {producto : "Toronja",idReferencia : "5fc6f8d8d14dcc1950c94e78"}
-      var newHistorial = {idReferenciaPersona:"5fc9c11f9240792ecc29225f",productoHistorial:[]} 
+      const newProducto = {producto : "Manzanita",idReferencia : "5fc89ef80716c625cbc3aee2"}
+      var newHistorial = {idReferenciaPersona:"5fc9bdf442fc7300111db5d5",productosHistorial:[]} 
       try {
-          if (await Historial.findOne({idReferenciaPersona: "5fc9c11f9240792ecc29225f"}) == null){
+          if (await Historial.findOne({idReferenciaPersona: "5fc9bdf442fc7300111db5d5"}) == null){
             new Historial (newHistorial).save();
           }
-          await Historial.updateOne({idReferenciaPersona: "5fc9c11f9240792ecc29225f"},{ $push: {productosHistorial: newProducto}});
+          await Historial.updateOne({idReferenciaPersona: "5fc9bdf442fc7300111db5d5"},{ $push: {productosHistorial: newProducto}});
           res.sendStatus(200); 
       } catch (error) {
           if(!error.statusCode){
