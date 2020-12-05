@@ -26,15 +26,15 @@ export class RegistrarProductoComponent implements OnInit {
     private firebaseStorage: FirebaseStorageService) { }
     
   RegisterProductForm = new FormGroup({
-    name: new FormControl(''),
-    price: new FormControl(''),
-    display: new FormControl(''),
-    location: new FormControl(''),
-    availableUnits: new FormControl(''),
-    shippingCost: new FormControl(''),
-    expireDate: new FormControl(''),
-    shippingDays: new FormControl(''),
-    description: new FormControl(''),
+    name: new FormControl(null, Validators.required),
+    price: new FormControl(null, Validators.required),
+    display: new FormControl(null, Validators.required),
+    location: new FormControl(null, Validators.required),
+    availableUnits: new FormControl(null, Validators.required),
+    shippingCost: new FormControl(null, Validators.required),
+    expireDate: new FormControl(null, Validators.required),
+    shippingDays: new FormControl(null, Validators.required),
+    description: new FormControl(null, Validators.required),
     productImage: new FormControl(null, Validators.required),
   });
   public mensajeArchivo = 'No hay un archivo seleccionado';
@@ -44,6 +44,8 @@ export class RegistrarProductoComponent implements OnInit {
   public porcentaje = 0;
   public finalizado = false;
   public downloadURL = '';
+  url;
+  imageSource = '';
 
   cambioArchivo(event) {
     if (event.target.files.length > 0) {
@@ -65,10 +67,36 @@ export class RegistrarProductoComponent implements OnInit {
     //this.productoService.sharedMessage.subscribe(message => this.message = message)
   } 
 
-
+  selectFile(event) {
+		if(!event.target.files[0] || event.target.files[0].length == 0) {
+			return;
+		}
+		
+		var mimeType = event.target.files[0].type;
+		
+		
+		var reader = new FileReader();
+		reader.readAsDataURL(event.target.files[0]);
+		
+		reader.onload = (_event) => {
+			
+			this.url = reader.result; 
+		}
+	}
 
   onRegisterProduct() {
+
+
     let archivo = this.datosFormulario.get('productImage');
+
+    if(!archivo || !this.RegisterProductForm.get('name').value || this.RegisterProductForm.get('shippingDays').value 
+      || this.RegisterProductForm.get('price').value || this.RegisterProductForm.get('display').value 
+      || this.RegisterProductForm.get('shippingCost').value || this.RegisterProductForm.get('availableUnits').value 
+      || this.RegisterProductForm.get('location').value || this.RegisterProductForm.get('expireDate').value 
+      || this.RegisterProductForm.get('description').value){
+      alert("Es necesario llenar todos los campos");
+      return;
+    }
     let referencia = this.firebaseStorage.referenciaCloudStorage(this.nombreArchivo);
     let tarea = this.firebaseStorage.tareaCloudStorage(this.nombreArchivo, archivo);
     let urlImage = "";
@@ -83,26 +111,26 @@ export class RegistrarProductoComponent implements OnInit {
           
         });
       });
-      console.log('before delay')
 
       await this.delay(5000);
 
       // Do something after
       console.log(urlImage);
-      // this.productoService.registrarProducto({
-      //   nombre: this.RegisterProductForm.get('name').value,
-      //   precio: this.RegisterProductForm.get('price').value,
-      //   presentacion: this.RegisterProductForm.get('display').value,
-      //   costo_envio: this.RegisterProductForm.get('shippingCost').value,
-      //   dias_envio: this.RegisterProductForm.get('shippingDays').value,
-      //   unidades_disp: this.RegisterProductForm.get('availableUnits').value,
-      //   ubicacion: this.RegisterProductForm.get('location').value,
-      //   fecha_exp: this.RegisterProductForm.get('expireDate').value,
-      //   descrip: this.RegisterProductForm.get('description').value,
-      //   img_prod: urlImage
-      // });
+      this.productoService.registrarProducto({
+        nombre: this.RegisterProductForm.get('name').value,
+        precio: this.RegisterProductForm.get('price').value,
+        presentacion: this.RegisterProductForm.get('display').value,
+        costo_envio: this.RegisterProductForm.get('shippingCost').value,
+        dias_envio: this.RegisterProductForm.get('shippingDays').value,
+        unidades_disp: this.RegisterProductForm.get('availableUnits').value,
+        ubicacion: this.RegisterProductForm.get('location').value,
+        fecha_exp: this.RegisterProductForm.get('expireDate').value,
+        descrip: this.RegisterProductForm.get('description').value,
+        img_prod: urlImage
+      });
       this.RegisterProductForm.reset();
-      console.log('after delay')
+      
+  
     })();
 
 
