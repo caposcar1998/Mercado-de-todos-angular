@@ -9,6 +9,7 @@ import HistorialController from "./controllers/historialController"
 
 var jwt = require('express-jwt');
 var jwks = require('jwks-rsa');
+var cors = require('cors');
 function setRoutes(app): void{
 
     const pruebaController = new PruebaController
@@ -116,6 +117,7 @@ function setRoutes(app): void{
 
       
     app.use(jwtCheck)
+    app.use(cors());
     app.use("/api", router);
     
 }

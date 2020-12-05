@@ -19,7 +19,7 @@ import { GeneralService } from './general.service';
   styleUrls: ['./app.component.scss'],
   animations:[slider]
 })
-export class AppComponent {
+export class AppComponent  {
   title = 'mercado-de-todos-angular';
   loggedIn = true;
   subscription: Subscription;
@@ -28,11 +28,11 @@ export class AppComponent {
   }
 
   constructor(public auth:AuthService, public general:GeneralService){
-    let text  ;
-    const source = interval(1000);
 
-    this.general.getToken().subscribe(info => text = info);
+
+
+
     
-    this.subscription = source.subscribe(val => console.log(text));
+    
   }
 }

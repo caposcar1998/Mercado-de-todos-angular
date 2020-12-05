@@ -10,6 +10,9 @@ import {
   transition,
 } from '@angular/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GeneralService } from 'src/app/general.service';
+import { interval } from 'rxjs'; 
+
 @Component({
   selector: 'app-header-logged',
   templateUrl: './header-logged.component.html',
@@ -52,12 +55,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 })
 export class HeaderLoggedComponent implements OnInit {
   profileJson: string = null;
-  constructor(public auth: AuthService) { }
+  
+  constructor(public auth: AuthService, public general:GeneralService) { }
 
   ngOnInit(): void {
     this.auth.user$.subscribe(
       (profile)=>(this.profileJson = JSON.stringify(profile, null, 2)));
+      this.general.getToken().subscribe(info =>
+        localStorage.setItem('token', info.access_token));
+        interval(7200000 ).subscribe(x => { 
+          
+          console.log("hola");
+          this.general.getToken().subscribe(info =>
+            localStorage.setItem('token', info.access_token));          
+        
+        });
   }
+  
+ 
+
 
   isClosed: boolean = true;
 
