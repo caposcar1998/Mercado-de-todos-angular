@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ProductoService } from '../../services/producto.service';
 import { ConfirmarCompra } from 'src/app/models/confirmarCompra';
@@ -21,6 +21,7 @@ export class ConfirmarCompraComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   constructor(private productoService: ProductoService,
+              private router: Router,
               private activatedRoute: ActivatedRoute
     ) { }
 
@@ -38,8 +39,10 @@ export class ConfirmarCompraComponent implements OnInit, OnDestroy {
   }
 
   onConfirmarCompra(){
-    console.warn(this.confirmarCompraForm.value);
-    console.log('hola');
+    let purchase: ProductoModel = this.productDetail;
+    purchase.unidades_disp = this.amount;
+    this.productoService.putProductoComprar(purchase);
+    this.router.navigate(['/mostrar-producto']);
   }
 
   ngOnDestroy(): void {

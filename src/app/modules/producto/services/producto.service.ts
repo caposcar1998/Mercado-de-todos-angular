@@ -34,6 +34,7 @@ export class ProductoService {
   endpointCarritos = "http://localhost:3000/api/carritos";
   endpointProducto = "http://localhost:3000/api/producto";
   endpointProductoSearch = "http://localhost:3000/api/producto/search";
+  endpointProductoComprar = "http://localhost:3000/api/producto/comprar";
   endpointCatalogoProducto = "http://localhost:3000/api/catalogoProducto";
   endpointCatalogos = "http://localhost:3000/api/catalogos";
   endpointCarritoProductos = "http://localhost:3000/api/carritoProductos";
@@ -219,6 +220,21 @@ export class ProductoService {
     const token = localStorage.getItem('token')
     const headers = { 'Authorization': `Bearer ${token}`, "Content-Type": "application/x-www-form-urlencoded" }
     return this.http.get<ProductoModel[]>(this.endpointProductoSearch+"?nombre="+search,{ headers }).pipe(retry(3),catchError(this.handleError));
+  }
+
+  putProductoComprar(purchase: ProductoModel) {
+    const token = localStorage.getItem('token')
+    const headers = { 'Authorization': `Bearer ${token}` }
+    console.log(purchase);
+    this.http.post<ProductoModel>(this.endpointProductoComprar, purchase,{ headers }).subscribe({
+      next: data => {
+            console.log("datos",data)
+        },
+        error: error => {
+
+            console.error(' error!', error);
+        }
+    })
   }
 
   insertarProductos(producto: ProductoModel) {

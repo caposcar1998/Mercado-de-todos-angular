@@ -66,7 +66,7 @@
                         <p i18n>${{ productDetail?.costo_envio + productDetail?.precio.valueOf() * amount.valueOf() }} MXN.</p>
                     </div>
                 </div>
-                <a href="./historial" class="btn btn-signin d-block" type="submit" i18n>Confirmar Compra</a>
+                <a (click)="onConfirmarCompra()" class="btn btn-signin d-block" type="submit" i18n>Confirmar Compra</a>
         </div>
         </div>
     </div>
