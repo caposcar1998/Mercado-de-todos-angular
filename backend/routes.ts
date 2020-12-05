@@ -71,6 +71,7 @@ function setRoutes(app): void{
     router.route("/catalogo").get(catalogoController.getAll);
     router.route("/catalogo/insertar").post(catalogoController.insert);
     router.route("/catalogo/count").get(catalogoController.count);
+    router.route("/catalogo/add").put(catalogoController.addProduct);
     router.route("/catalogo/:id").get(catalogoController.get);
     router.route("/catalogo/:id").put(catalogoController.update);
     router.route("/catalogo/:id").delete(catalogoController.delete);
@@ -79,6 +80,7 @@ function setRoutes(app): void{
     router.route("/historial").get(historialController.getAll);
     router.route("/historial/insertar").post(historialController.insert);
     router.route("/historial/count").get(historialController.count);
+    router.route("/historial/add").put(historialController.addProduct);
     router.route("/historial/:id").get(historialController.get);
     router.route("/historial/:id").put(historialController.update);
     router.route("/historial/:id").delete(historialController.delete);

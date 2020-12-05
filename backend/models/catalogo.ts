@@ -7,6 +7,7 @@ let catalogoProducto = new mongoose.Schema({
 })
 
 const catalogos = new mongoose.Schema({
+    idReferenciaPersona : String,
     "catalogoProducto.$": { type: catalogoProducto },
     catalogoProductos: { type: Array, defaultValue: [], optional: true }
 })
