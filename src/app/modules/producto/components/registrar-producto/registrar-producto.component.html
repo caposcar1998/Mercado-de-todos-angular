@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row mb-4">
     <div class="card mt-3 col-12 col-sm-12 col-md-6 ">
-      <img src="../../../../../assets/beans.jpg" class="card-img-top" alt="...">
+      <img [src]="url" *ngIf="url" class="card-img-top" alt="...">
       <div class="card-body">
           <div class="form-group mt-3">
               <form [formGroup]="RegisterProductForm" (ngSubmit)="onRegisterProduct()">
-                <input type="file" id="newPic" (change)="cambioArchivo($event)" formControlName="productImage" name="newPic" class="form-control mb-4">
+                <input type="file" id="newPic" (change)="selectFile($event)" (change)="cambioArchivo($event)" formControlName="productImage" name="newPic" class="form-control mb-4">
                 <textarea name="message" formControlName="description" rows="7" cols="60" placeholder="Inserta aqui la descripción del producto" class="form-control mb-4"></textarea>
             </form>
           </div>
@@ -43,17 +43,10 @@
                   </div>
                   <div class="form-group col-md-6">
                       <label for="inputDeliveryDays" i18n>Días estimados para envio:</label>
-                      <input type="number" id="inputDeliveryDays" formControlName="shippingDays" name="deliveryDays" class="form-control mb-4" min="1" max="7" step="1" value="1"> 
+                      <input placeholder="Días de envio" type="number" id="inputDeliveryDays" formControlName="shippingDays" name="deliveryDays" class="form-control mb-4" min="1" max="7" step="1" value="1"> 
                   </div>
               </div>
-              <div class="form-group mt-3 text-center">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="userAgreement">
-                    <label class="form-check-label" for="userAgreement" i18n>
-                      Acepto los términos y condiciones
-                    </label>
-                  </div>
-              </div>
+
           </form>
         <button class="btn btn-signin d-block" (click) = "onRegisterProduct()" i18n>Registrar Producto</button>
       </div>
