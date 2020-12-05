@@ -7,6 +7,7 @@ let productoHistorial = new mongoose.Schema({
 })
 
 const historiales = new mongoose.Schema({
+    idReferenciaPersona : String,
     "productosHistorial.$": { type: productoHistorial },
     productosHistorial: { type: Array, defaultValue: [], optional: true }
 })
