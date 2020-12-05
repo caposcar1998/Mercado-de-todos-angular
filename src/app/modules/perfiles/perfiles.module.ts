@@ -17,14 +17,15 @@ import { CompradorNuevoComponent } from './components/comprador-nuevo/comprador-
 import { VendedorComponent } from './components/vendedor/vendedor.component';
 import { VendedorNuevoComponent } from './components/vendedor-nuevo/vendedor-nuevo.component';
 import { LandingComponent } from './components/landing/landing.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { HistorialComprasComponent } from './components/historial-compras/historial-compras.component';
 
 @NgModule({
   declarations: [PerfilCompradorComponent, PerfilVendedorComponent, EditarPerfilCompradorComponent, EditarPerfilVendedorComponent, VerPerfilCompradorComponent, VerPerfilVendedorComponent, GraficasVendedorComponent, GraficasCompradoresComponent, CompradorComponent, CompradorNuevoComponent, VendedorComponent, VendedorNuevoComponent, LandingComponent, HistorialComprasComponent],
   imports: [
     CommonModule,
-    PerfilesRoutingModule
+    PerfilesRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [PerfilesService]
 })

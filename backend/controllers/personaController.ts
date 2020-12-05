@@ -97,8 +97,9 @@ class PersonaController{
     //Get id by mail
     getId = async (req, res) => {
       let statusCode = 404;
+      console.log(req.query.email)
       try {
-      const obj = await Persona.find({correo : req.query.correo},{_id : 1});
+      const obj = await Persona.find({email : req.query.email},{_id : 1});
       res.status(200).json(obj);
       } catch (error) {
           if(!error.statusCode){
@@ -140,6 +141,15 @@ class PersonaController{
             return res.status(error.statusCode).json({error: error.message})
         }
     }
+
+    setBasicinfo= async (req, res) => {
+ 
+        try {	        
+            await Persona.updateOne({ _id: req.params.id }, { $set: { nombre: req.body.nombre, ciudad: req.body.ciudad, telefono: req.body.telefono, domicilio: req.body.domicilio } })	        
+            res.sendStatus(200);	          
+        } catch (err) {	  return res.status(400).json({ error: err.message });      }   
+      }	  	        
+    	    
 }
 
 export default PersonaController
