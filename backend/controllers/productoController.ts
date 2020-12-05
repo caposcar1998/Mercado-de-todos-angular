@@ -65,7 +65,10 @@ class ProductoController{
     buyprod = async (req, res) => {
       let statusCode = 404;
       try {
-        const obj = await Producto.updateOne({ _id: req.query.id }, { $inc: {unidades_disp: -req.query.unidades_compra} })
+        console.log(req.body);
+        let id : String = req.body._id;
+        let amount : Number = req.body.unidades_disp.valueOf() * -1;
+        const obj = await Producto.updateOne({ _id: id }, { $inc: {unidades_disp: amount} })
         res.status(200).json(obj);
           } catch (error) {
             if(!error.statusCode){

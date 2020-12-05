@@ -39,7 +39,9 @@ export class ConfirmarCompraComponent implements OnInit, OnDestroy {
   }
 
   onConfirmarCompra(){
-    this.productoService.putProductoComprar(this.id, this.amount);
+    let purchase: ProductoModel = this.productDetail;
+    purchase.unidades_disp = this.amount;
+    this.productoService.putProductoComprar(purchase);
     this.router.navigate(['/mostrar-producto']);
   }
 

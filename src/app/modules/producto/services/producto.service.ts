@@ -222,11 +222,11 @@ export class ProductoService {
     return this.http.get<ProductoModel[]>(this.endpointProductoSearch+"?nombre="+search,{ headers }).pipe(retry(3),catchError(this.handleError));
   }
 
-  putProductoComprar(id: String, amount: Number) {
+  putProductoComprar(purchase: ProductoModel) {
     const token = localStorage.getItem('token')
     const headers = { 'Authorization': `Bearer ${token}` }
-
-    this.http.put(this.endpointProductoComprar+"/?id="+id+"&unidades_compra="+amount.toString(),{ headers }).subscribe({
+    console.log(purchase);
+    this.http.post<ProductoModel>(this.endpointProductoComprar, purchase,{ headers }).subscribe({
       next: data => {
             console.log("datos",data)
         },
